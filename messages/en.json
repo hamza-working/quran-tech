@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "program": "Program",
+    "register": "Register",
+    "progress": "Progress",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Quran & Technology",
+    "subtitle": "We combine Quran memorization and technology learning for children aged 6 to 12 in Morocco",
+    "cta_register": "Register Now",
+    "cta_program": "Discover the Program",
+    "stats_children": "enrolled children",
+    "stats_surahs": "Quranic surahs",
+    "stats_levels": "educational levels",
+    "tracks_title": "Our Educational Tracks",
+    "quran_track": "Quran Track",
+    "tech_track": "Technology Track",
+    "listen_title": "Listen to the Quran",
+    "listen_subtitle": "By Sheikh Maher Al Muaiqly"
+  },
+  "program": {
+    "title": "Educational Program",
+    "subtitle": "Three complete educational levels",
+    "quran": "Quran Track",
+    "tech": "Technology Track"
+  },
+  "register": {
+    "title": "Child Registration",
+    "login_title": "Login",
+    "subtitle": "Join the Quran & Technology family",
+    "login_subtitle": "Enter your data to login",
+    "tab_register": "New Registration",
+    "tab_login": "Login",
+    "name": "Child Name",
+    "name_placeholder": "Enter child name",
+    "age": "Age",
+    "age_placeholder": "Choose age",
+    "level": "Level",
+    "level_placeholder": "Choose level",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "submit": "Register Now",
+    "login_submit": "Login",
+    "forgot_password": "Forgot password?",
+    "error_fields": "Please fill in all fields",
+    "error_password": "Passwords do not match",
+    "error_length": "Password must be at least 8 characters",
+    "success_register": "Registration successful! 🎉",
+    "success_login": "Login successful! 🎉"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to answer all your questions",
+    "whatsapp": "WhatsApp",
+    "whatsapp_sub": "Contact us directly",
+    "email": "Email",
+    "location": "Location",
+    "location_value": "Morocco 🇲🇦",
+    "form_title": "Send us a message",
+    "form_name": "Your name",
+    "form_email": "Your email",
+    "form_message": "Your message...",
+    "form_submit": "Send Message 📨"
+  }
+}

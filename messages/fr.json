@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "program": "Programme",
+    "register": "Inscription",
+    "progress": "Progrès",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Coran & Technologie",
+    "subtitle": "Nous combinons la mémorisation du Coran et l'apprentissage de la technologie pour les enfants de 6 à 12 ans au Maroc",
+    "cta_register": "S'inscrire",
+    "cta_program": "Découvrir le programme",
+    "stats_children": "enfants inscrits",
+    "stats_surahs": "sourates coraniques",
+    "stats_levels": "niveaux éducatifs",
+    "tracks_title": "Nos parcours éducatifs",
+    "quran_track": "Parcours Coran",
+    "tech_track": "Parcours Technologie",
+    "listen_title": "Écouter le Coran",
+    "listen_subtitle": "Par cheikh Maher Al Muaiqly"
+  },
+  "program": {
+    "title": "Programme éducatif",
+    "subtitle": "Trois niveaux éducatifs complets",
+    "quran": "Parcours Coran",
+    "tech": "Parcours Technologie"
+  },
+  "register": {
+    "title": "Inscription de l'enfant",
+    "login_title": "Se connecter",
+    "subtitle": "Rejoignez la famille Coran & Technologie",
+    "login_subtitle": "Entrez vos données pour vous connecter",
+    "tab_register": "Nouvelle inscription",
+    "tab_login": "Se connecter",
+    "name": "Nom de l'enfant",
+    "name_placeholder": "Entrez le nom de l'enfant",
+    "age": "Âge",
+    "age_placeholder": "Choisissez l'âge",
+    "level": "Niveau",
+    "level_placeholder": "Choisissez le niveau",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirm_password": "Confirmer le mot de passe",
+    "submit": "S'inscrire",
+    "login_submit": "Se connecter",
+    "forgot_password": "Mot de passe oublié ?",
+    "error_fields": "Veuillez remplir tous les champs",
+    "error_password": "Les mots de passe ne correspondent pas",
+    "error_length": "Le mot de passe doit contenir au moins 8 caractères",
+    "success_register": "Inscription réussie! 🎉",
+    "success_login": "Connexion réussie! 🎉"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes là pour répondre à toutes vos questions",
+    "whatsapp": "WhatsApp",
+    "whatsapp_sub": "Contactez-nous directement",
+    "email": "Email",
+    "location": "Localisation",
+    "location_value": "Maroc 🇲🇦",
+    "form_title": "Envoyez-nous un message",
+    "form_name": "Votre nom",
+    "form_email": "Votre email",
+    "form_message": "Votre message...",
+    "form_submit": "Envoyer le message 📨"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "program": "البرنامج",
+    "register": "التسجيل",
+    "progress": "التقدم",
+    "contact": "التواصل"
+  },
+  "home": {
+    "title": "القرآن والتكنولوجيا",
+    "subtitle": "نجمع بين حفظ القرآن الكريم وتعلم التكنولوجيا للأطفال من 6 إلى 12 سنة في المغرب",
+    "cta_register": "سجل الآن",
+    "cta_program": "اكتشف البرنامج",
+    "stats_children": "طفل مسجل",
+    "stats_surahs": "سورة قرآنية",
+    "stats_levels": "مستويات تعليمية",
+    "tracks_title": "مساراتنا التعليمية",
+    "quran_track": "المسار القرآني",
+    "tech_track": "المسار التكنولوجي",
+    "listen_title": "استمع للقرآن الكريم",
+    "listen_subtitle": "بصوت الشيخ ماهر المعيقلي"
+  },
+  "program": {
+    "title": "البرنامج التعليمي",
+    "subtitle": "ثلاثة مستويات تعليمية متكاملة",
+    "quran": "المسار القرآني",
+    "tech": "المسار التكنولوجي"
+  },
+  "register": {
+    "title": "تسجيل الطفل",
+    "login_title": "تسجيل الدخول",
+    "subtitle": "انضم إلى عائلة القرآن والتكنولوجيا",
+    "login_subtitle": "أدخل بياناتك للدخول",
+    "tab_register": "تسجيل جديد",
+    "tab_login": "تسجيل الدخول",
+    "name": "اسم الطفل",
+    "name_placeholder": "أدخل اسم الطفل",
+    "age": "العمر",
+    "age_placeholder": "اختر العمر",
+    "level": "المستوى",
+    "level_placeholder": "اختر المستوى",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "submit": "تسجيل الآن",
+    "login_submit": "دخول",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "error_fields": "يرجى ملء جميع الحقول",
+    "error_password": "كلمة المرور غير متطابقة",
+    "error_length": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+    "success_register": "تم التسجيل بنجاح! 🎉",
+    "success_login": "تم تسجيل الدخول بنجاح! 🎉"
+  },
+  "contact": {
+    "title": "تواصل معنا",
+    "subtitle": "نحن هنا للإجابة على جميع استفساراتك",
+    "whatsapp": "واتساب",
+    "whatsapp_sub": "تواصل معنا مباشرة",
+    "email": "البريد الإلكتروني",
+    "location": "الموقع",
+    "location_value": "المغرب 🇲🇦",
+    "form_title": "أرسل لنا رسالة",
+    "form_name": "اسمك",
+    "form_email": "بريدك الإلكتروني",
+    "form_message": "رسالتك...",
+    "form_submit": "إرسال الرسالة 📨"
+  }
+}
