@@ -83,9 +83,10 @@ const grammar = [
   ]
 },
 {
-  titleAr: 'الأرقام الكبيرة', titleFr: 'Les grands nombres', titleEn: 'Large Numbers',
-  icon: '💯',
+  titleAr: 'الأرقام من 20 إلى 100', titleFr: 'Les nombres de 20 à 100', titleEn: 'Numbers 20 to 100',
+  icon: '🔢',
   items: [
+    { en: 'Twenty - 20', ar: 'عشرون', example: 'Twenty students' },
     { en: 'Twenty-one - 21', ar: 'واحد وعشرون', example: 'Twenty-one days' },
     { en: 'Twenty-two - 22', ar: 'اثنان وعشرون', example: 'Twenty-two students' },
     { en: 'Twenty-three - 23', ar: 'ثلاثة وعشرون', example: 'Twenty-three birds' },
@@ -103,6 +104,12 @@ const grammar = [
     { en: 'Eighty - 80', ar: 'ثمانون', example: 'Eighty apples' },
     { en: 'Ninety - 90', ar: 'تسعون', example: 'Ninety stars' },
     { en: 'One Hundred - 100', ar: 'مئة', example: 'One hundred students' },
+  ]
+},
+{
+  titleAr: 'الأرقام من 100 إلى 1000', titleFr: 'Les nombres de 100 à 1000', titleEn: 'Numbers 100 to 1000',
+  icon: '💯',
+  items: [
     { en: 'One Hundred and One - 101', ar: 'مئة وواحد', example: 'One hundred and one days' },
     { en: 'One Hundred and Two - 102', ar: 'مئة واثنان', example: 'One hundred and two birds' },
     { en: 'One Hundred and Three - 103', ar: 'مئة وثلاثة', example: 'One hundred and three books' },

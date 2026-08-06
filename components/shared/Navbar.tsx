@@ -78,19 +78,37 @@ const handleSignOut = async () => {
           </span>
         </Link>
 
-        {/* روابط الجهاز المكتبي */}
-        <div className="hidden md:flex items-center gap-6">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={getLocalizedHref(link.href)}
-              className="transition text-sm font-medium hover:opacity-75"
-              style={{color: 'white'}}
-            >
-              {getLabel(link)}
-            </Link>
-          ))}
-        </div>
+       {/* روابط الجهاز المكتبي */}
+<div className="hidden md:flex items-center gap-6">
+  {navLinks.map(link => {
+    const protectedLinks = ['/program', '/english', '/quiz', '/dashboard'];
+    const isProtected = protectedLinks.includes(link.href);
+
+    if (isProtected && !user) {
+      return (
+        <button
+          key={link.href}
+          onClick={() => setShowLogin(true)}
+          className="transition text-sm font-medium hover:opacity-75"
+          style={{color: 'white', background: 'none', border: 'none', cursor: 'pointer'}}
+        >
+          {getLabel(link)}
+        </button>
+      );
+    }
+
+    return (
+      <Link
+        key={link.href}
+        href={getLocalizedHref(link.href)}
+        className="transition text-sm font-medium hover:opacity-75"
+        style={{color: 'white'}}
+      >
+        {getLabel(link)}
+      </Link>
+    );
+  })}
+</div>
 
         {/* اختيار اللغة */}
         
@@ -143,19 +161,37 @@ const handleSignOut = async () => {
       </div>
 
       {/* قائمة الجوال */}
-      {isOpen && (
-        <div style={{background: '#005450'}} className="md:hidden px-4 py-4 flex flex-col gap-4">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={getLocalizedHref(link.href)}
-              className="transition font-medium hover:opacity-75"
-              style={{color: 'white'}}
-              onClick={() => setIsOpen(false)}
-            >
-              {getLabel(link)}
-            </Link>
-          ))}
+{isOpen && (
+  <div style={{background: '#005450'}} className="md:hidden px-4 py-4 flex flex-col gap-4">
+    {navLinks.map(link => {
+      const protectedLinks = ['/program', '/english', '/quiz', '/dashboard'];
+      const isProtected = protectedLinks.includes(link.href);
+
+      if (isProtected && !user) {
+        return (
+          <button
+            key={link.href}
+            onClick={() => { setShowLogin(true); setIsOpen(false); }}
+            className="transition font-medium hover:opacity-75 text-right"
+            style={{color: 'white', background: 'none', border: 'none', cursor: 'pointer'}}
+          >
+            {getLabel(link)}
+          </button>
+        );
+      }
+
+      return (
+        <Link
+          key={link.href}
+          href={getLocalizedHref(link.href)}
+          className="transition font-medium hover:opacity-75"
+          style={{color: 'white'}}
+          onClick={() => setIsOpen(false)}
+        >
+          {getLabel(link)}
+        </Link>
+      );
+    })}
           <div className="flex gap-2 mt-2">
             {languages.map(lang => (
               <button
