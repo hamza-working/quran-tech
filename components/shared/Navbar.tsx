@@ -7,12 +7,13 @@ import { Menu, X, LogOut, User } from 'lucide-react';
 import Link from 'next/link';
 import { auth } from '@/lib/firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
+import LoginForm from '@/components/shared/LoginForm';
 
 const navLinks = [
   { href: '/', labelAr: 'الرئيسية', labelEn: 'Home', labelFr: 'Accueil' },
   { href: '/program', labelAr: 'البرنامج', labelEn: 'Program', labelFr: 'Programme' },
+  { href: '/english', labelAr: 'تعلم الإنجليزية', labelEn: 'Learn English', labelFr: 'Anglais' },
   { href: '/quiz', labelAr: 'الاختبار الثقافي', labelEn: 'Cultural Quiz', labelFr: 'Quiz Culturel' },
-  { href: '/register', labelAr: 'التسجيل', labelEn: 'Register', labelFr: 'Inscription' },
   { href: '/dashboard', labelAr: 'التقدم', labelEn: 'Progress', labelFr: 'Progrès' },
   { href: '/contact', labelAr: 'التواصل', labelEn: 'Contact', labelFr: 'Contact' },
 ];
@@ -29,6 +30,7 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
 const [user, setUser] = useState<{email: string | null} | null>(null);
+const [showLogin, setShowLogin] = useState(false);
 
 useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -125,14 +127,14 @@ const handleSignOut = async () => {
             </button>
           </div>
         ) : (
-          <Link
-            href={`/${locale}/register`}
-            className="hidden md:flex text-xs px-3 py-1 rounded-full font-bold transition"
-            style={{background: '#fbbf24', color: '#006a67'}}
-          >
-            {locale === 'ar' ? 'دخول' : locale === 'fr' ? 'Connexion' : 'Login'}
-          </Link>
-        )}
+  <button
+    onClick={() => setShowLogin(true)}
+    className="hidden md:flex text-xs px-3 py-1 rounded-full font-bold transition"
+    style={{background: '#fbbf24', color: '#006a67'}}
+  >
+    {locale === 'ar' ? 'دخول' : locale === 'fr' ? 'Connexion' : 'Login'}
+  </button>
+)}
         {/* زر القائمة للجوال */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -171,6 +173,29 @@ const handleSignOut = async () => {
           </div>
         </div>
       )}
+      {/* نافذة Login */}
+{showLogin && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center"
+    style={{background: 'rgba(0,0,0,0.5)'}}
+    onClick={() => setShowLogin(false)}
+  >
+    <div
+      className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md mx-4"
+      style={{border: '3px solid #00cec9'}}
+      onClick={e => e.stopPropagation()}
+    >
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold" style={{color: '#006a67'}}>
+          {locale === 'ar' ? '🔑 تسجيل الدخول' : locale === 'fr' ? '🔑 Connexion' : '🔑 Login'}
+        </h2>
+        <button onClick={() => setShowLogin(false)} className="text-gray-400 hover:text-gray-600 text-2xl">✕</button>
+      </div>
+
+      <LoginForm locale={locale} onSuccess={() => setShowLogin(false)} />
+    </div>
+  </div>
+)}
     </nav>
   );
 }
