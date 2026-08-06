@@ -66,3 +66,8 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 206, 201, 0.5);
 }
+
+::placeholder {
+  color: #aaa;
+  opacity: 1;
+}

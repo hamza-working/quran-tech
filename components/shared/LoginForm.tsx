@@ -31,8 +31,8 @@ export default function LoginForm({ locale, onSuccess }: LoginFormProps) {
     fr: {
       login: 'Connexion', register: 'Inscription',
       email: 'Email', password: 'Mot de passe',
-      confirm: 'Confirmer le mot de passe', name: 'Nom de l\'enfant',
-      submit_login: 'Se connecter', submit_register: 'S\'inscrire',
+      confirm: 'Confirmer le mot de passe', name: "Nom de l'enfant",
+      submit_login: 'Se connecter', submit_register: "S'inscrire",
       error_fields: 'Veuillez remplir tous les champs',
       error_password: 'Les mots de passe ne correspondent pas',
       error_length: 'Le mot de passe doit contenir au moins 8 caractères',
@@ -50,7 +50,11 @@ export default function LoginForm({ locale, onSuccess }: LoginFormProps) {
 
   const t = texts[locale as keyof typeof texts] || texts.ar;
 
-  const inputStyle = {border: '2px solid #b2f0ee'};
+  const inputStyle: React.CSSProperties = {
+    border: '2px solid #b2f0ee',
+    color: '#333',
+    backgroundColor: 'white',
+  };
 
   const handleSubmit = async () => {
     setError('');
@@ -98,42 +102,65 @@ export default function LoginForm({ locale, onSuccess }: LoginFormProps) {
         </button>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-4">
         {!isLogin && (
+          <div>
+            <label className="block text-sm font-bold mb-1" style={{color: '#006a67'}}>{t.name}</label>
+            <input
+              type="text"
+              placeholder={t.name}
+              value={childName}
+              onChange={e => setChildName(e.target.value)}
+              className="w-full rounded-2xl px-4 py-3 text-right outline-none"
+              style={inputStyle}
+              onFocus={e => e.target.style.borderColor = '#00cec9'}
+              onBlur={e => e.target.style.borderColor = '#b2f0ee'}
+            />
+          </div>
+        )}
+
+        <div>
+          <label className="block text-sm font-bold mb-1" style={{color: '#006a67'}}>{t.email}</label>
           <input
-            type="text"
-            placeholder={t.name}
-            value={childName}
-            onChange={e => setChildName(e.target.value)}
+            type="email"
+            placeholder="example@email.com"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
             className="w-full rounded-2xl px-4 py-3 text-right outline-none"
             style={inputStyle}
+            onFocus={e => e.target.style.borderColor = '#00cec9'}
+            onBlur={e => e.target.style.borderColor = '#b2f0ee'}
           />
-        )}
-        <input
-          type="email"
-          placeholder={t.email}
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-          style={inputStyle}
-        />
-        <input
-          type="password"
-          placeholder={t.password}
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-          style={inputStyle}
-        />
-        {!isLogin && (
+        </div>
+
+        <div>
+          <label className="block text-sm font-bold mb-1" style={{color: '#006a67'}}>{t.password}</label>
           <input
             type="password"
-            placeholder={t.confirm}
-            value={confirmPassword}
-            onChange={e => setConfirmPassword(e.target.value)}
+            placeholder="••••••••"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
             className="w-full rounded-2xl px-4 py-3 text-right outline-none"
             style={inputStyle}
+            onFocus={e => e.target.style.borderColor = '#00cec9'}
+            onBlur={e => e.target.style.borderColor = '#b2f0ee'}
           />
+        </div>
+
+        {!isLogin && (
+          <div>
+            <label className="block text-sm font-bold mb-1" style={{color: '#006a67'}}>{t.confirm}</label>
+            <input
+              type="password"
+              placeholder="••••••••"
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
+              className="w-full rounded-2xl px-4 py-3 text-right outline-none"
+              style={inputStyle}
+              onFocus={e => e.target.style.borderColor = '#00cec9'}
+              onBlur={e => e.target.style.borderColor = '#b2f0ee'}
+            />
+          </div>
         )}
 
         {error && (
