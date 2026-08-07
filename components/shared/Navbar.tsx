@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/', labelAr: 'الرئيسية', labelEn: 'Home', labelFr: 'Accueil' },
   { href: '/program', labelAr: 'البرنامج', labelEn: 'Program', labelFr: 'Programme' },
   { href: '/english', labelAr: 'تعلم الإنجليزية', labelEn: 'Learn English', labelFr: 'Anglais' },
+  { href: '/french', labelAr: 'تعلم الفرنسية', labelEn: 'Learn French', labelFr: 'Français' },
   { href: '/quiz', labelAr: 'الاختبار الثقافي', labelEn: 'Cultural Quiz', labelFr: 'Quiz Culturel' },
   { href: '/dashboard', labelAr: 'التقدم', labelEn: 'Progress', labelFr: 'Progrès' },
   { href: '/contact', labelAr: 'التواصل', labelEn: 'Contact', labelFr: 'Contact' },
@@ -81,7 +82,7 @@ const handleSignOut = async () => {
        {/* روابط الجهاز المكتبي */}
 <div className="hidden md:flex items-center gap-6">
   {navLinks.map(link => {
-    const protectedLinks = ['/program', '/english', '/quiz', '/dashboard', '/profile'];
+    const protectedLinks = ['/program', '/english', '/french', '/quiz', '/dashboard', '/profile'];
     const isProtected = protectedLinks.includes(link.href);
 
     if (isProtected && !user) {
