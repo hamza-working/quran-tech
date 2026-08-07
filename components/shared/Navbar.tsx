@@ -12,6 +12,7 @@ import LoginForm from '@/components/shared/LoginForm';
 const navLinks = [
   { href: '/', labelAr: 'الرئيسية', labelEn: 'Home', labelFr: 'Accueil' },
   { href: '/program', labelAr: 'البرنامج', labelEn: 'Program', labelFr: 'Programme' },
+  { href: '/tajweed', labelAr: 'التجويد', labelEn: 'Tajweed', labelFr: 'Tajwid' },
   { href: '/english', labelAr: 'تعلم الإنجليزية', labelEn: 'Learn English', labelFr: 'Anglais' },
   { href: '/french', labelAr: 'تعلم الفرنسية', labelEn: 'Learn French', labelFr: 'Français' },
   { href: '/quiz', labelAr: 'الاختبار الثقافي', labelEn: 'Cultural Quiz', labelFr: 'Quiz Culturel' },
@@ -82,7 +83,7 @@ const handleSignOut = async () => {
        {/* روابط الجهاز المكتبي */}
 <div className="hidden md:flex items-center gap-6">
   {navLinks.map(link => {
-    const protectedLinks = ['/program', '/english', '/french', '/quiz', '/dashboard', '/profile'];
+    const protectedLinks = ['/program', '/tajweed', '/english', '/french', '/quiz', '/dashboard', '/profile'];
     const isProtected = protectedLinks.includes(link.href);
 
     if (isProtected && !user) {
