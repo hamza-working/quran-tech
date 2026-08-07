@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { auth } from '@/lib/firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { createChildProfile } from '@/lib/firestore';
 
 interface LoginFormProps {
   locale: string;
@@ -68,7 +69,13 @@ export default function LoginForm({ locale, onSuccess }: LoginFormProps) {
         if (!childName || !email || !password || !confirmPassword) { setError(t.error_fields); setLoading(false); return; }
         if (password !== confirmPassword) { setError(t.error_password); setLoading(false); return; }
         if (password.length < 8) { setError(t.error_length); setLoading(false); return; }
-        await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+await createChildProfile(
+  userCredential.user.uid,
+  childName,
+  email,
+  1
+);
       }
       onSuccess();
     } catch (err: unknown) {
