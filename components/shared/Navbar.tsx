@@ -15,7 +15,6 @@ const navLinks = [
   { href: '/english', labelAr: 'تعلم الإنجليزية', labelEn: 'Learn English', labelFr: 'Anglais' },
   { href: '/quiz', labelAr: 'الاختبار الثقافي', labelEn: 'Cultural Quiz', labelFr: 'Quiz Culturel' },
   { href: '/dashboard', labelAr: 'التقدم', labelEn: 'Progress', labelFr: 'Progrès' },
-  { href: '/profile', labelAr: 'ملفي', labelEn: 'My Profile', labelFr: 'Mon Profil' },
   { href: '/contact', labelAr: 'التواصل', labelEn: 'Contact', labelFr: 'Contact' },
 ];
 
@@ -131,20 +130,24 @@ const handleSignOut = async () => {
 
         {/* زر المستخدم */}
         {user ? (
-          <div className="hidden md:flex items-center gap-2 mr-2">
-            <span className="text-xs opacity-70 flex items-center gap-1">
-              <User size={14} />
-              {user.email?.split('@')[0]}
-            </span>
-            <button
-              onClick={handleSignOut}
-              className="flex items-center gap-1 text-xs px-3 py-1 rounded-full font-bold transition"
-              style={{background: '#fee2e2', color: '#dc2626'}}
-            >
-              <LogOut size={14} />
-              {locale === 'ar' ? 'خروج' : locale === 'fr' ? 'Déconnexion' : 'Logout'}
-            </button>
-          </div>
+  <div className="hidden md:flex items-center gap-2 mr-2">
+    <Link
+      href={getLocalizedHref('/profile')}
+      className="text-xs opacity-70 flex items-center gap-1 hover:opacity-100 transition"
+      style={{color: 'white'}}
+    >
+      <User size={14} />
+      {user.email?.split('@')[0]}
+    </Link>
+    <button
+      onClick={handleSignOut}
+      className="flex items-center gap-1 text-xs px-3 py-1 rounded-full font-bold transition"
+      style={{background: '#fee2e2', color: '#dc2626'}}
+    >
+      <LogOut size={14} />
+      {locale === 'ar' ? 'خروج' : locale === 'fr' ? 'Déconnexion' : 'Logout'}
+    </button>
+  </div>
         ) : (
   <button
     onClick={() => setShowLogin(true)}
