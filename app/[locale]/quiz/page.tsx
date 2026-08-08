@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
+import SuccessAnimation from '@/components/SuccessAnimation';
 
 type Question = {
   id: number;
