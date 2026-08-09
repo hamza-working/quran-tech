@@ -40,7 +40,13 @@ export default function Navbar() {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
-
+useEffect(() => {
+  const saved = localStorage.getItem('darkMode');
+  if (saved === 'true') {
+    setDarkMode(true);
+    document.body.style.filter = 'invert(1) hue-rotate(180deg)';
+  }
+}, []);
   const handleSignOut = async () => {
     await signOut(auth);
     router.push(`/${locale}`);

@@ -12,13 +12,13 @@ interface SuccessAnimationProps {
 export default function SuccessAnimation({ show, message, score }: SuccessAnimationProps) {
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    if (show) {
-      setVisible(true);
-      const timer = setTimeout(() => setVisible(false), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [show]);
+ useEffect(() => {
+  if (show) {
+    setVisible(true);
+  } else {
+    setVisible(false);
+  }
+}, [show]);
 
   if (!visible) return null;
 

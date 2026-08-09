@@ -27,6 +27,20 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={cairo.variable}>
+      <head>
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      (function() {
+        try {
+          var darkMode = localStorage.getItem('darkMode');
+          if (darkMode === 'true') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch(e) {}
+      })();
+    `
+  }} />
+</head>
       <body className="bg-white text-gray-900 font-cairo">
         <NextIntlClientProvider messages={messages}>
           {children}

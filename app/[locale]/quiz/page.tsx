@@ -315,6 +315,7 @@ export default function QuizPage() {
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
   const [filter, setFilter] = useState<'all' | 'religious' | 'scientific' | 'cultural'>('all');
+const [showSuccess, setShowSuccess] = useState(false);
 
   const filteredQuestions = filter === 'all' ? questions : questions.filter(q => q.category === filter);
   const currentQuestion = filteredQuestions[currentIndex];
@@ -393,10 +394,14 @@ export default function QuizPage() {
     setIsAnswered(true);
     if (answer === currentQuestion[locale].answer) {
       setScore(prev => prev + 1);
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 2000);
     }
   };
 
-  const handleNext = () => {
+  
+const handleNext = () => {
+    setShowSuccess(false);
     if (currentIndex + 1 >= filteredQuestions.length) {
       setFinished(true);
     } else {
@@ -606,6 +611,10 @@ export default function QuizPage() {
         </div>
 
       </div>
+      <SuccessAnimation
+        show={showSuccess}
+        message={locale === 'ar' ? 'إجابة صحيحة!' : locale === 'fr' ? 'Bonne réponse!' : 'Correct!'}
+      />
     </main>
   );
 }
