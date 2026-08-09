@@ -23,7 +23,7 @@ export default function Confetti({ show }: { show: boolean }) {
     return;
   }
 
-  const colors = ['#00cec9', '#fbbf24', '#f59e0b', '#006a67', '#34d399', '#f87171'];
+  const colors = ['#079992', '#fbbf24', '#f59e0b', '#006a67', '#34d399', '#f87171'];
   const shapes: ('circle' | 'square' | 'star')[] = ['circle', 'square', 'star'];
 
   const newParticles = Array.from({ length: 80 }, (_, i) => ({

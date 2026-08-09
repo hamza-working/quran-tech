@@ -4,7 +4,7 @@
   --color-primary-50: #e6fffe;
   --color-primary-100: #ccfffd;
   --color-primary-400: #00e5e0;
-  --color-primary-500: #00cec9;
+  --color-primary-500: #079992;
   --color-primary-600: #00b5b0;
   --color-primary-700: #009c98;
   --color-primary-800: #008380;
@@ -53,7 +53,7 @@ body {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #00cec9, #009c98);
+  background: linear-gradient(135deg, #079992, #009c98);
   color: white;
   font-weight: 700;
   border-radius: 9999px;
@@ -165,7 +165,7 @@ body {
 }
 
 .dark [style*="color: #006a67"] {
-  color: #00cec9 !important;
+  color: #079992 !important;
 }
 
 .dark [style*="background: linear-gradient(135deg, #e6fffe"],

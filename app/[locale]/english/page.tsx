@@ -233,7 +233,7 @@ export default function EnglishPage() {
               onClick={() => setActiveTab(tab)}
               className="flex-1 py-3 font-bold text-sm transition"
               style={activeTab === tab
-                ? {background: '#00cec9', color: 'white'}
+                ? {background: '#079992', color: 'white'}
                 : {color: '#006a67'}
               }
             >
@@ -254,7 +254,7 @@ export default function EnglishPage() {
                   className="px-3 py-1 rounded-full text-sm font-bold transition"
                   style={vocabFilter === cat
                     ? {background: '#006a67', color: 'white'}
-                    : {background: 'white', color: '#006a67', border: '2px solid #00cec9'}
+                    : {background: 'white', color: '#006a67', border: '2px solid #079992'}
                   }
                 >
                   {t[cat as keyof typeof t]}
@@ -269,7 +269,7 @@ export default function EnglishPage() {
                   key={i}
                   onClick={() => setFlipped(flipped === i ? null : i)}
                   className="bg-white rounded-3xl p-6 text-center cursor-pointer transition hover:scale-105 shadow-md"
-                  style={{border: '3px solid #00cec9', minHeight: '140px'}}
+                  style={{border: '3px solid #079992', minHeight: '140px'}}
                 >
                   <div className="text-5xl mb-3">{word.emoji}</div>
                   {flipped === i ? (
@@ -318,28 +318,28 @@ export default function EnglishPage() {
         {activeTab === 'quiz' && (
           <div className="max-w-lg mx-auto">
             {quizFinished ? (
-              <div className="bg-white rounded-3xl shadow-xl p-10 text-center" style={{border: '3px solid #00cec9'}}>
+              <div className="bg-white rounded-3xl shadow-xl p-10 text-center" style={{border: '3px solid #079992'}}>
                 <div className="text-7xl mb-4">🏆</div>
                 <h2 className="text-2xl font-bold mb-4" style={{color: '#006a67'}}>{t.result}</h2>
-                <div className="text-5xl font-bold mb-6" style={{color: '#00cec9'}}>
+                <div className="text-5xl font-bold mb-6" style={{color: '#079992'}}>
                   {quizScore} / {quizWords.length}
                 </div>
                 <button
                   onClick={handleQuizRestart}
                   className="w-full py-3 rounded-2xl font-bold text-white"
-                  style={{background: 'linear-gradient(135deg, #00cec9, #006a67)'}}
+                  style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
                 >
                   🔄 {t.restart}
                 </button>
               </div>
             ) : (
-              <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: '3px solid #00cec9'}}>
+              <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: '3px solid #079992'}}>
                 <div className="flex justify-between mb-4">
                   <span className="text-sm text-gray-400">{quizIndex + 1} / {quizWords.length}</span>
-                  <span className="text-sm font-bold" style={{color: '#00cec9'}}>⭐ {quizScore}</span>
+                  <span className="text-sm font-bold" style={{color: '#079992'}}>⭐ {quizScore}</span>
                 </div>
                 <div className="w-full rounded-full h-2 mb-6" style={{background: '#e6fffe'}}>
-                  <div className="h-2 rounded-full" style={{width: `${((quizIndex + 1) / quizWords.length) * 100}%`, background: '#00cec9'}} />
+                  <div className="h-2 rounded-full" style={{width: `${((quizIndex + 1) / quizWords.length) * 100}%`, background: '#079992'}} />
                 </div>
                 <div className="text-center mb-8">
                   <div className="text-6xl mb-4">{currentQuizWord.emoji}</div>
@@ -378,7 +378,7 @@ export default function EnglishPage() {
                     <button
                       onClick={handleQuizNext}
                       className="w-full mt-4 py-3 rounded-2xl font-bold text-white"
-                      style={{background: 'linear-gradient(135deg, #00cec9, #006a67)'}}
+                      style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
                     >
                       {quizIndex + 1 >= quizWords.length ? `🏁 ${t.finish}` : `${t.next} →`}
                     </button>

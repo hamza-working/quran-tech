@@ -316,7 +316,7 @@ export default function Navbar() {
         >
           <div
             className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md mx-4"
-            style={{border: '3px solid #00cec9'}}
+            style={{border: '3px solid #079992'}}
             onClick={e => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-6">

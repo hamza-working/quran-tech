@@ -113,20 +113,20 @@ if (!mounted || checking) return null;
           <button
             onClick={() => { setIsLogin(false); setError(''); setSuccess(''); }}
             className="flex-1 py-3 font-bold text-lg transition"
-            style={!isLogin ? {background: '#00cec9', color: 'white'} : {background: 'white', color: '#006a67'}}
+            style={!isLogin ? {background: '#079992', color: 'white'} : {background: 'white', color: '#006a67'}}
           >
             {t('tab_register')}
           </button>
           <button
             onClick={() => { setIsLogin(true); setError(''); setSuccess(''); }}
             className="flex-1 py-3 font-bold text-lg transition"
-            style={isLogin ? {background: '#00cec9', color: 'white'} : {background: 'white', color: '#006a67'}}
+            style={isLogin ? {background: '#079992', color: 'white'} : {background: 'white', color: '#006a67'}}
           >
             {t('tab_login')}
           </button>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: '3px solid #00cec9'}}>
+        <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: '3px solid #079992'}}>
           <div className="text-center mb-8">
             <div className="text-6xl mb-3">{isLogin ? '🔑' : '🌟'}</div>
             <h1 className="text-3xl font-bold" style={{color: '#006a67'}}>
@@ -149,7 +149,7 @@ if (!mounted || checking) return null;
                     onChange={e => setFormData({...formData, childName: e.target.value})}
                     className="w-full rounded-2xl px-4 py-3 text-right outline-none"
                     style={{border: '2px solid #b2f0ee'}}
-                    onFocus={e => e.target.style.borderColor = '#00cec9'}
+                    onFocus={e => e.target.style.borderColor = '#079992'}
                     onBlur={e => e.target.style.borderColor = '#b2f0ee'}
                   />
                 </div>
@@ -193,7 +193,7 @@ if (!mounted || checking) return null;
                 onChange={e => setFormData({...formData, email: e.target.value})}
                 className="w-full rounded-2xl px-4 py-3 text-right outline-none"
                 style={{border: '2px solid #b2f0ee'}}
-                onFocus={e => e.target.style.borderColor = '#00cec9'}
+                onFocus={e => e.target.style.borderColor = '#079992'}
                 onBlur={e => e.target.style.borderColor = '#b2f0ee'}
               />
             </div>
@@ -207,7 +207,7 @@ if (!mounted || checking) return null;
                 onChange={e => setFormData({...formData, password: e.target.value})}
                 className="w-full rounded-2xl px-4 py-3 text-right outline-none"
                 style={{border: '2px solid #b2f0ee'}}
-                onFocus={e => e.target.style.borderColor = '#00cec9'}
+                onFocus={e => e.target.style.borderColor = '#079992'}
                 onBlur={e => e.target.style.borderColor = '#b2f0ee'}
               />
             </div>
@@ -222,7 +222,7 @@ if (!mounted || checking) return null;
                   onChange={e => setFormData({...formData, confirmPassword: e.target.value})}
                   className="w-full rounded-2xl px-4 py-3 text-right outline-none"
                   style={{border: '2px solid #b2f0ee'}}
-                  onFocus={e => e.target.style.borderColor = '#00cec9'}
+                  onFocus={e => e.target.style.borderColor = '#079992'}
                   onBlur={e => e.target.style.borderColor = '#b2f0ee'}
                 />
               </div>
@@ -244,7 +244,7 @@ if (!mounted || checking) return null;
               disabled={loading}
               className="w-full font-bold py-4 rounded-2xl text-lg text-white transition hover:opacity-90"
               style={{
-                background: loading ? '#b2f0ee' : 'linear-gradient(135deg, #00cec9, #006a67)',
+                background: loading ? '#b2f0ee' : 'linear-gradient(135deg, #079992, #006a67)',
                 boxShadow: '0 4px 15px rgba(0,206,201,0.4)',
                 cursor: loading ? 'not-allowed' : 'pointer'
               }}
@@ -253,7 +253,7 @@ if (!mounted || checking) return null;
             </button>
 
             {isLogin && (
-              <p className="text-center text-sm cursor-pointer hover:opacity-70" style={{color: '#00cec9'}}>
+              <p className="text-center text-sm cursor-pointer hover:opacity-70" style={{color: '#079992'}}>
                 {t('forgot_password')}
               </p>
             )}

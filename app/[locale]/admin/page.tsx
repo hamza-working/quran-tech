@@ -66,7 +66,7 @@ export default function AdminPage() {
         {/* إحصائيات عامة */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { icon: '👦', label: 'الأطفال المسجلين', value: children.length, color: '#00cec9' },
+            { icon: '👦', label: 'الأطفال المسجلين', value: children.length, color: '#079992' },
             { icon: '📖', label: 'متوسط السور المحفوظة', value: avgMemorized, color: '#fbbf24' },
             { icon: '🧠', label: 'إجمالي الاختبارات', value: totalQuizzes, color: '#f59e0b' },
             { icon: '⭐', label: 'إجمالي السور المحفوظة', value: totalMemorized, color: '#06b6d4' },
@@ -84,14 +84,14 @@ export default function AdminPage() {
           <button
             onClick={() => setActiveTab('children')}
             className="flex-1 py-3 font-bold transition"
-            style={activeTab === 'children' ? {background: '#00cec9', color: 'white'} : {color: '#006a67'}}
+            style={activeTab === 'children' ? {background: '#079992', color: 'white'} : {color: '#006a67'}}
           >
             👦 قائمة الأطفال
           </button>
           <button
             onClick={() => setActiveTab('stats')}
             className="flex-1 py-3 font-bold transition"
-            style={activeTab === 'stats' ? {background: '#00cec9', color: 'white'} : {color: '#006a67'}}
+            style={activeTab === 'stats' ? {background: '#079992', color: 'white'} : {color: '#006a67'}}
           >
             📊 إحصائيات تفصيلية
           </button>
@@ -113,7 +113,7 @@ export default function AdminPage() {
             </div>
 
             {/* جدول الأطفال */}
-            <div className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: '3px solid #00cec9'}}>
+            <div className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: '3px solid #079992'}}>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
@@ -140,7 +140,7 @@ export default function AdminPage() {
                           <div className="flex items-center gap-2">
                             <div
                               className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
-                              style={{background: '#00cec9'}}
+                              style={{background: '#079992'}}
                             >
                               {child.name.charAt(0).toUpperCase()}
                             </div>
@@ -150,16 +150,16 @@ export default function AdminPage() {
                         <td className="p-4 text-gray-400 text-sm">{child.email}</td>
                         <td className="p-4 text-center">
                           <span className="px-2 py-1 rounded-full text-white text-xs font-bold"
-                            style={{background: child.level === 1 ? '#00cec9' : child.level === 2 ? '#fbbf24' : '#f59e0b'}}>
+                            style={{background: child.level === 1 ? '#079992' : child.level === 2 ? '#fbbf24' : '#f59e0b'}}>
                             {child.level === 1 ? 'مبتدئ' : child.level === 2 ? 'متوسط' : 'متقدم'}
                           </span>
                         </td>
                         <td className="p-4 text-center">
                           <div className="flex items-center gap-2 justify-center">
                             <div className="w-16 rounded-full h-2" style={{background: '#e6fffe'}}>
-                              <div className="h-2 rounded-full" style={{width: `${(child.memorizedSurahs / 114) * 100}%`, background: '#00cec9'}} />
+                              <div className="h-2 rounded-full" style={{width: `${(child.memorizedSurahs / 114) * 100}%`, background: '#079992'}} />
                             </div>
-                            <span className="font-bold text-sm" style={{color: '#00cec9'}}>{child.memorizedSurahs}</span>
+                            <span className="font-bold text-sm" style={{color: '#079992'}}>{child.memorizedSurahs}</span>
                           </div>
                         </td>
                         <td className="p-4 text-center font-bold" style={{color: '#fbbf24'}}>{child.completedQuizzes}</td>
@@ -181,10 +181,10 @@ export default function AdminPage() {
           <div className="grid md:grid-cols-2 gap-6">
 
             {/* توزيع المستويات */}
-            <div className="bg-white rounded-3xl p-6 shadow-md" style={{border: '3px solid #00cec9'}}>
+            <div className="bg-white rounded-3xl p-6 shadow-md" style={{border: '3px solid #079992'}}>
               <h2 className="font-bold text-lg mb-4" style={{color: '#006a67'}}>📊 توزيع المستويات</h2>
               {[
-                { label: 'مبتدئ 🌱', level: 1, color: '#00cec9' },
+                { label: 'مبتدئ 🌱', level: 1, color: '#079992' },
                 { label: 'متوسط ⭐', level: 2, color: '#fbbf24' },
                 { label: 'متقدم 👑', level: 3, color: '#f59e0b' },
               ].map((lvl, i) => {
@@ -215,14 +215,14 @@ export default function AdminPage() {
                     <span className="font-bold text-lg" style={{color: '#fbbf24'}}>#{i + 1}</span>
                     <div
                       className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
-                      style={{background: '#00cec9'}}
+                      style={{background: '#079992'}}
                     >
                       {child.name.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
                       <div className="font-bold text-sm" style={{color: '#006a67'}}>{child.name}</div>
                     </div>
-                    <span className="font-bold" style={{color: '#00cec9'}}>{child.memorizedSurahs} سورة</span>
+                    <span className="font-bold" style={{color: '#079992'}}>{child.memorizedSurahs} سورة</span>
                   </div>
                 ))}
               {children.length === 0 && (

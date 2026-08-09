@@ -12,7 +12,7 @@ export default function ProgramPage() {
       level: 1,
       age: '6-8',
       icon: '🌱',
-      color: '#00cec9',
+      color: '#079992',
       quran: {
         ar: ['حفظ قصار السور', 'سورة الفاتحة والإخلاص والفلق والناس', 'أحكام النون الساكنة'],
         fr: ['Mémorisation des courtes sourates', 'Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas', 'Règles de la noon saakin'],
@@ -97,7 +97,7 @@ export default function ProgramPage() {
                   <ul className="space-y-2">
                     {getLang(lvl.quran).map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
-                        <span style={{color: '#00cec9'}}>✅</span> {item}
+                        <span style={{color: '#079992'}}>✅</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -119,7 +119,7 @@ export default function ProgramPage() {
         </div>
 
         {/* قسم تعلم البرمجة للأطفال */}
-        <div className="mt-12 bg-white rounded-3xl p-8" style={{border: '3px solid #00cec9'}}>
+        <div className="mt-12 bg-white rounded-3xl p-8" style={{border: '3px solid #079992'}}>
           <div className="text-center mb-8">
             <div className="text-5xl mb-3">🎮</div>
             <h2 className="text-3xl font-bold" style={{color: '#006a67'}}>
@@ -136,7 +136,7 @@ export default function ProgramPage() {
                 icon: '🐢',
                 titleAr: 'المبتدئ', titleFr: 'Débutant', titleEn: 'Beginner',
                 descAr: 'تعلم البرمجة بالتسلسل والألوان', descFr: 'Apprendre avec des séquences et couleurs', descEn: 'Learn with sequences and colors',
-                color: '#00cec9',
+                color: '#079992',
                 href: 'https://scratch.mit.edu/projects/editor/',
               },
               {

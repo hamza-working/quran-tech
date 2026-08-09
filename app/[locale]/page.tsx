@@ -11,7 +11,7 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section style={{background: 'linear-gradient(to bottom, #006a67, #00cec9)'}} className="text-white py-20 px-4 text-center">
+      <section style={{background: 'linear-gradient(to bottom, #006a67, #079992)'}} className="text-white py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="text-6xl mb-6">🕌</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{color: '#fbbf24'}}>
@@ -43,7 +43,7 @@ export default function HomePage() {
             { number: '3', label: t('stats_levels') },
           ].map((stat, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="text-3xl font-bold" style={{color: '#00cec9'}}>{stat.number}</div>
+              <div className="text-3xl font-bold" style={{color: '#079992'}}>{stat.number}</div>
               <div className="text-gray-500 text-sm mt-1">{stat.label}</div>
             </div>
           ))}
@@ -57,7 +57,7 @@ export default function HomePage() {
             {t('tracks_title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl p-8 border-2" style={{background: '#e6fffe', borderColor: '#00cec9'}}>
+            <div className="rounded-2xl p-8 border-2" style={{background: '#e6fffe', borderColor: '#079992'}}>
               <div className="text-4xl mb-4">📖</div>
               <h3 className="text-xl font-bold mb-3" style={{color: '#006a67'}}>
                 {t('quran_track')}

@@ -41,7 +41,7 @@ export default function ContactPage() {
           </a>
 
           <div className="flex items-center gap-5 rounded-3xl p-6"
-            style={{background: 'white', border: '3px solid #00cec9', boxShadow: '0 8px 25px rgba(0,206,201,0.15)'}}>
+            style={{background: 'white', border: '3px solid #079992', boxShadow: '0 8px 25px rgba(0,206,201,0.15)'}}>
             <div className="text-5xl">📍</div>
             <div>
               <div className="font-bold text-xl" style={{color: '#006a67'}}>{t('location')}</div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="mt-8 bg-white rounded-3xl p-8" style={{border: '3px solid #00cec9'}}>
+        <div className="mt-8 bg-white rounded-3xl p-8" style={{border: '3px solid #079992'}}>
           <h2 className="text-2xl font-bold mb-6 text-center" style={{color: '#006a67'}}>{t('form_title')}</h2>
           <div className="space-y-4">
             <input type="text" placeholder={t('form_name')}
@@ -63,7 +63,7 @@ export default function ContactPage() {
               className="w-full rounded-2xl px-4 py-3 text-right outline-none resize-none"
               style={{border: '2px solid #b2f0ee'}} />
             <button className="w-full font-bold py-4 rounded-2xl text-lg text-white transition hover:opacity-90"
-              style={{background: 'linear-gradient(135deg, #00cec9, #006a67)'}}>
+              style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}>
               {t('form_submit')}
             </button>
           </div>

@@ -296,7 +296,7 @@ const questions: Question[] = [
 ];
 
 const categoryColors = {
-  religious: '#00cec9',
+  religious: '#079992',
   scientific: '#fbbf24',
   cultural: '#f59e0b',
 };
@@ -431,10 +431,10 @@ const handleNext = () => {
       <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
         <Navbar />
         <div className="max-w-lg mx-auto px-4 py-16 text-center">
-          <div className="bg-white rounded-3xl shadow-xl p-10" style={{border: '3px solid #00cec9'}}>
+          <div className="bg-white rounded-3xl shadow-xl p-10" style={{border: '3px solid #079992'}}>
             <div className="text-7xl mb-4">🏆</div>
             <h2 className="text-3xl font-bold mb-2" style={{color: '#006a67'}}>{t.result}</h2>
-            <div className="text-6xl font-bold my-6" style={{color: '#00cec9'}}>
+            <div className="text-6xl font-bold my-6" style={{color: '#079992'}}>
               {score} / {filteredQuestions.length}
             </div>
             <div className="text-2xl font-bold mb-6" style={{color: '#fbbf24'}}>
@@ -445,14 +445,14 @@ const handleNext = () => {
                 className="h-4 rounded-full transition-all"
                 style={{
                   width: `${(score / filteredQuestions.length) * 100}%`,
-                  background: 'linear-gradient(to right, #00cec9, #006a67)'
+                  background: 'linear-gradient(to right, #079992, #006a67)'
                 }}
               />
             </div>
             <button
               onClick={handleRestart}
               className="w-full py-4 rounded-2xl font-bold text-lg text-white transition hover:opacity-90"
-              style={{background: 'linear-gradient(135deg, #00cec9, #006a67)'}}
+              style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
             >
               🔄 {t.restart}
             </button>
@@ -482,7 +482,7 @@ const handleNext = () => {
               className="px-4 py-2 rounded-full font-bold text-sm transition"
               style={filter === cat
                 ? {background: '#006a67', color: 'white'}
-                : {background: 'white', color: '#006a67', border: '2px solid #00cec9'}
+                : {background: 'white', color: '#006a67', border: '2px solid #079992'}
               }
             >
               {cat === 'all' ? t.all : `${categoryIcons[cat]} ${t[cat]}`}
@@ -595,7 +595,7 @@ const handleNext = () => {
             <button
               onClick={handleNext}
               className="w-full mt-6 py-4 rounded-2xl font-bold text-lg text-white transition hover:opacity-90"
-              style={{background: 'linear-gradient(135deg, #00cec9, #006a67)'}}
+              style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
             >
               {currentIndex + 1 >= filteredQuestions.length ? `🏁 ${t.finish}` : `${t.next} ←`}
             </button>

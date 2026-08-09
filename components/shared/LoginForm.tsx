@@ -96,14 +96,14 @@ await createChildProfile(
         <button
           onClick={() => { setIsLogin(true); setError(''); }}
           className="flex-1 py-2 font-bold text-sm transition"
-          style={isLogin ? {background: '#00cec9', color: 'white'} : {background: '#f0fffe', color: '#006a67'}}
+          style={isLogin ? {background: '#079992', color: 'white'} : {background: '#f0fffe', color: '#006a67'}}
         >
           {t.login}
         </button>
         <button
           onClick={() => { setIsLogin(false); setError(''); }}
           className="flex-1 py-2 font-bold text-sm transition"
-          style={!isLogin ? {background: '#00cec9', color: 'white'} : {background: '#f0fffe', color: '#006a67'}}
+          style={!isLogin ? {background: '#079992', color: 'white'} : {background: '#f0fffe', color: '#006a67'}}
         >
           {t.register}
         </button>
@@ -120,7 +120,7 @@ await createChildProfile(
               onChange={e => setChildName(e.target.value)}
               className="w-full rounded-2xl px-4 py-3 text-right outline-none"
               style={inputStyle}
-              onFocus={e => e.target.style.borderColor = '#00cec9'}
+              onFocus={e => e.target.style.borderColor = '#079992'}
               onBlur={e => e.target.style.borderColor = '#b2f0ee'}
             />
           </div>
@@ -135,7 +135,7 @@ await createChildProfile(
             onChange={e => setEmail(e.target.value)}
             className="w-full rounded-2xl px-4 py-3 text-right outline-none"
             style={inputStyle}
-            onFocus={e => e.target.style.borderColor = '#00cec9'}
+            onFocus={e => e.target.style.borderColor = '#079992'}
             onBlur={e => e.target.style.borderColor = '#b2f0ee'}
           />
         </div>
@@ -149,7 +149,7 @@ await createChildProfile(
             onChange={e => setPassword(e.target.value)}
             className="w-full rounded-2xl px-4 py-3 text-right outline-none"
             style={inputStyle}
-            onFocus={e => e.target.style.borderColor = '#00cec9'}
+            onFocus={e => e.target.style.borderColor = '#079992'}
             onBlur={e => e.target.style.borderColor = '#b2f0ee'}
           />
         </div>
@@ -164,7 +164,7 @@ await createChildProfile(
               onChange={e => setConfirmPassword(e.target.value)}
               className="w-full rounded-2xl px-4 py-3 text-right outline-none"
               style={inputStyle}
-              onFocus={e => e.target.style.borderColor = '#00cec9'}
+              onFocus={e => e.target.style.borderColor = '#079992'}
               onBlur={e => e.target.style.borderColor = '#b2f0ee'}
             />
           </div>
@@ -180,7 +180,7 @@ await createChildProfile(
           onClick={handleSubmit}
           disabled={loading}
           className="w-full font-bold py-3 rounded-2xl text-white transition hover:opacity-90"
-          style={{background: loading ? '#b2f0ee' : 'linear-gradient(135deg, #00cec9, #006a67)'}}
+          style={{background: loading ? '#b2f0ee' : 'linear-gradient(135deg, #079992, #006a67)'}}
         >
           {loading ? '⏳...' : isLogin ? t.submit_login : t.submit_register}
         </button>

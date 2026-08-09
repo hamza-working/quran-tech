@@ -95,7 +95,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl p-6 max-w-md mx-auto" style={{border: '3px solid #00cec9'}}>
+    <div className="bg-white rounded-3xl shadow-xl p-6 max-w-md mx-auto" style={{border: '3px solid #079992'}}>
 
       {/* اسم السورة */}
       <div className="text-center mb-6">
@@ -103,7 +103,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
           سورة {currentSurah?.name}
         </h2>
         <p className="text-gray-400 text-sm mt-1">الشيخ ماهر المعيقلي</p>
-        <p className="text-xs mt-1" style={{color: '#00cec9'}}>
+        <p className="text-xs mt-1" style={{color: '#079992'}}>
           {currentSurahId} / {surahs.length}
         </p>
       </div>
@@ -117,7 +117,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
         >
           <div
             className="h-3 rounded-full transition-all"
-            style={{width: `${progress}%`, background: 'linear-gradient(to right, #00cec9, #006a67)'}}
+            style={{width: `${progress}%`, background: 'linear-gradient(to right, #079992, #006a67)'}}
           />
         </div>
         <div className="flex justify-between text-xs text-gray-400 mt-1">
@@ -134,7 +134,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
         <button
           onClick={togglePlay}
           className="text-white rounded-full p-4 transition hover:opacity-90"
-          style={{background: 'linear-gradient(135deg, #00cec9, #006a67)', boxShadow: '0 4px 15px rgba(0,206,201,0.4)'}}
+          style={{background: 'linear-gradient(135deg, #079992, #006a67)', boxShadow: '0 4px 15px rgba(0,206,201,0.4)'}}
         >
           {isLoading && !isPlaying
             ? <span className="text-sm px-1">...</span>
@@ -175,7 +175,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
           value={volume}
           onChange={handleVolumeChange}
           className="w-full"
-          style={{accentColor: '#00cec9'}}
+          style={{accentColor: '#079992'}}
         />
       </div>
 

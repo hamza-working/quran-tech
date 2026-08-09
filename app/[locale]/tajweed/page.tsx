@@ -215,7 +215,7 @@ export default function TajweedPage() {
             <button
               onClick={() => setSelectedRule(null)}
               className="mb-6 px-4 py-2 rounded-2xl font-bold transition hover:opacity-90"
-              style={{background: '#e6fffe', color: '#006a67', border: '2px solid #00cec9'}}
+              style={{background: '#e6fffe', color: '#006a67', border: '2px solid #079992'}}
             >
               ← {t.back}
             </button>
@@ -250,9 +250,9 @@ export default function TajweedPage() {
                 </div>
 
                 {/* المدة */}
-                <div className="rounded-2xl p-5 text-center" style={{background: '#e6fffe', border: '2px solid #00cec9'}}>
+                <div className="rounded-2xl p-5 text-center" style={{background: '#e6fffe', border: '2px solid #079992'}}>
                   <div className="font-bold mb-2" style={{color: '#006a67'}}>⏱️ {t.duration}</div>
-                  <div className="text-xl font-bold" style={{color: '#00cec9'}}>
+                  <div className="text-xl font-bold" style={{color: '#079992'}}>
                     {selected.duration}
                   </div>
                 </div>

@@ -112,7 +112,7 @@ export default function DashboardPage() {
   }
 
   const techCards = [
-    { icon: '🐱', title: t.scratchTitle, desc: t.scratchDesc, color: '#00cec9', progress: 40 },
+    { icon: '🐱', title: t.scratchTitle, desc: t.scratchDesc, color: '#079992', progress: 40 },
     { icon: '🇬🇧', title: t.englishTitle, desc: t.englishDesc, color: '#fbbf24', progress: profile.englishProgress },
     { icon: '🧠', title: t.quizTitle, desc: `${profile.completedQuizzes} ${t.quizDesc}`, color: '#f59e0b', progress: Math.min(100, profile.completedQuizzes * 10) },
   ];
@@ -134,10 +134,10 @@ export default function DashboardPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-8">
 
           {/* تقدم الحفظ */}
-          <div className="bg-white rounded-3xl p-6 shadow-lg" style={{border: '3px solid #00cec9'}}>
+          <div className="bg-white rounded-3xl p-6 shadow-lg" style={{border: '3px solid #079992'}}>
             <h2 className="text-xl font-bold mb-4" style={{color: '#006a67'}}>📖 {t.quranProgress}</h2>
             <div className="text-center mb-4">
-              <span className="text-5xl font-bold" style={{color: '#00cec9'}}>{profile.memorizedSurahs}</span>
+              <span className="text-5xl font-bold" style={{color: '#079992'}}>{profile.memorizedSurahs}</span>
               <span className="text-gray-400"> / 114</span>
             </div>
             <div className="w-full rounded-full h-3 mb-4" style={{background: '#e6fffe'}}>
@@ -145,7 +145,7 @@ export default function DashboardPage() {
                 className="h-3 rounded-full transition-all"
                 style={{
                   width: `${(profile.memorizedSurahs / 114) * 100}%`,
-                  background: 'linear-gradient(to right, #00cec9, #006a67)'
+                  background: 'linear-gradient(to right, #079992, #006a67)'
                 }}
               />
             </div>
@@ -159,7 +159,7 @@ export default function DashboardPage() {
                 onClick={handleAddSurah}
                 disabled={saving}
                 className="flex-1 py-2 rounded-2xl font-bold text-white transition hover:opacity-90"
-                style={{background: saving ? '#b2f0ee' : '#00cec9'}}
+                style={{background: saving ? '#b2f0ee' : '#079992'}}
               >
                 {saving ? '⏳' : t.addSurah}
               </button>
@@ -199,7 +199,7 @@ export default function DashboardPage() {
         </div>
 
         {/* نظام الشارات */}
-        <div className="bg-white rounded-3xl shadow-lg" style={{border: '3px solid #00cec9'}}>
+        <div className="bg-white rounded-3xl shadow-lg" style={{border: '3px solid #079992'}}>
           <BadgeSystem memorizedSurahs={profile.memorizedSurahs} locale={locale} />
         </div>
 

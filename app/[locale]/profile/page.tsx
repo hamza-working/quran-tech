@@ -61,8 +61,8 @@ export default function ProfilePage() {
   };
 
   const getLevelColor = () => {
-    if (!profile) return '#00cec9';
-    if (profile.level === 1) return '#00cec9';
+    if (!profile) return '#079992';
+    if (profile.level === 1) return '#079992';
     if (profile.level === 2) return '#fbbf24';
     return '#f59e0b';
   };
@@ -81,7 +81,7 @@ export default function ProfilePage() {
   if (!profile) return null;
 
   const stats = [
-    { icon: '📖', label: t.memorized, value: `${profile.memorizedSurahs} / 114`, color: '#00cec9' },
+    { icon: '📖', label: t.memorized, value: `${profile.memorizedSurahs} / 114`, color: '#079992' },
     { icon: '🧠', label: t.quizzes, value: profile.completedQuizzes, color: '#fbbf24' },
     { icon: '🇬🇧', label: t.english, value: `${profile.englishProgress}%`, color: '#06b6d4' },
     { icon: '🇫🇷', label: t.french, value: `${profile.frenchProgress}%`, color: '#8b5cf6' },
@@ -93,10 +93,10 @@ export default function ProfilePage() {
       <div className="max-w-2xl mx-auto px-4 py-12">
 
         {/* رأس الملف الشخصي */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 mb-6 text-center" style={{border: '3px solid #00cec9'}}>
+        <div className="bg-white rounded-3xl shadow-xl p-8 mb-6 text-center" style={{border: '3px solid #079992'}}>
           <div
             className="w-24 h-24 rounded-full flex items-center justify-center text-5xl mx-auto mb-4"
-            style={{background: 'linear-gradient(135deg, #00cec9, #006a67)'}}
+            style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
           >
             {profile.name.charAt(0).toUpperCase()}
           </div>
@@ -122,14 +122,14 @@ export default function ProfilePage() {
         </div>
 
         {/* شريط التقدم العام */}
-        <div className="bg-white rounded-3xl p-6 shadow-md mb-6" style={{border: '3px solid #00cec9'}}>
+        <div className="bg-white rounded-3xl p-6 shadow-md mb-6" style={{border: '3px solid #079992'}}>
           <h2 className="font-bold text-lg mb-4" style={{color: '#006a67'}}>📊 {t.memorized}</h2>
           <div className="w-full rounded-full h-4 mb-2" style={{background: '#e6fffe'}}>
             <div
               className="h-4 rounded-full transition-all"
               style={{
                 width: `${(profile.memorizedSurahs / 114) * 100}%`,
-                background: 'linear-gradient(to right, #00cec9, #006a67)'
+                background: 'linear-gradient(to right, #079992, #006a67)'
               }}
             />
           </div>
@@ -143,13 +143,13 @@ export default function ProfilePage() {
           <button
             onClick={() => router.push(`/${locale}/dashboard`)}
             className="py-4 rounded-2xl font-bold text-white transition hover:opacity-90"
-            style={{background: 'linear-gradient(135deg, #00cec9, #006a67)'}}
+            style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
           >
             🏆 {t.goToDashboard}
           </button>
           <button
             className="py-4 rounded-2xl font-bold transition hover:opacity-90"
-            style={{background: '#e6fffe', color: '#006a67', border: '2px solid #00cec9'}}
+            style={{background: '#e6fffe', color: '#006a67', border: '2px solid #079992'}}
           >
             ✏️ {t.editProfile}
           </button>

@@ -32,7 +32,7 @@ export default function SuccessAnimation({ show, message, score }: SuccessAnimat
           className="text-center rounded-3xl p-8 shadow-2xl"
           style={{
             background: 'white',
-            border: '4px solid #00cec9',
+            border: '4px solid #079992',
             animation: 'popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
           }}
         >
@@ -43,7 +43,7 @@ export default function SuccessAnimation({ show, message, score }: SuccessAnimat
           </div>
           <h2 className="text-2xl font-bold mb-2" style={{color: '#006a67'}}>{message}</h2>
           {score && (
-            <div className="text-4xl font-bold" style={{color: '#00cec9'}}>{score}</div>
+            <div className="text-4xl font-bold" style={{color: '#079992'}}>{score}</div>
           )}
         </div>
         <style>{`
