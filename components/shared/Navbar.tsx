@@ -127,6 +127,11 @@ export default function Navbar() {
                     className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
                     📖 {t.tajweed}
                   </button>
+                  
+                  <button onClick={() => { handleProtectedLink('/technology'); setShowLearn(false); }}
+  className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
+  💻 {locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}
+</button>
                 </div>
               )}
             </div>
@@ -249,6 +254,10 @@ export default function Navbar() {
               className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
               📖 {t.tajweed}
             </button>
+            <button onClick={() => { handleProtectedLink('/technology'); setIsOpen(false); }}
+  className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
+  💻 {locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}
+</button>
             <button onClick={() => { handleProtectedLink('/quiz'); setIsOpen(false); }}
               className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
               🧠 {t.quiz}
