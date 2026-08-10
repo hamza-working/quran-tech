@@ -42,7 +42,7 @@ const projectDetails = [
         'Share your project with friends!',
       ],
     },
-    color: '#1abc9c', tag: 'Scratch',
+    color: '#006A67', tag: 'Scratch',
   },
   {
     icon: '📱',
@@ -212,7 +212,7 @@ const projectDetails = [
         'Share your project with the world!',
       ],
     },
-    color: '#1abc9c', tag: '🚀',
+    color: '#006A67', tag: '🚀',
   },
 ];  
 return (
@@ -220,7 +220,7 @@ return (
       <Navbar />
 
       {/* Hero Section */}
-      <section style={{background: 'linear-gradient(to bottom, #148f77, #1abc9c)'}} className="text-white py-20 px-4 text-center">
+      <section style={{background: 'linear-gradient(to bottom, #148f77, #006A67)'}} className="text-white py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="text-6xl mb-6">🕌</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{color: '#fbbf24'}}>
@@ -252,7 +252,7 @@ return (
             { number: '3', label: t('stats_levels') },
           ].map((stat, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="text-3xl font-bold" style={{color: '#1abc9c'}}>{stat.number}</div>
+              <div className="text-3xl font-bold" style={{color: '#006A67'}}>{stat.number}</div>
               <div className="text-gray-500 text-sm mt-1">{stat.label}</div>
             </div>
           ))}
@@ -266,7 +266,7 @@ return (
             {t('tracks_title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl p-8 border-2" style={{background: '#e8f8f5', borderColor: '#1abc9c'}}>
+            <div className="rounded-2xl p-8 border-2" style={{background: '#e8f8f5', borderColor: '#006A67'}}>
               <div className="text-4xl mb-4">📖</div>
               <h3 className="text-xl font-bold mb-3" style={{color: '#148f77'}}>
                 {t('quran_track')}
@@ -308,8 +308,8 @@ return (
       {/* مشروع الأسبوع */}
       <section className="py-16 px-4" style={{background: '#f0fdf9'}}>
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '3px solid #1abc9c'}}>
-            <div className="p-2 text-center text-white text-sm font-bold" style={{background: '#1abc9c'}}>
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '3px solid #006A67'}}>
+            <div className="p-2 text-center text-white text-sm font-bold" style={{background: '#006A67'}}>
               🌟 {locale === 'ar' ? 'مشروع الأسبوع' : locale === 'fr' ? 'Projet de la semaine' : 'Project of the Week'}
             </div>
             <div className="p-8 md:flex items-center gap-8">
@@ -326,14 +326,14 @@ return (
                    'Level 2 children programmed an interactive Scratch game to memorize Quran surah names in a fun way.'}
                 </p>
                 <div className="flex items-center gap-3 flex-wrap">
-                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#1abc9c'}}>Scratch</span>
+                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#006A67'}}>Scratch</span>
                   <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#fbbf24', color: '#78350f'}}>
                     {locale === 'ar' ? 'المستوى 2' : locale === 'fr' ? 'Niveau 2' : 'Level 2'}
                   </span>
                   <a
                     href="#projects"
                     className="flex items-center gap-1 text-sm font-bold transition hover:opacity-80"
-                    style={{color: '#1abc9c'}}
+                    style={{color: '#006A67'}}
                   >
                     {locale === 'ar' ? 'اكتشف المشروع ←' : locale === 'fr' ? 'Découvrir le projet →' : 'Discover the project →'}
                   </a>
@@ -366,7 +366,7 @@ return (
                 descAr: 'لعبة Scratch لتعلم أسماء السور',
                 descFr: 'Jeu Scratch pour apprendre les sourates',
                 descEn: 'Scratch game to learn surah names',
-                tag: 'Scratch', color: '#1abc9c',
+                tag: 'Scratch', color: '#006A67',
                 level: locale === 'ar' ? 'المستوى 1' : locale === 'fr' ? 'Niveau 1' : 'Level 1',
               },
               {
@@ -411,7 +411,7 @@ return (
                 descAr: 'انضم وابدأ مشروعك الخاص اليوم!',
                 descFr: 'Rejoignez-nous et commencez votre projet!',
                 descEn: 'Join us and start your own project today!',
-                tag: '🚀', color: '#1abc9c', level: '',
+                tag: '🚀', color: '#006A67', level: '',
               },
             ].map((project, i) => (
   <div

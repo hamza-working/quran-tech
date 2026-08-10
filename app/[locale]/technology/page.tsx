@@ -57,7 +57,7 @@ const sections = [
   {
     id: 'microbit',
     icon: '🤖',
-    color: '#1abc9c',
+    color: '#006A67',
     nameAr: 'micro:bit والروبوتيكس',
     nameFr: 'micro:bit et Robotique',
     nameEn: 'micro:bit and Robotics',
@@ -136,9 +136,9 @@ const sections = [
         titleAr: 'تلوين الموقع بـ CSS',
         titleFr: 'Colorier le site avec CSS',
         titleEn: 'Styling with CSS',
-        contentAr: 'CSS يجمّل الموقع. أضف داخل <head>:\n<style>\n  body {\n    background: #1abc9c;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
-        contentFr: 'CSS embellit le site. Ajoute dans <head>:\n<style>\n  body {\n    background: #1abc9c;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
-        contentEn: 'CSS beautifies the site. Add inside <head>:\n<style>\n  body {\n    background: #1abc9c;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
+        contentAr: 'CSS يجمّل الموقع. أضف داخل <head>:\n<style>\n  body {\n    background: #006A67;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
+        contentFr: 'CSS embellit le site. Ajoute dans <head>:\n<style>\n  body {\n    background: #006A67;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
+        contentEn: 'CSS beautifies the site. Add inside <head>:\n<style>\n  body {\n    background: #006A67;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
         icon: '🎨',
       },
       {
