@@ -75,7 +75,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav style={{background: '#006a67'}} className="text-white shadow-lg sticky top-0 z-50">
+      <nav style={{background: '#0e6b55'}} className="text-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
 
           {/* الشعار */}
@@ -112,7 +112,7 @@ export default function Navbar() {
               {showLearn && (
                 <div
                   className="absolute top-full mt-1 rounded-2xl shadow-xl overflow-hidden z-50 min-w-40"
-                  style={{background: '#005450'}}
+                  style={{background: '#0e6b55'}}
                   onMouseLeave={() => setShowLearn(false)}
                 >
                   <button onClick={() => { handleProtectedLink('/english'); setShowLearn(false); }}
@@ -178,7 +178,7 @@ export default function Navbar() {
               {showLanguages && (
                 <div
                   className="absolute top-full mt-1 rounded-2xl shadow-xl overflow-hidden z-50"
-                  style={{background: '#005450'}}
+                  style={{background: '#0e6b55'}}
                 >
                   {languages.map(lang => (
                     <button
@@ -217,7 +217,7 @@ export default function Navbar() {
               <button
                 onClick={() => setShowLogin(true)}
                 className="text-xs px-4 py-2 rounded-xl font-bold transition hover:opacity-90"
-                style={{background: '#fbbf24', color: '#006a67'}}
+                style={{background: '#fbbf24', color: '#0e6b55'}}
               >
                 {t.login}
               </button>
@@ -233,7 +233,7 @@ export default function Navbar() {
 
         {/* قائمة الجوال */}
         {isOpen && (
-          <div style={{background: '#005450'}} className="lg:hidden px-4 py-4 flex flex-col gap-2">
+          <div style={{background: '#0e6b55'}} className="lg:hidden px-4 py-4 flex flex-col gap-2">
             <Link href={getLocalizedHref('/')} onClick={() => setIsOpen(false)}
               className="px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
               {t.home}
@@ -279,7 +279,7 @@ export default function Navbar() {
                     onClick={() => changeLanguage(lang.code)}
                     className="text-xs px-3 py-1 rounded-full font-bold transition"
                     style={locale === lang.code
-                      ? {background: '#fbbf24', color: '#006a67'}
+                      ? {background: '#fbbf24', color: '#0e6b55'}
                       : {color: 'white', border: '1px solid rgba(255,255,255,0.3)'}
                     }
                   >
@@ -308,7 +308,7 @@ export default function Navbar() {
             ) : (
               <button onClick={() => { setShowLogin(true); setIsOpen(false); }}
                 className="w-full py-2 rounded-xl font-bold mt-2"
-                style={{background: '#fbbf24', color: '#006a67'}}>
+                style={{background: '#fbbf24', color: '#0e6b55'}}>
                 {t.login}
               </button>
             )}
@@ -329,7 +329,7 @@ export default function Navbar() {
             onClick={e => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold" style={{color: '#006a67'}}>
+              <h2 className="text-2xl font-bold" style={{color: '#0e6b55'}}>
                 {locale === 'ar' ? '🔑 تسجيل الدخول' : locale === 'fr' ? '🔑 Connexion' : '🔑 Login'}
               </h2>
               <button onClick={() => setShowLogin(false)} className="text-gray-400 hover:text-gray-600 text-2xl">✕</button>

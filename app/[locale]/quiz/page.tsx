@@ -428,31 +428,31 @@ const handleNext = () => {
 
   if (finished) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
         <Navbar />
         <div className="max-w-lg mx-auto px-4 py-16 text-center">
           <div className="bg-white rounded-3xl shadow-xl p-10" style={{border: '3px solid #079992'}}>
             <div className="text-7xl mb-4">🏆</div>
-            <h2 className="text-3xl font-bold mb-2" style={{color: '#006a67'}}>{t.result}</h2>
+            <h2 className="text-3xl font-bold mb-2" style={{color: '#0e6b55'}}>{t.result}</h2>
             <div className="text-6xl font-bold my-6" style={{color: '#079992'}}>
               {score} / {filteredQuestions.length}
             </div>
             <div className="text-2xl font-bold mb-6" style={{color: '#fbbf24'}}>
               {getResultText()}
             </div>
-            <div className="w-full rounded-full h-4 mb-8" style={{background: '#e6fffe'}}>
+            <div className="w-full rounded-full h-4 mb-8" style={{background: '#e8f8f5'}}>
               <div
                 className="h-4 rounded-full transition-all"
                 style={{
                   width: `${(score / filteredQuestions.length) * 100}%`,
-                  background: 'linear-gradient(to right, #079992, #006a67)'
+                  background: 'linear-gradient(to right, #079992, #0e6b55)'
                 }}
               />
             </div>
             <button
               onClick={handleRestart}
               className="w-full py-4 rounded-2xl font-bold text-lg text-white transition hover:opacity-90"
-              style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
+              style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
             >
               🔄 {t.restart}
             </button>
@@ -463,13 +463,13 @@ const handleNext = () => {
   }
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-2xl mx-auto px-4 py-12">
 
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🧠</div>
-          <h1 className="text-3xl font-bold" style={{color: '#006a67'}}>{t.title}</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
 
@@ -481,8 +481,8 @@ const handleNext = () => {
               onClick={() => { setFilter(cat); handleRestart(); }}
               className="px-4 py-2 rounded-full font-bold text-sm transition"
               style={filter === cat
-                ? {background: '#006a67', color: 'white'}
-                : {background: 'white', color: '#006a67', border: '2px solid #079992'}
+                ? {background: '#0e6b55', color: 'white'}
+                : {background: 'white', color: '#0e6b55', border: '2px solid #079992'}
               }
             >
               {cat === 'all' ? t.all : `${categoryIcons[cat]} ${t[cat]}`}
@@ -505,7 +505,7 @@ const handleNext = () => {
           </div>
 
           {/* شريط التقدم */}
-          <div className="w-full rounded-full h-2 mb-6" style={{background: '#e6fffe'}}>
+          <div className="w-full rounded-full h-2 mb-6" style={{background: '#e8f8f5'}}>
             <div
               className="h-2 rounded-full transition-all"
               style={{
@@ -516,7 +516,7 @@ const handleNext = () => {
           </div>
 
           {/* نص السؤال */}
-          <h2 className="text-xl font-bold text-center mb-8" style={{color: '#006a67'}}>
+          <h2 className="text-xl font-bold text-center mb-8" style={{color: '#0e6b55'}}>
             {currentQuestion[locale].question}
           </h2>
 
@@ -525,8 +525,8 @@ const handleNext = () => {
             <div className="grid grid-cols-2 gap-3">
               {currentQuestion[locale].options?.map((option, i) => {
                 let bg = 'white';
-                let border = '#b2f0ee';
-                let color = '#006a67';
+                let border = '#a9dfbf';
+                let color = '#0e6b55';
 
                 if (isAnswered) {
                   if (option === currentQuestion[locale].answer) {
@@ -552,8 +552,8 @@ const handleNext = () => {
             <div className="grid grid-cols-2 gap-4">
               {[true, false].map((val) => {
                 let bg = 'white';
-                let border = '#b2f0ee';
-                let color = '#006a67';
+                let border = '#a9dfbf';
+                let color = '#0e6b55';
 
                 if (isAnswered) {
                   if (val === currentQuestion[locale].answer) {
@@ -595,7 +595,7 @@ const handleNext = () => {
             <button
               onClick={handleNext}
               className="w-full mt-6 py-4 rounded-2xl font-bold text-lg text-white transition hover:opacity-90"
-              style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
+              style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
             >
               {currentIndex + 1 >= filteredQuestions.length ? `🏁 ${t.finish}` : `${t.next} ←`}
             </button>
@@ -605,7 +605,7 @@ const handleNext = () => {
 
         {/* النقاط الحالية */}
         <div className="text-center mt-6">
-          <span className="font-bold text-lg" style={{color: '#006a67'}}>
+          <span className="font-bold text-lg" style={{color: '#0e6b55'}}>
             ⭐ {score} / {currentIndex + (isAnswered ? 1 : 0)}
           </span>
         </div>

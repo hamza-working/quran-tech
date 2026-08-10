@@ -65,13 +65,13 @@ export default function ProgramPage() {
   };
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-5xl mx-auto px-4 py-12">
 
         <div className="text-center mb-12">
           <div className="text-6xl mb-4">📚</div>
-          <h1 className="text-4xl font-bold" style={{color: '#006a67'}}>{t('title')}</h1>
+          <h1 className="text-4xl font-bold" style={{color: '#0e6b55'}}>{t('title')}</h1>
           <p className="text-gray-400 mt-3 text-lg">{t('subtitle')}</p>
         </div>
 
@@ -92,8 +92,8 @@ export default function ProgramPage() {
 
               {/* المحتوى */}
               <div className="grid md:grid-cols-2 gap-6 p-6">
-                <div className="rounded-2xl p-5" style={{background: '#e6fffe'}}>
-                  <h3 className="text-lg font-bold mb-3" style={{color: '#006a67'}}>📖 {t('quran')}</h3>
+                <div className="rounded-2xl p-5" style={{background: '#e8f8f5'}}>
+                  <h3 className="text-lg font-bold mb-3" style={{color: '#0e6b55'}}>📖 {t('quran')}</h3>
                   <ul className="space-y-2">
                     {getLang(lvl.quran).map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
@@ -122,7 +122,7 @@ export default function ProgramPage() {
         <div className="mt-12 bg-white rounded-3xl p-8" style={{border: '3px solid #079992'}}>
           <div className="text-center mb-8">
             <div className="text-5xl mb-3">🎮</div>
-            <h2 className="text-3xl font-bold" style={{color: '#006a67'}}>
+            <h2 className="text-3xl font-bold" style={{color: '#0e6b55'}}>
               {locale === 'ar' ? 'تعلم البرمجة بالألعاب' : locale === 'fr' ? 'Apprendre à coder en jouant' : 'Learn Coding by Playing'}
             </h2>
             <p className="text-gray-400 mt-2">

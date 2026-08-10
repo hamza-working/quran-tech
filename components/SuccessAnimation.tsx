@@ -41,7 +41,7 @@ export default function SuccessAnimation({ show, message, score }: SuccessAnimat
           </div>
           <div className="text-6xl mb-2" style={{animation: 'pulse 0.5s ease infinite alternate'}}>
           </div>
-          <h2 className="text-2xl font-bold mb-2" style={{color: '#006a67'}}>{message}</h2>
+          <h2 className="text-2xl font-bold mb-2" style={{color: '#0e6b55'}}>{message}</h2>
           {score && (
             <div className="text-4xl font-bold" style={{color: '#079992'}}>{score}</div>
           )}

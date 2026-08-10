@@ -168,13 +168,13 @@ export default function FrenchPage() {
   };
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
 
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🇫🇷</div>
-          <h1 className="text-3xl font-bold" style={{color: '#006a67'}}>{t.title}</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
 
@@ -185,7 +185,7 @@ export default function FrenchPage() {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className="flex-1 py-3 font-bold text-sm transition"
-              style={activeTab === tab ? {background: '#8b5cf6', color: 'white'} : {color: '#006a67'}}
+              style={activeTab === tab ? {background: '#8b5cf6', color: 'white'} : {color: '#0e6b55'}}
             >
               {tab === 'vocab' ? `📖 ${t.vocab}` : tab === 'grammar' ? `📝 ${t.grammar}` : `🎯 ${t.quiz}`}
             </button>
@@ -251,7 +251,7 @@ export default function FrenchPage() {
                   {section.items.map((item, j) => (
                     <div key={j} className="rounded-2xl p-3 text-center" style={{background: '#f5f3ff', border: '2px solid #8b5cf6'}}>
                       <div className="font-bold text-lg" style={{color: '#8b5cf6'}}>{item.fr}</div>
-                      <div className="text-sm font-bold" style={{color: '#006a67'}}>{item.ar}</div>
+                      <div className="text-sm font-bold" style={{color: '#0e6b55'}}>{item.ar}</div>
                       <div className="text-xs text-gray-400 mt-1 italic">{item.example}</div>
                     </div>
                   ))}

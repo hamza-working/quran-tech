@@ -105,7 +105,7 @@ useEffect(() => {
 if (!mounted || checking) return null;
   
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-md mx-auto px-4 py-12">
 
@@ -113,14 +113,14 @@ if (!mounted || checking) return null;
           <button
             onClick={() => { setIsLogin(false); setError(''); setSuccess(''); }}
             className="flex-1 py-3 font-bold text-lg transition"
-            style={!isLogin ? {background: '#079992', color: 'white'} : {background: 'white', color: '#006a67'}}
+            style={!isLogin ? {background: '#079992', color: 'white'} : {background: 'white', color: '#0e6b55'}}
           >
             {t('tab_register')}
           </button>
           <button
             onClick={() => { setIsLogin(true); setError(''); setSuccess(''); }}
             className="flex-1 py-3 font-bold text-lg transition"
-            style={isLogin ? {background: '#079992', color: 'white'} : {background: 'white', color: '#006a67'}}
+            style={isLogin ? {background: '#079992', color: 'white'} : {background: 'white', color: '#0e6b55'}}
           >
             {t('tab_login')}
           </button>
@@ -129,7 +129,7 @@ if (!mounted || checking) return null;
         <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: '3px solid #079992'}}>
           <div className="text-center mb-8">
             <div className="text-6xl mb-3">{isLogin ? '🔑' : '🌟'}</div>
-            <h1 className="text-3xl font-bold" style={{color: '#006a67'}}>
+            <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>
               {isLogin ? t('login_title') : t('title')}
             </h1>
             <p className="text-gray-400 mt-2 text-sm">
@@ -141,25 +141,25 @@ if (!mounted || checking) return null;
             {!isLogin && (
               <>
                 <div>
-                  <label className="block font-bold mb-2 text-sm" style={{color: '#006a67'}}>{t('name')}</label>
+                  <label className="block font-bold mb-2 text-sm" style={{color: '#0e6b55'}}>{t('name')}</label>
                   <input
                     type="text"
                     placeholder={t('name_placeholder')}
                     value={formData.childName}
                     onChange={e => setFormData({...formData, childName: e.target.value})}
                     className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-                    style={{border: '2px solid #b2f0ee'}}
+                    style={{border: '2px solid #a9dfbf'}}
                     onFocus={e => e.target.style.borderColor = '#079992'}
-                    onBlur={e => e.target.style.borderColor = '#b2f0ee'}
+                    onBlur={e => e.target.style.borderColor = '#a9dfbf'}
                   />
                 </div>
                 <div>
-                  <label className="block font-bold mb-2 text-sm" style={{color: '#006a67'}}>{t('age')}</label>
+                  <label className="block font-bold mb-2 text-sm" style={{color: '#0e6b55'}}>{t('age')}</label>
                   <select
                     value={formData.age}
                     onChange={e => setFormData({...formData, age: e.target.value})}
                     className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-                    style={{border: '2px solid #b2f0ee'}}
+                    style={{border: '2px solid #a9dfbf'}}
                   >
                     <option value="">{t('age_placeholder')}</option>
                     {Array.from({length: 7}, (_, i) => i + 6).map(age => (
@@ -168,12 +168,12 @@ if (!mounted || checking) return null;
                   </select>
                 </div>
                 <div>
-                  <label className="block font-bold mb-2 text-sm" style={{color: '#006a67'}}>{t('level')}</label>
+                  <label className="block font-bold mb-2 text-sm" style={{color: '#0e6b55'}}>{t('level')}</label>
                   <select
                     value={formData.level}
                     onChange={e => setFormData({...formData, level: e.target.value})}
                     className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-                    style={{border: '2px solid #b2f0ee'}}
+                    style={{border: '2px solid #a9dfbf'}}
                   >
                     <option value="">{t('level_placeholder')}</option>
                     <option value="1">1 — (6-8)</option>
@@ -185,45 +185,45 @@ if (!mounted || checking) return null;
             )}
 
             <div>
-              <label className="block font-bold mb-2 text-sm" style={{color: '#006a67'}}>{t('email')}</label>
+              <label className="block font-bold mb-2 text-sm" style={{color: '#0e6b55'}}>{t('email')}</label>
               <input
                 type="email"
                 placeholder="example@email.com"
                 value={formData.email}
                 onChange={e => setFormData({...formData, email: e.target.value})}
                 className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-                style={{border: '2px solid #b2f0ee'}}
+                style={{border: '2px solid #a9dfbf'}}
                 onFocus={e => e.target.style.borderColor = '#079992'}
-                onBlur={e => e.target.style.borderColor = '#b2f0ee'}
+                onBlur={e => e.target.style.borderColor = '#a9dfbf'}
               />
             </div>
 
             <div>
-              <label className="block font-bold mb-2 text-sm" style={{color: '#006a67'}}>{t('password')}</label>
+              <label className="block font-bold mb-2 text-sm" style={{color: '#0e6b55'}}>{t('password')}</label>
               <input
                 type="password"
                 placeholder="••••••••"
                 value={formData.password}
                 onChange={e => setFormData({...formData, password: e.target.value})}
                 className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-                style={{border: '2px solid #b2f0ee'}}
+                style={{border: '2px solid #a9dfbf'}}
                 onFocus={e => e.target.style.borderColor = '#079992'}
-                onBlur={e => e.target.style.borderColor = '#b2f0ee'}
+                onBlur={e => e.target.style.borderColor = '#a9dfbf'}
               />
             </div>
 
             {!isLogin && (
               <div>
-                <label className="block font-bold mb-2 text-sm" style={{color: '#006a67'}}>{t('confirm_password')}</label>
+                <label className="block font-bold mb-2 text-sm" style={{color: '#0e6b55'}}>{t('confirm_password')}</label>
                 <input
                   type="password"
                   placeholder="••••••••"
                   value={formData.confirmPassword}
                   onChange={e => setFormData({...formData, confirmPassword: e.target.value})}
                   className="w-full rounded-2xl px-4 py-3 text-right outline-none"
-                  style={{border: '2px solid #b2f0ee'}}
+                  style={{border: '2px solid #a9dfbf'}}
                   onFocus={e => e.target.style.borderColor = '#079992'}
-                  onBlur={e => e.target.style.borderColor = '#b2f0ee'}
+                  onBlur={e => e.target.style.borderColor = '#a9dfbf'}
                 />
               </div>
             )}
@@ -244,7 +244,7 @@ if (!mounted || checking) return null;
               disabled={loading}
               className="w-full font-bold py-4 rounded-2xl text-lg text-white transition hover:opacity-90"
               style={{
-                background: loading ? '#b2f0ee' : 'linear-gradient(135deg, #079992, #006a67)',
+                background: loading ? '#a9dfbf' : 'linear-gradient(135deg, #079992, #0e6b55)',
                 boxShadow: '0 4px 15px rgba(0,206,201,0.4)',
                 cursor: loading ? 'not-allowed' : 'pointer'
               }}

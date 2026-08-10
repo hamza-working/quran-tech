@@ -215,13 +215,13 @@ export default function EnglishPage() {
   };
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
 
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🇬🇧</div>
-          <h1 className="text-3xl font-bold" style={{color: '#006a67'}}>{t.title}</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
 
@@ -234,7 +234,7 @@ export default function EnglishPage() {
               className="flex-1 py-3 font-bold text-sm transition"
               style={activeTab === tab
                 ? {background: '#079992', color: 'white'}
-                : {color: '#006a67'}
+                : {color: '#0e6b55'}
               }
             >
               {tab === 'vocab' ? `📖 ${t.vocab}` : tab === 'grammar' ? `📝 ${t.grammar}` : `🎯 ${t.quiz}`}
@@ -253,8 +253,8 @@ export default function EnglishPage() {
                   onClick={() => setVocabFilter(cat)}
                   className="px-3 py-1 rounded-full text-sm font-bold transition"
                   style={vocabFilter === cat
-                    ? {background: '#006a67', color: 'white'}
-                    : {background: 'white', color: '#006a67', border: '2px solid #079992'}
+                    ? {background: '#0e6b55', color: 'white'}
+                    : {background: 'white', color: '#0e6b55', border: '2px solid #079992'}
                   }
                 >
                   {t[cat as keyof typeof t]}
@@ -274,12 +274,12 @@ export default function EnglishPage() {
                   <div className="text-5xl mb-3">{word.emoji}</div>
                   {flipped === i ? (
                     <div>
-                      <div className="font-bold text-lg" style={{color: '#006a67'}}>{word.translation}</div>
+                      <div className="font-bold text-lg" style={{color: '#0e6b55'}}>{word.translation}</div>
                       <div className="text-sm text-gray-400 mt-1">{word.word}</div>
                     </div>
                   ) : (
                     <div>
-                      <div className="font-bold text-lg" style={{color: '#006a67'}}>{word.word}</div>
+                      <div className="font-bold text-lg" style={{color: '#0e6b55'}}>{word.word}</div>
                       <div className="text-xs text-gray-400 mt-1">{t.clickToFlip}</div>
                     </div>
                   )}
@@ -304,7 +304,7 @@ export default function EnglishPage() {
                   {section.items.map((item, j) => (
                     <div key={j} className="rounded-2xl p-3 text-center" style={{background: '#fffbeb', border: '2px solid #fbbf24'}}>
                       <div className="font-bold text-lg" style={{color: '#d97706'}}>{item.en}</div>
-                      <div className="text-sm font-bold" style={{color: '#006a67'}}>{item.ar}</div>
+                      <div className="text-sm font-bold" style={{color: '#0e6b55'}}>{item.ar}</div>
                       <div className="text-xs text-gray-400 mt-1 italic">{item.example}</div>
                     </div>
                   ))}
@@ -320,14 +320,14 @@ export default function EnglishPage() {
             {quizFinished ? (
               <div className="bg-white rounded-3xl shadow-xl p-10 text-center" style={{border: '3px solid #079992'}}>
                 <div className="text-7xl mb-4">🏆</div>
-                <h2 className="text-2xl font-bold mb-4" style={{color: '#006a67'}}>{t.result}</h2>
+                <h2 className="text-2xl font-bold mb-4" style={{color: '#0e6b55'}}>{t.result}</h2>
                 <div className="text-5xl font-bold mb-6" style={{color: '#079992'}}>
                   {quizScore} / {quizWords.length}
                 </div>
                 <button
                   onClick={handleQuizRestart}
                   className="w-full py-3 rounded-2xl font-bold text-white"
-                  style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
+                  style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
                 >
                   🔄 {t.restart}
                 </button>
@@ -338,18 +338,18 @@ export default function EnglishPage() {
                   <span className="text-sm text-gray-400">{quizIndex + 1} / {quizWords.length}</span>
                   <span className="text-sm font-bold" style={{color: '#079992'}}>⭐ {quizScore}</span>
                 </div>
-                <div className="w-full rounded-full h-2 mb-6" style={{background: '#e6fffe'}}>
+                <div className="w-full rounded-full h-2 mb-6" style={{background: '#e8f8f5'}}>
                   <div className="h-2 rounded-full" style={{width: `${((quizIndex + 1) / quizWords.length) * 100}%`, background: '#079992'}} />
                 </div>
                 <div className="text-center mb-8">
                   <div className="text-6xl mb-4">{currentQuizWord.emoji}</div>
-                  <h2 className="text-3xl font-bold" style={{color: '#006a67'}}>{currentQuizWord.word}</h2>
+                  <h2 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{currentQuizWord.word}</h2>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {quizOptions.map((option, i) => {
                     let bg = 'white';
-                    let border = '#b2f0ee';
-                    let color = '#006a67';
+                    let border = '#a9dfbf';
+                    let color = '#0e6b55';
                     if (quizAnswered) {
                       if (option === currentQuizWord.translation) { bg = '#dcfce7'; border = '#16a34a'; color = '#16a34a'; }
                       else if (option === quizSelected) { bg = '#fee2e2'; border = '#dc2626'; color = '#dc2626'; }
@@ -378,7 +378,7 @@ export default function EnglishPage() {
                     <button
                       onClick={handleQuizNext}
                       className="w-full mt-4 py-3 rounded-2xl font-bold text-white"
-                      style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
+                      style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
                     >
                       {quizIndex + 1 >= quizWords.length ? `🏁 ${t.finish}` : `${t.next} →`}
                     </button>

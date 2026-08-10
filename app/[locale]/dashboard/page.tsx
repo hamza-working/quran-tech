@@ -91,10 +91,10 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
-          <div className="text-2xl font-bold" style={{color: '#006a67'}}>{t.loading}</div>
+          <div className="text-2xl font-bold" style={{color: '#0e6b55'}}>{t.loading}</div>
         </div>
       </main>
     );
@@ -102,7 +102,7 @@ export default function DashboardPage() {
 
   if (!profile) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
           <div className="text-2xl font-bold" style={{color: '#dc2626'}}>{t.notFound}</div>
@@ -118,14 +118,14 @@ export default function DashboardPage() {
   ];
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
 
         {/* ترحيب */}
         <div className="text-center mb-10">
           <div className="text-6xl mb-4">🏆</div>
-          <h1 className="text-3xl font-bold" style={{color: '#006a67'}}>
+          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>
             {t.hello} {profile.name}! 👋
           </h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
@@ -135,22 +135,22 @@ export default function DashboardPage() {
 
           {/* تقدم الحفظ */}
           <div className="bg-white rounded-3xl p-6 shadow-lg" style={{border: '3px solid #079992'}}>
-            <h2 className="text-xl font-bold mb-4" style={{color: '#006a67'}}>📖 {t.quranProgress}</h2>
+            <h2 className="text-xl font-bold mb-4" style={{color: '#0e6b55'}}>📖 {t.quranProgress}</h2>
             <div className="text-center mb-4">
               <span className="text-5xl font-bold" style={{color: '#079992'}}>{profile.memorizedSurahs}</span>
               <span className="text-gray-400"> / 114</span>
             </div>
-            <div className="w-full rounded-full h-3 mb-4" style={{background: '#e6fffe'}}>
+            <div className="w-full rounded-full h-3 mb-4" style={{background: '#e8f8f5'}}>
               <div
                 className="h-3 rounded-full transition-all"
                 style={{
                   width: `${(profile.memorizedSurahs / 114) * 100}%`,
-                  background: 'linear-gradient(to right, #079992, #006a67)'
+                  background: 'linear-gradient(to right, #079992, #0e6b55)'
                 }}
               />
             </div>
             <div className="text-center mb-4">
-              <span className="text-sm font-bold px-3 py-1 rounded-full" style={{background: '#e6fffe', color: '#006a67'}}>
+              <span className="text-sm font-bold px-3 py-1 rounded-full" style={{background: '#e8f8f5', color: '#0e6b55'}}>
                 {t.level}: {getLevel()}
               </span>
             </div>
@@ -159,7 +159,7 @@ export default function DashboardPage() {
                 onClick={handleAddSurah}
                 disabled={saving}
                 className="flex-1 py-2 rounded-2xl font-bold text-white transition hover:opacity-90"
-                style={{background: saving ? '#b2f0ee' : '#079992'}}
+                style={{background: saving ? '#a9dfbf' : '#079992'}}
               >
                 {saving ? '⏳' : t.addSurah}
               </button>

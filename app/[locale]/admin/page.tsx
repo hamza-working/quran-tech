@@ -42,24 +42,24 @@ export default function AdminPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
-          <div className="text-2xl font-bold" style={{color: '#006a67'}}>جاري التحميل...</div>
+          <div className="text-2xl font-bold" style={{color: '#0e6b55'}}>جاري التحميل...</div>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-6xl mx-auto px-4 py-12">
 
         {/* رأس الصفحة */}
         <div className="text-center mb-10">
           <div className="text-5xl mb-3">⚙️</div>
-          <h1 className="text-3xl font-bold" style={{color: '#006a67'}}>لوحة تحكم المشرف</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>لوحة تحكم المشرف</h1>
           <p className="text-gray-400 mt-2">إدارة الأطفال المسجلين ومتابعة تقدمهم</p>
         </div>
 
@@ -84,14 +84,14 @@ export default function AdminPage() {
           <button
             onClick={() => setActiveTab('children')}
             className="flex-1 py-3 font-bold transition"
-            style={activeTab === 'children' ? {background: '#079992', color: 'white'} : {color: '#006a67'}}
+            style={activeTab === 'children' ? {background: '#079992', color: 'white'} : {color: '#0e6b55'}}
           >
             👦 قائمة الأطفال
           </button>
           <button
             onClick={() => setActiveTab('stats')}
             className="flex-1 py-3 font-bold transition"
-            style={activeTab === 'stats' ? {background: '#079992', color: 'white'} : {color: '#006a67'}}
+            style={activeTab === 'stats' ? {background: '#079992', color: 'white'} : {color: '#0e6b55'}}
           >
             📊 إحصائيات تفصيلية
           </button>
@@ -108,7 +108,7 @@ export default function AdminPage() {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 className="w-full rounded-2xl px-4 py-3 text-right outline-none bg-white"
-                style={{border: '2px solid #b2f0ee', color: '#333'}}
+                style={{border: '2px solid #a9dfbf', color: '#333'}}
               />
             </div>
 
@@ -117,7 +117,7 @@ export default function AdminPage() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr style={{background: '#006a67', color: 'white'}}>
+                    <tr style={{background: '#0e6b55', color: 'white'}}>
                       <th className="p-4 text-right">الاسم</th>
                       <th className="p-4 text-right">البريد</th>
                       <th className="p-4 text-center">المستوى</th>
@@ -132,11 +132,11 @@ export default function AdminPage() {
                         key={child.uid}
                         className="border-b transition hover:opacity-90"
                         style={{
-                          borderColor: '#e6fffe',
+                          borderColor: '#e8f8f5',
                           background: i % 2 === 0 ? 'white' : '#f0fffe'
                         }}
                       >
-                        <td className="p-4 font-bold" style={{color: '#006a67'}}>
+                        <td className="p-4 font-bold" style={{color: '#0e6b55'}}>
                           <div className="flex items-center gap-2">
                             <div
                               className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
@@ -156,7 +156,7 @@ export default function AdminPage() {
                         </td>
                         <td className="p-4 text-center">
                           <div className="flex items-center gap-2 justify-center">
-                            <div className="w-16 rounded-full h-2" style={{background: '#e6fffe'}}>
+                            <div className="w-16 rounded-full h-2" style={{background: '#e8f8f5'}}>
                               <div className="h-2 rounded-full" style={{width: `${(child.memorizedSurahs / 114) * 100}%`, background: '#079992'}} />
                             </div>
                             <span className="font-bold text-sm" style={{color: '#079992'}}>{child.memorizedSurahs}</span>
@@ -182,7 +182,7 @@ export default function AdminPage() {
 
             {/* توزيع المستويات */}
             <div className="bg-white rounded-3xl p-6 shadow-md" style={{border: '3px solid #079992'}}>
-              <h2 className="font-bold text-lg mb-4" style={{color: '#006a67'}}>📊 توزيع المستويات</h2>
+              <h2 className="font-bold text-lg mb-4" style={{color: '#0e6b55'}}>📊 توزيع المستويات</h2>
               {[
                 { label: 'مبتدئ 🌱', level: 1, color: '#079992' },
                 { label: 'متوسط ⭐', level: 2, color: '#fbbf24' },
@@ -220,7 +220,7 @@ export default function AdminPage() {
                       {child.name.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-sm" style={{color: '#006a67'}}>{child.name}</div>
+                      <div className="font-bold text-sm" style={{color: '#0e6b55'}}>{child.name}</div>
                     </div>
                     <span className="font-bold" style={{color: '#079992'}}>{child.memorizedSurahs} سورة</span>
                   </div>

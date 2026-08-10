@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #e6fffe;
+  --color-primary-50: #e8f8f5;
   --color-primary-100: #ccfffd;
   --color-primary-400: #00e5e0;
   --color-primary-500: #079992;
   --color-primary-600: #00b5b0;
   --color-primary-700: #009c98;
   --color-primary-800: #008380;
-  --color-primary-900: #006a67;
+  --color-primary-900: #0e6b55;
 
   --color-gold-300: #fde68a;
   --color-gold-400: #fbbf24;
@@ -39,7 +39,7 @@ body {
 
 .gold-btn {
   background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #006a67;
+  color: #0e6b55;
   font-weight: 700;
   border-radius: 9999px;
   padding: 0.75rem 2rem;
@@ -164,11 +164,11 @@ body {
   background-color: #1e293b !important;
 }
 
-.dark [style*="color: #006a67"] {
+.dark [style*="color: #0e6b55"] {
   color: #079992 !important;
 }
 
-.dark [style*="background: linear-gradient(135deg, #e6fffe"],
+.dark [style*="background: linear-gradient(135deg, #e8f8f5"],
 .dark [style*="background: linear-gradient(135deg, #e6fff"] {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
 }

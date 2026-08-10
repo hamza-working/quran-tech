@@ -42,7 +42,7 @@ const projectDetails = [
         'Share your project with friends!',
       ],
     },
-    color: '#006A67', tag: 'Scratch',
+    color: '#0e6b55', tag: 'Scratch',
   },
   {
     icon: '📱',
@@ -212,7 +212,7 @@ const projectDetails = [
         'Share your project with the world!',
       ],
     },
-    color: '#006A67', tag: '🚀',
+    color: '#0e6b55', tag: '🚀',
   },
 ];  
 return (
@@ -220,7 +220,7 @@ return (
       <Navbar />
 
       {/* Hero Section */}
-      <section style={{background: 'linear-gradient(to bottom, #148f77, #006A67)'}} className="text-white py-20 px-4 text-center">
+      <section style={{background: 'linear-gradient(to bottom, #0e6b55, #0e6b55)'}} className="text-white py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="text-6xl mb-6">🕌</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{color: '#fbbf24'}}>
@@ -232,7 +232,7 @@ return (
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link href="register"
               className="font-bold px-8 py-3 rounded-full transition text-lg"
-              style={{background: '#fbbf24', color: '#148f77'}}>
+              style={{background: '#fbbf24', color: '#0e6b55'}}>
               {t('cta_register')}
             </Link>
             <Link href="program"
@@ -252,7 +252,7 @@ return (
             { number: '3', label: t('stats_levels') },
           ].map((stat, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="text-3xl font-bold" style={{color: '#006A67'}}>{stat.number}</div>
+              <div className="text-3xl font-bold" style={{color: '#0e6b55'}}>{stat.number}</div>
               <div className="text-gray-500 text-sm mt-1">{stat.label}</div>
             </div>
           ))}
@@ -262,13 +262,13 @@ return (
       {/* المسارات التعليمية */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10" style={{color: '#148f77'}}>
+          <h2 className="text-3xl font-bold text-center mb-10" style={{color: '#0e6b55'}}>
             {t('tracks_title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl p-8 border-2" style={{background: '#e8f8f5', borderColor: '#006A67'}}>
+            <div className="rounded-2xl p-8 border-2" style={{background: '#e8f8f5', borderColor: '#0e6b55'}}>
               <div className="text-4xl mb-4">📖</div>
-              <h3 className="text-xl font-bold mb-3" style={{color: '#148f77'}}>
+              <h3 className="text-xl font-bold mb-3" style={{color: '#0e6b55'}}>
                 {t('quran_track')}
               </h3>
               <ul className="text-gray-600 space-y-2">
@@ -297,7 +297,7 @@ return (
       {/* مشغل الصوت */}
       <section className="py-16 px-4" style={{background: '#e8f8f5'}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{color: '#148f77'}}>
+          <h2 className="text-3xl font-bold mb-4" style={{color: '#0e6b55'}}>
             {t('listen_title')}
           </h2>
           <p className="text-gray-500 mb-8">{t('listen_subtitle')}</p>
@@ -308,14 +308,14 @@ return (
       {/* مشروع الأسبوع */}
       <section className="py-16 px-4" style={{background: '#f0fdf9'}}>
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '3px solid #006A67'}}>
-            <div className="p-2 text-center text-white text-sm font-bold" style={{background: '#006A67'}}>
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '3px solid #0e6b55'}}>
+            <div className="p-2 text-center text-white text-sm font-bold" style={{background: '#0e6b55'}}>
               🌟 {locale === 'ar' ? 'مشروع الأسبوع' : locale === 'fr' ? 'Projet de la semaine' : 'Project of the Week'}
             </div>
             <div className="p-8 md:flex items-center gap-8">
               <div className="text-8xl text-center mb-6 md:mb-0">🎮</div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold mb-3" style={{color: '#148f77'}}>
+                <h2 className="text-2xl font-bold mb-3" style={{color: '#0e6b55'}}>
                   {locale === 'ar' ? 'صممنا لعبة لتعلم أسماء سور القرآن' :
                    locale === 'fr' ? 'Nous avons créé un jeu pour apprendre les noms des sourates' :
                    'We designed a game to learn Quran surah names'}
@@ -326,14 +326,14 @@ return (
                    'Level 2 children programmed an interactive Scratch game to memorize Quran surah names in a fun way.'}
                 </p>
                 <div className="flex items-center gap-3 flex-wrap">
-                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#006A67'}}>Scratch</span>
+                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#0e6b55'}}>Scratch</span>
                   <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#fbbf24', color: '#78350f'}}>
                     {locale === 'ar' ? 'المستوى 2' : locale === 'fr' ? 'Niveau 2' : 'Level 2'}
                   </span>
                   <a
                     href="#projects"
                     className="flex items-center gap-1 text-sm font-bold transition hover:opacity-80"
-                    style={{color: '#006A67'}}
+                    style={{color: '#0e6b55'}}
                   >
                     {locale === 'ar' ? 'اكتشف المشروع ←' : locale === 'fr' ? 'Découvrir le projet →' : 'Discover the project →'}
                   </a>
@@ -348,7 +348,7 @@ return (
       <section id="projects" className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold" style={{color: '#148f77'}}>
+            <h2 className="text-3xl font-bold" style={{color: '#0e6b55'}}>
               👨‍💻 {locale === 'ar' ? 'ماذا صنع أطفالنا؟' : locale === 'fr' ? 'Que font nos enfants?' : 'What did our children make?'}
             </h2>
             <p className="text-gray-400 mt-2">
@@ -366,7 +366,7 @@ return (
                 descAr: 'لعبة Scratch لتعلم أسماء السور',
                 descFr: 'Jeu Scratch pour apprendre les sourates',
                 descEn: 'Scratch game to learn surah names',
-                tag: 'Scratch', color: '#006A67',
+                tag: 'Scratch', color: '#0e6b55',
                 level: locale === 'ar' ? 'المستوى 1' : locale === 'fr' ? 'Niveau 1' : 'Level 1',
               },
               {
@@ -411,7 +411,7 @@ return (
                 descAr: 'انضم وابدأ مشروعك الخاص اليوم!',
                 descFr: 'Rejoignez-nous et commencez votre projet!',
                 descEn: 'Join us and start your own project today!',
-                tag: '🚀', color: '#006A67', level: '',
+                tag: '🚀', color: '#0e6b55', level: '',
               },
             ].map((project, i) => (
   <div
@@ -445,7 +445,7 @@ return (
       </section>
 
       {/* Footer */}
-      <footer className="text-white text-center py-6" style={{background: '#148f77'}}>
+      <footer className="text-white text-center py-6" style={{background: '#0e6b55'}}>
         <p className="text-sm" style={{color: '#ccfffd'}}>
           جميع الحقوق محفوظة — عليوي حمزة — {t('title')} © 2026
         </p>
@@ -478,7 +478,7 @@ return (
       </div>
 
       <div className="mb-4">
-        <h3 className="font-bold mb-4 text-lg" style={{color: '#148f77'}}>
+        <h3 className="font-bold mb-4 text-lg" style={{color: '#0e6b55'}}>
           {locale === 'ar' ? '🛠️ كيف تصنعه؟' : locale === 'fr' ? '🛠️ Comment le faire?' : '🛠️ How to make it?'}
         </h3>
         <div className="space-y-3">
@@ -506,7 +506,7 @@ return (
         <button
           onClick={() => setSelectedProject(null)}
           className="flex-1 py-2 rounded-2xl font-bold transition hover:opacity-90"
-          style={{background: '#e8f8f5', color: '#148f77'}}
+          style={{background: '#e8f8f5', color: '#0e6b55'}}
         >
           {locale === 'ar' ? 'حسناً، سأجرب!' : locale === 'fr' ? 'OK, je vais essayer!' : 'OK, I\'ll try it!'}
         </button>

@@ -69,10 +69,10 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
-          <div className="text-2xl font-bold" style={{color: '#006a67'}}>{t.loading}</div>
+          <div className="text-2xl font-bold" style={{color: '#0e6b55'}}>{t.loading}</div>
         </div>
       </main>
     );
@@ -88,7 +88,7 @@ export default function ProfilePage() {
   ];
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e6fffe 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
       <Navbar />
       <div className="max-w-2xl mx-auto px-4 py-12">
 
@@ -96,11 +96,11 @@ export default function ProfilePage() {
         <div className="bg-white rounded-3xl shadow-xl p-8 mb-6 text-center" style={{border: '3px solid #079992'}}>
           <div
             className="w-24 h-24 rounded-full flex items-center justify-center text-5xl mx-auto mb-4"
-            style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
+            style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
           >
             {profile.name.charAt(0).toUpperCase()}
           </div>
-          <h1 className="text-3xl font-bold mb-2" style={{color: '#006a67'}}>{profile.name}</h1>
+          <h1 className="text-3xl font-bold mb-2" style={{color: '#0e6b55'}}>{profile.name}</h1>
           <p className="text-gray-400 mb-4">{profile.email}</p>
           <span
             className="px-4 py-2 rounded-full font-bold text-white text-sm"
@@ -123,13 +123,13 @@ export default function ProfilePage() {
 
         {/* شريط التقدم العام */}
         <div className="bg-white rounded-3xl p-6 shadow-md mb-6" style={{border: '3px solid #079992'}}>
-          <h2 className="font-bold text-lg mb-4" style={{color: '#006a67'}}>📊 {t.memorized}</h2>
-          <div className="w-full rounded-full h-4 mb-2" style={{background: '#e6fffe'}}>
+          <h2 className="font-bold text-lg mb-4" style={{color: '#0e6b55'}}>📊 {t.memorized}</h2>
+          <div className="w-full rounded-full h-4 mb-2" style={{background: '#e8f8f5'}}>
             <div
               className="h-4 rounded-full transition-all"
               style={{
                 width: `${(profile.memorizedSurahs / 114) * 100}%`,
-                background: 'linear-gradient(to right, #079992, #006a67)'
+                background: 'linear-gradient(to right, #079992, #0e6b55)'
               }}
             />
           </div>
@@ -143,13 +143,13 @@ export default function ProfilePage() {
           <button
             onClick={() => router.push(`/${locale}/dashboard`)}
             className="py-4 rounded-2xl font-bold text-white transition hover:opacity-90"
-            style={{background: 'linear-gradient(135deg, #079992, #006a67)'}}
+            style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
           >
             🏆 {t.goToDashboard}
           </button>
           <button
             className="py-4 rounded-2xl font-bold transition hover:opacity-90"
-            style={{background: '#e6fffe', color: '#006a67', border: '2px solid #079992'}}
+            style={{background: '#e8f8f5', color: '#0e6b55', border: '2px solid #079992'}}
           >
             ✏️ {t.editProfile}
           </button>
