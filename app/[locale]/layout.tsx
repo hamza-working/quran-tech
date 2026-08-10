@@ -103,6 +103,7 @@ export default async function LocaleLayout({
             })();
           `
         }} />
+        <meta name="google-site-verification" content="38pkk5hCr98IRpZMrmID4wRVjjmU0yD2m7B5nKpUIGw" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1abc9c" />
         <link rel="canonical" href="https://quran-techn.netlify.app" />
