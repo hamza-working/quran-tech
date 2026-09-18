@@ -102,7 +102,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
         <h2 className="text-2xl font-bold" style={{color: '#0e6b55'}}>
           سورة {currentSurah?.name}
         </h2>
-        <p className="text-gray-400 text-sm mt-1">الشيخ ماهر المعيقلي</p>
+        <p className="text-gray-400 text-sm mt-1">الشيخ ياسين الجزائري — رواية ورش</p>
         <p className="text-xs mt-1" style={{color: '#079992'}}>
           {currentSurahId} / {surahs.length}
         </p>

@@ -120,7 +120,7 @@ export const surahs = [
 
 export const getSurahAudioUrl = (surahId: number): string => {
   const formattedId = String(surahId).padStart(3, '0');
-  return `https://archive.org/download/Maher-Meaqli/Skh-Maher-${formattedId}.ogg`;
+  return `https://ia902802.us.archive.org/28/items/www.elahmad.com_69/${formattedId}.mp3`;
 };
 
 export const getSurahById = (id: number) => {
