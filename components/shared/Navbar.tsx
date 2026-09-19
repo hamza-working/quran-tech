@@ -66,9 +66,9 @@ export default function Navbar() {
   };
 
   const navTexts = {
-    ar: { home: 'الرئيسية', program: 'البرنامج', learn: 'التعلم', english: 'الإنجليزية', french: 'الفرنسية', tajweed: 'التجويد', quiz: 'الاختبار', dashboard: 'تقدمي', contact: 'تواصل', login: 'دخول', logout: 'خروج' },
-    fr: { home: 'Accueil', program: 'Programme', learn: 'Apprendre', english: 'Anglais', french: 'Français', tajweed: 'Tajwid', quiz: 'Quiz', dashboard: 'Progrès', contact: 'Contact', login: 'Connexion', logout: 'Déconnexion' },
-    en: { home: 'Home', program: 'Program', learn: 'Learn', english: 'English', french: 'French', tajweed: 'Tajweed', quiz: 'Quiz', dashboard: 'Progress', contact: 'Contact', login: 'Login', logout: 'Logout' },
+    ar: { home: 'الرئيسية', program: 'البرنامج', learn: 'التعلم', english: 'الإنجليزية', french: 'الفرنسية', tajweed: 'التجويد', quiz: 'الاختبار', dashboard: 'تقدمي', contact: 'تواصل', login: 'دخول', logout: 'خروج', mushaf: 'المصحف'  },
+    fr: { home: 'Accueil', program: 'Programme', learn: 'Apprendre', english: 'Anglais', french: 'Français', tajweed: 'Tajwid', quiz: 'Quiz', dashboard: 'Progrès', contact: 'Contact', login: 'Connexion', logout: 'Déconnexion', mushaf: 'Mushaf'  },
+    en: { home: 'Home', program: 'Program', learn: 'Learn', english: 'English', french: 'French', tajweed: 'Tajweed', quiz: 'Quiz', dashboard: 'Progress', contact: 'Contact', login: 'Login', logout: 'Logout', mushaf: 'Mushaf' },
   };
 
   const t = navTexts[locale as keyof typeof navTexts] || navTexts.ar;
@@ -142,10 +142,10 @@ export default function Navbar() {
               🧠 {t.quiz}
             </button>
 
-            {/* تقدمي */}
-            <button onClick={() => handleProtectedLink('/dashboard')}
-              className="px-3 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition">
-              📊 {t.dashboard}
+            {/* المصحف */}
+            <button onClick={() => { handleProtectedLink('/mushaf'); setIsOpen(false); }}
+            className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
+            📖 {locale === 'ar' ? 'المصحف' : locale === 'fr' ? 'Mushaf' : 'Mushaf'}
             </button>
 
             {/* تواصل */}
@@ -262,9 +262,9 @@ export default function Navbar() {
               className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
               🧠 {t.quiz}
             </button>
-            <button onClick={() => { handleProtectedLink('/dashboard'); setIsOpen(false); }}
-              className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              📊 {t.dashboard}
+            <button onClick={() => { handleProtectedLink('/mushaf'); setShowLearn(false); }}
+            className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
+           📖 {locale === 'ar' ? 'المصحف' : locale === 'fr' ? 'Mushaf' : 'Mushaf'}
             </button>
             <Link href={getLocalizedHref('/contact')} onClick={() => setIsOpen(false)}
               className="px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">

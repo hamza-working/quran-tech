@@ -3,55 +3,11 @@
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
+import AudioClip from '@/components/AudioClip';
 
 const rules = [
   {
     id: 1,
-    icon: '🔴',
-    color: '#ef4444',
-    nameAr: 'الإخفاء',
-    nameFr: 'Al-Ikhfa',
-    nameEn: 'Al-Ikhfa (Concealment)',
-    descAr: 'إخفاء النون الساكنة أو التنوين عند حروف الإخفاء الخمسة عشر مع بقاء الغنة',
-    descFr: 'Cacher le "n" quiescent ou le tanwin devant les 15 lettres d\'ikhfa avec maintien du ghunna',
-    descEn: 'Concealing the noon saakin or tanween before 15 letters while maintaining the ghunna',
-    lettersAr: 'ت - ث - ج - د - ذ - ز - س - ش - ص - ض - ط - ظ - ف - ق - ك',
-    example: 'مِنْ تَحْتِهَا',
-    exampleTranslation: 'من تحتها',
-    duration: '2 حركة',
-  },
-  {
-    id: 2,
-    icon: '🟢',
-    color: '#22c55e',
-    nameAr: 'الإدغام',
-    nameFr: 'Al-Idgham',
-    nameEn: 'Al-Idgham (Merging)',
-    descAr: 'إدغام النون الساكنة أو التنوين في حروف (ينمو) مع الغنة، وفي حرفي (لر) بدون غنة',
-    descFr: 'Fusionner le "n" quiescent ou le tanwin dans certaines lettres',
-    descEn: 'Merging the noon saakin or tanween into certain letters',
-    lettersAr: 'ي - ن - م - و - ل - ر',
-    example: 'مَنْ يَعْمَلْ',
-    exampleTranslation: 'من يعمل',
-    duration: '2 حركة مع غنة',
-  },
-  {
-    id: 3,
-    icon: '🔵',
-    color: '#3b82f6',
-    nameAr: 'الإقلاب',
-    nameFr: 'Al-Iqlab',
-    nameEn: 'Al-Iqlab (Conversion)',
-    descAr: 'قلب النون الساكنة أو التنوين ميماً مخفاة عند حرف الباء',
-    descFr: 'Convertir le "n" quiescent ou le tanwin en "m" devant la lettre "b"',
-    descEn: 'Converting the noon saakin or tanween into a meem before the letter "b"',
-    lettersAr: 'ب',
-    example: 'مِنْ بَعْدِ',
-    exampleTranslation: 'من بعد',
-    duration: '2 حركة مع غنة',
-  },
-  {
-    id: 4,
     icon: '🟡',
     color: '#eab308',
     nameAr: 'الإظهار',
@@ -61,24 +17,84 @@ const rules = [
     descFr: 'Prononcer clairement le "n" quiescent ou le tanwin devant les 6 lettres gutturales',
     descEn: 'Clearly pronouncing the noon saakin or tanween before 6 throat letters',
     lettersAr: 'ء - ه - ع - ح - غ - خ',
-    example: 'مَنْ آمَنَ',
-    exampleTranslation: 'من آمن',
+    example: 'أَنْعَمْتَ',
+    exampleTranslation: 'الفاتحة 1:7 — النون مظهرة قبل العين',
     duration: 'بدون غنة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/001007.mp3',
+    audioSurah: 'الفاتحة — آية 7',
+    startTime: 0,
+  },
+  {
+    id: 2,
+    icon: '🟢',
+    color: '#22c55e',
+    nameAr: 'الإدغام بغنة',
+    nameFr: 'Al-Idgham avec ghunna',
+    nameEn: 'Al-Idgham with Ghunnah',
+    descAr: 'إدغام النون الساكنة أو التنوين في حروف (ي ن م و) مع بقاء الغنة',
+    descFr: 'Fusionner le "n" avec les lettres (ي ن م و) avec maintien du ghunna',
+    descEn: 'Merging the noon saakin or tanween into (ي ن م و) while maintaining ghunnah',
+    lettersAr: 'ي - ن - م - و',
+    example: 'مِنْ يَعْمَلْ',
+    exampleTranslation: 'النساء 4:123 — النون مدغمة في الياء',
+    duration: '2 حركة مع غنة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/004123.mp3',
+    audioSurah: 'النساء — آية 123',
+    startTime: 0,
+  },
+  {
+    id: 3,
+    icon: '🟢',
+    color: '#16a34a',
+    nameAr: 'الإدغام بدون غنة',
+    nameFr: 'Al-Idgham sans ghunna',
+    nameEn: 'Al-Idgham without Ghunnah',
+    descAr: 'إدغام النون الساكنة أو التنوين في حرفي (ل ر) بدون غنة',
+    descFr: 'Fusionner le "n" dans les lettres (ل ر) sans ghunna',
+    descEn: 'Merging the noon saakin or tanween into (ل ر) without ghunnah',
+    lettersAr: 'ل - ر',
+    example: 'مِنْ رَبِّهِمْ',
+    exampleTranslation: 'البقرة 2:5 — النون مدغمة في الراء',
+    duration: 'بدون غنة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/002005.mp3',
+    audioSurah: 'البقرة — آية 5',
+    startTime: 0,
+  },
+  {
+    id: 4,
+    icon: '🔵',
+    color: '#3b82f6',
+    nameAr: 'الإقلاب',
+    nameFr: 'Al-Iqlab',
+    nameEn: 'Al-Iqlab (Conversion)',
+    descAr: 'قلب النون الساكنة أو التنوين ميماً مخفاة عند حرف الباء',
+    descFr: 'Convertir le "n" en "m" devant la lettre "b"',
+    descEn: 'Converting the noon saakin or tanween into a meem before "b"',
+    lettersAr: 'ب',
+    example: 'مِنْ بَعْدِ',
+    exampleTranslation: 'البقرة 2:27 — النون مقلوبة ميماً قبل الباء',
+    duration: '2 حركة مع غنة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/002027.mp3',
+    audioSurah: 'البقرة — آية 27',
+    startTime: 0,
   },
   {
     id: 5,
-    icon: '🟣',
-    color: '#a855f7',
-    nameAr: 'المد الطبيعي',
-    nameFr: 'Al-Mad At-Tabii',
-    nameEn: 'Natural Madd',
-    descAr: 'مد حروف العلة (ا - و - ي) مدة حركتين طبيعيتين',
-    descFr: 'Prolonger les voyelles longues (a, o, i) pendant deux temps naturels',
-    descEn: 'Extending the long vowels (a, o, i) for two natural counts',
-    lettersAr: 'ا - و - ي',
-    example: 'قَالَ',
-    exampleTranslation: 'قال',
-    duration: '2 حركة',
+    icon: '🔴',
+    color: '#ef4444',
+    nameAr: 'الإخفاء',
+    nameFr: 'Al-Ikhfa',
+    nameEn: 'Al-Ikhfa (Concealment)',
+    descAr: 'إخفاء النون الساكنة أو التنوين عند حروف الإخفاء الخمسة عشر مع بقاء الغنة',
+    descFr: 'Cacher le "n" devant les 15 lettres d\'ikhfa avec maintien du ghunna',
+    descEn: 'Concealing the noon saakin or tanween before 15 letters while maintaining ghunnah',
+    lettersAr: 'ت - ث - ج - د - ذ - ز - س - ش - ص - ض - ط - ظ - ف - ق - ك',
+    example: 'أَنْتُمْ',
+    exampleTranslation: 'النون مخفاة قبل التاء',
+    duration: '2 حركة مع غنة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/105004.mp3',
+    audioSurah: 'الفيل — آية 4',
+    startTime: 0,
   },
   {
     id: 6,
@@ -92,8 +108,11 @@ const rules = [
     descEn: 'Nasal sound accompanying the noon and meem with shaddah',
     lettersAr: 'ن مشددة - م مشددة',
     example: 'إِنَّ',
-    exampleTranslation: 'إن',
+    exampleTranslation: 'العصر — الغنة في إِنَّ',
     duration: '2 حركة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/002011.mp3',
+    audioSurah: 'البقرة — آية 11',
+    startTime: 0,
   },
   {
     id: 7,
@@ -102,28 +121,52 @@ const rules = [
     nameAr: 'القلقلة',
     nameFr: 'Al-Qalqala',
     nameEn: 'Al-Qalqala',
-    descAr: 'اضطراب المخرج عند النطق بحروف القلقلة ساكنة حتى يسمع لها نبرة قوية',
-    descFr: 'Vibration lors de la prononciation des lettres de qalqala quiescentes',
-    descEn: 'Echo sound when pronouncing qalqala letters in sukoon',
+    descAr: 'اضطراب المخرج عند النطق بحروف (ق ط ب ج د) ساكنة حتى يسمع لها نبرة قوية',
+    descFr: 'Vibration lors de la prononciation des lettres (ق ط ب ج د) quiescentes',
+    descEn: 'Echo sound when pronouncing (ق ط ب ج د) in sukoon',
     lettersAr: 'ق - ط - ب - ج - د',
-    example: 'يَخْلُقْكُمْ',
-    exampleTranslation: 'يخلقكم',
+    example: 'الْفَلَقِ',
+    exampleTranslation: 'الفلق 113:1 — القلقلة الكبرى في القاف عند الوقف',
     duration: 'حركة واحدة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/113001.mp3',
+    audioSurah: 'الفلق — آية 1',
+    startTime: 0,
   },
   {
     id: 8,
+    icon: '🟣',
+    color: '#a855f7',
+    nameAr: 'المد الطبيعي',
+    nameFr: 'Al-Mad At-Tabii',
+    nameEn: 'Natural Madd',
+    descAr: 'مد حروف العلة (ا - و - ي) مدة حركتين طبيعيتين',
+    descFr: 'Prolonger les voyelles longues pendant deux temps naturels',
+    descEn: 'Extending the long vowels for two natural counts',
+    lettersAr: 'ا - و - ي',
+    example: 'قَالُوا',
+    exampleTranslation: 'البقرة 2:11 — المد في الواو',
+    duration: '2 حركة',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/002011.mp3',
+    audioSurah: 'البقرة — آية 11',
+    startTime: 0,
+  },
+  {
+    id: 9,
     icon: '🔷',
     color: '#0ea5e9',
     nameAr: 'التفخيم والترقيق',
     nameFr: 'At-Tafkhim et At-Tarqiq',
     nameEn: 'Tafkhim and Tarqiq',
-    descAr: 'التفخيم هو تغليظ الصوت، والترقيق هو ترقيق الصوت. حرف الراء يتبع قواعد خاصة',
+    descAr: 'التفخيم هو تغليظ الصوت في حروف (خ ص ض ط ظ غ ق)، والترقيق في باقي الحروف',
     descFr: 'Tafkhim est l\'épaississement du son, tarqiq est l\'amincissement du son',
     descEn: 'Tafkhim is the heaviness of sound, tarqiq is the lightness of sound',
-    lettersAr: 'ر - ل في لفظ الجلالة',
-    example: 'الله',
-    exampleTranslation: 'الله',
+    lettersAr: 'خ - ص - ض - ط - ظ - غ - ق',
+    example: 'بِسْمِ اللَّهِ',
+    exampleTranslation: 'البسملة — الراء مرققة بعد الكسر',
     duration: 'حسب الحرف',
+    audioUrl: 'https://mirrors.quranicaudio.com/everyayah/Husary_64kbps/001001.mp3',
+    audioSurah: 'الفاتحة — آية 1',
+    startTime: 0,
   },
 ];
 
@@ -258,14 +301,25 @@ export default function TajweedPage() {
                 </div>
               </div>
 
-              {/* زر الاستماع */}
-              <div className="mt-6 text-center">
-                <div className="text-sm text-gray-400 mb-2">
-                  {locale === 'ar' ? 'استمع للمثال من مشغل القرآن في الصفحة الرئيسية' :
-                   locale === 'fr' ? 'Écoutez l\'exemple depuis le lecteur Coran sur la page d\'accueil' :
-                   'Listen to the example from the Quran player on the home page'}
-                </div>
-              </div>
+            {/* مشغل الصوت */}
+<div className="mt-6">
+  <h3 className="font-bold mb-3 text-center" style={{color: selected.color}}>
+    🎧 {locale === 'ar' ? 'استمع للمثال' : locale === 'fr' ? 'Écouter l\'exemple' : 'Listen to Example'}
+  </h3>
+  <div className="rounded-2xl p-4 text-center" style={{background: `${selected.color}10`, border: `2px solid ${selected.color}`}}>
+    <p className="text-sm text-gray-500 mb-3">
+      {locale === 'ar' ? `من سورة ${selected.audioSurah} — برواية ورش` :
+       locale === 'fr' ? `De la sourate ${selected.audioSurah} — Warsh` :
+       `From Surah ${selected.audioSurah} — Warsh`}
+    </p>
+<AudioClip
+  url={selected.audioUrl}
+  color={selected.color}
+  startTime={0}
+  duration={20}
+/>
+  </div>
+</div>
             </div>
 
             {/* التنقل بين القواعد */}
