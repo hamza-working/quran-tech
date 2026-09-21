@@ -107,6 +107,7 @@ export default async function LocaleLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0e6b55" />
         <link rel="canonical" href="https://quran-techn.netlify.app" />
+        <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="bg-white text-gray-900 font-cairo" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>

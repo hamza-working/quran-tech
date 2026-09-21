@@ -1,320 +1,175 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLocale } from 'next-intl';
+import Image from 'next/image';
 import Navbar from '@/components/shared/Navbar';
-
-interface Word {
-  id: number;
-  position: number;
-  text_uthmani: string;
-  char_type_name: string;
-  translation: { text: string };
-  transliteration: { text: string };
-}
-
-interface Verse {
-  id: number;
-  verse_number: number;
-  verse_key: string;
-  page_number: number;
-  juz_number?: number;
-  words: Word[];
-}
-
-const tajweedColors: Record<string, string> = {
-  'ٱللَّهِ': '#1abc9c',
-  'ٱللَّهُ': '#1abc9c',
-  'ٱللَّهَ': '#1abc9c',
-  'بِسْمِ': '#f59e0b',
-  'ٱلرَّحْمَـٰنِ': '#8b5cf6',
-  'ٱلرَّحِيمِ': '#8b5cf6',
-};
-
-const getWordColor = (text: string): string => {
-  return tajweedColors[text] || '#1a1a2e';
-};
+import { surahPages, getPageUrl } from '@/lib/quranPages';
 
 export default function MushafPage() {
   const locale = useLocale() as 'ar' | 'fr' | 'en';
+  const [selectedSurah, setSelectedSurah] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
-  const [verses, setVerses] = useState<Verse[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedWord, setSelectedWord] = useState<Word | null>(null);
-  const [totalPages] = useState(604);
+  const [imgError, setImgError] = useState(false);
+
+  const surah = surahPages[selectedSurah];
+  const imageUrl = getPageUrl(surah.slug, currentPage);
 
   const texts = {
     ar: {
       title: 'المصحف الشريف',
-      subtitle: 'القرآن الكريم برواية ورش',
+      subtitle: 'مصحف التجويد الملون',
+      selectSurah: 'اختر السورة',
       page: 'صفحة',
       of: 'من',
       prev: 'السابق',
       next: 'التالي',
-      loading: 'جاري تحميل الصفحة...',
-      meaning: 'المعنى',
-      transliteration: 'النطق',
-      close: 'إغلاق',
-      goToPage: 'انتقل إلى صفحة',
+      colorKey: 'مفتاح الألوان',
     },
     fr: {
       title: 'Le Saint Coran',
-      subtitle: 'Coran en récitation Warsh',
+      subtitle: 'Mushaf Tajweed en couleur',
+      selectSurah: 'Choisir une sourate',
       page: 'Page',
       of: 'sur',
       prev: 'Précédent',
       next: 'Suivant',
-      loading: 'Chargement de la page...',
-      meaning: 'Signification',
-      transliteration: 'Translittération',
-      close: 'Fermer',
-      goToPage: 'Aller à la page',
+      colorKey: 'Légende des couleurs',
     },
     en: {
       title: 'The Holy Quran',
-      subtitle: 'Quran in Warsh recitation',
+      subtitle: 'Color Coded Tajweed Mushaf',
+      selectSurah: 'Select Surah',
       page: 'Page',
       of: 'of',
       prev: 'Previous',
       next: 'Next',
-      loading: 'Loading page...',
-      meaning: 'Meaning',
-      transliteration: 'Transliteration',
-      close: 'Close',
-      goToPage: 'Go to page',
+      colorKey: 'Color Key',
     },
   };
 
   const t = texts[locale] || texts.ar;
 
-  useEffect(() => {
-    const fetchPage = async () => {
-      setLoading(true);
-      setSelectedWord(null);
-      try {
-        const res = await fetch(
-          `https://api.quran.com/api/v4/verses/by_page/${currentPage}?language=ar&words=true&word_fields=text_uthmani,translation_text&per_page=50`
-        );
-        const data = await res.json();
-        setVerses(data.verses || []);
-      } catch {
-        setVerses([]);
-      }
-      setLoading(false);
-    };
-    fetchPage();
-  }, [currentPage]);
+  const handleSurahChange = (surahNum: number) => {
+    setSelectedSurah(surahNum);
+    setCurrentPage(1);
+    setImgError(false);
+  };
 
-  const handlePageInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = parseInt(e.target.value);
-    if (val >= 1 && val <= 604) setCurrentPage(val);
+  const handleNext = () => {
+    if (currentPage < surah.pages) {
+      setCurrentPage(p => p + 1);
+      setImgError(false);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 1) {
+      setCurrentPage(p => p - 1);
+      setImgError(false);
+    }
   };
 
   return (
-    <main className="min-h-screen" style={{background: '#fdf8f0'}}>
+    <main className="min-h-screen" style={{background: '#f5f0e8'}}>
       <Navbar />
 
       {/* رأس الصفحة */}
-      <div className="text-center py-6" style={{background: 'linear-gradient(135deg, #148f77, #1abc9c)', color: 'white'}}>
-        <div className="text-4xl mb-2">📖</div>
-        <h1 className="text-2xl font-bold">{t.title}</h1>
-        <p className="text-sm opacity-80 mt-1">{t.subtitle}</p>
+      <div className="text-center py-4" style={{background: 'linear-gradient(135deg, #2d5a27, #4a7c3f)', color: 'white'}}>
+        <h1 className="text-2xl font-bold">📖 {t.title}</h1>
+        <p className="text-sm opacity-80">{t.subtitle}</p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-6">
+      <div className="max-w-5xl mx-auto px-3 py-4">
 
-        {/* شريط التنقل */}
-        <div className="flex items-center justify-between mb-6 bg-white rounded-2xl p-4 shadow-md" style={{border: '2px solid #1abc9c'}}>
+        {/* اختيار السورة */}
+        <div className="bg-white rounded-2xl p-4 mb-4 shadow-md" style={{border: '2px solid #2d5a27'}}>
+          <label className="block text-sm font-bold mb-2" style={{color: '#2d5a27'}}>
+            📚 {t.selectSurah}
+          </label>
+          <select
+            value={selectedSurah}
+            onChange={e => handleSurahChange(Number(e.target.value))}
+            className="w-full rounded-xl p-3 font-bold outline-none text-right"
+            style={{border: '2px solid #2d5a27', color: '#2d5a27', background: '#f9fff9'}}
+          >
+            {Object.entries(surahPages).map(([num, s]) => (
+              <option key={num} value={num}>
+                {num}. {s.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* صورة الصفحة */}
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-4" style={{border: '4px solid #d4af37'}}>
+          {imgError ? (
+            <div className="text-center py-20">
+              <div className="text-5xl mb-4">📖</div>
+              <p style={{color: '#2d5a27'}}>
+                {locale === 'ar' ? 'الصفحة غير متوفرة حالياً' : locale === 'fr' ? 'Page non disponible' : 'Page not available'}
+              </p>
+            </div>
+          ) : (
+            <img
+              src={imageUrl}
+              alt={`${surah.name} - ${t.page} ${currentPage}`}
+              className="w-full h-auto"
+              onError={() => setImgError(true)}
+              style={{display: 'block'}}
+            />
+          )}
+        </div>
+
+        {/* أزرار التنقل */}
+        <div className="flex items-center justify-between bg-white rounded-2xl p-3 shadow-md mb-4" style={{border: '2px solid #2d5a27'}}>
           <button
-            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+            onClick={handlePrev}
             disabled={currentPage === 1}
-            className="px-4 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
-            style={{background: '#1abc9c'}}
+            className="px-5 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
+            style={{background: '#2d5a27'}}
           >
             ← {t.prev}
           </button>
 
-          <div className="flex items-center gap-3">
-            <span className="text-sm font-bold" style={{color: '#148f77'}}>
-              {t.page}
-            </span>
-            <input
-              type="number"
-              min={1}
-              max={604}
-              value={currentPage}
-              onChange={handlePageInput}
-              className="w-16 text-center rounded-xl p-2 font-bold outline-none"
-              style={{border: '2px solid #1abc9c', color: '#148f77'}}
-            />
-            <span className="text-sm font-bold" style={{color: '#148f77'}}>
-              {t.of} {totalPages}
-            </span>
+          <div className="text-center">
+            <div className="font-bold" style={{color: '#2d5a27'}}>
+              {surah.name}
+            </div>
+            <div className="text-sm" style={{color: '#d4af37'}}>
+              {t.page} {currentPage} {t.of} {surah.pages}
+            </div>
           </div>
 
           <button
-            onClick={() => setCurrentPage(p => Math.min(604, p + 1))}
-            disabled={currentPage === 604}
-            className="px-4 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
-            style={{background: '#1abc9c'}}
+            onClick={handleNext}
+            disabled={currentPage === surah.pages}
+            className="px-5 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
+            style={{background: '#2d5a27'}}
           >
             {t.next} →
           </button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-
-          {/* صفحة المصحف */}
-          <div className="md:col-span-2">
-            <div
-              className="rounded-3xl p-6 shadow-xl min-h-96"
-              style={{
-                background: '#fffff8',
-                border: '4px solid #d4af37',
-                fontFamily: '"Scheherazade New", "Traditional Arabic", serif',
-                direction: 'rtl',
-              }}
-            >
-              {/* إطار زخرفي */}
-              <div className="text-center mb-4 pb-3" style={{borderBottom: '2px solid #d4af37'}}>
-                <span className="text-sm font-bold" style={{color: '#d4af37'}}>
-                  ﷽
-                </span>
+        {/* مفتاح الألوان */}
+        <div className="bg-white rounded-2xl p-4 shadow-md" style={{border: '2px solid #d4af37'}}>
+          <h3 className="font-bold text-sm mb-3 text-center" style={{color: '#d4af37'}}>
+            🎨 {t.colorKey}
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            {[
+              { color: '#cc0000', label: locale === 'ar' ? 'مد 2 أو 4 أو 6 حركات' : 'Madd 2, 4 or 6 harakats' },
+              { color: '#008800', label: locale === 'ar' ? 'غنة وإخفاء' : 'Ghunna & Ikhfa' },
+              { color: '#006600', label: locale === 'ar' ? 'لفظ الجلالة' : 'Lafzul Jalala' },
+              { color: '#0000cc', label: locale === 'ar' ? 'قلقلة' : 'Qalqala' },
+              { color: '#ff6600', label: locale === 'ar' ? 'مد واجب 4 أو 5 حركات' : 'Madd Wajib 4-5' },
+              { color: '#000000', label: locale === 'ar' ? 'نص عادي' : 'Normal text' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full shrink-0" style={{background: item.color}} />
+                <span className="text-xs" style={{color: '#444'}}>{item.label}</span>
               </div>
-
-              {loading ? (
-                <div className="text-center py-16">
-                  <div className="text-4xl mb-4">📖</div>
-                  <p style={{color: '#148f77'}}>{t.loading}</p>
-                </div>
-              ) : (
-                <div className="text-center leading-loose">
-                  {verses.map((verse) => (
-                    <span key={verse.id}>
-                      {verse.words.map((word) => (
-                        word.char_type_name === 'end' ? (
-                          <span
-                            key={word.id}
-                            className="mx-1 text-lg"
-                            style={{color: '#d4af37'}}
-                          >
-                            {word.text_uthmani}
-                          </span>
-                        ) : (
-                          <span
-                            key={word.id}
-                            onClick={() => setSelectedWord(word)}
-                            className="mx-1 cursor-pointer hover:opacity-70 transition text-2xl"
-                            style={{
-                              color: getWordColor(word.text_uthmani),
-                              textShadow: selectedWord?.id === word.id ? '0 0 8px #1abc9c' : 'none',
-                              fontWeight: selectedWord?.id === word.id ? 'bold' : 'normal',
-                            }}
-                          >
-                            {word.text_uthmani}
-                          </span>
-                        )
-                      ))}
-                      {' '}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {/* رقم الصفحة */}
-              <div className="text-center mt-4 pt-3" style={{borderTop: '2px solid #d4af37'}}>
-                <span className="text-sm" style={{color: '#d4af37'}}>— {currentPage} —</span>
-              </div>
-            </div>
-          </div>
-
-          {/* التفسير */}
-          <div className="md:col-span-1">
-            <div className="bg-white rounded-3xl shadow-md p-5 sticky top-4" style={{border: '2px solid #1abc9c'}}>
-              <h2 className="font-bold text-lg mb-4 text-center" style={{color: '#148f77'}}>
-                {selectedWord ? '💡 ' + t.meaning : '👆 انقر على كلمة'}
-              </h2>
-
-              {selectedWord ? (
-                <div>
-                  {/* الكلمة */}
-                  <div
-                    className="text-center p-4 rounded-2xl mb-4"
-                    style={{background: '#e8f8f5'}}
-                  >
-                    <div
-                      className="text-4xl mb-2"
-                      style={{
-                        fontFamily: '"Scheherazade New", serif',
-                        color: '#148f77',
-                        direction: 'rtl'
-                      }}
-                    >
-                      {selectedWord.text_uthmani}
-                    </div>
-                  </div>
-
-                  {/* المعنى */}
-                  <div className="space-y-3">
-                    <div className="p-3 rounded-2xl" style={{background: '#f0fdf9'}}>
-                      <div className="text-xs font-bold mb-1" style={{color: '#1abc9c'}}>
-                        🌍 {t.meaning}
-                      </div>
-                      <div className="font-bold" style={{color: '#148f77'}}>
-                        {selectedWord.translation?.text || '—'}
-                      </div>
-                    </div>
-
-                    <div className="p-3 rounded-2xl" style={{background: '#fffbeb'}}>
-                      <div className="text-xs font-bold mb-1" style={{color: '#d97706'}}>
-                        🔤 {t.transliteration}
-                      </div>
-                      <div className="font-bold" style={{color: '#92400e', direction: 'ltr'}}>
-                        {selectedWord.transliteration?.text || '—'}
-                      </div>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => setSelectedWord(null)}
-                    className="w-full mt-4 py-2 rounded-2xl text-sm font-bold transition hover:opacity-80"
-                    style={{background: '#e8f8f5', color: '#148f77'}}
-                  >
-                    ✕ {t.close}
-                  </button>
-                </div>
-              ) : (
-                <div className="text-center text-gray-400 py-8">
-                  <div className="text-5xl mb-3">☝️</div>
-                  <p className="text-sm">
-                    {locale === 'ar' ? 'انقر على أي كلمة لمعرفة معناها' :
-                     locale === 'fr' ? 'Cliquez sur un mot pour voir sa signification' :
-                     'Click on any word to see its meaning'}
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* معلومات الصفحة */}
-            {verses.length > 0 && (
-              <div className="bg-white rounded-3xl shadow-md p-4 mt-4" style={{border: '2px solid #d4af37'}}>
-                <h3 className="font-bold text-sm mb-3" style={{color: '#d4af37'}}>📌 معلومات الصفحة</h3>
-                <div className="text-xs text-gray-500 space-y-1">
-                  <div>
-                    <span className="font-bold" style={{color: '#148f77'}}>السورة: </span>
-                    {verses[0]?.verse_key?.split(':')[0] === '1' ? 'الفاتحة' : `سورة ${verses[0]?.verse_key?.split(':')[0]}`}
-                  </div>
-                  <div>
-                    <span className="font-bold" style={{color: '#148f77'}}>عدد الآيات: </span>
-                    {verses.length}
-                  </div>
-                  <div>
-                    <span className="font-bold" style={{color: '#148f77'}}>الجزء: </span>
-                    {verses[0]?.juz_number || '—'}
-                  </div>
-                </div>
-              </div>
-            )}
+            ))}
           </div>
         </div>
       </div>

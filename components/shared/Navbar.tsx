@@ -263,7 +263,7 @@ export default function Navbar() {
               🧠 {t.quiz}
             </button>
             <button onClick={() => { handleProtectedLink('/mushaf'); setShowLearn(false); }}
-            className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
+            className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
            📖 {locale === 'ar' ? 'المصحف' : locale === 'fr' ? 'Mushaf' : 'Mushaf'}
             </button>
             <Link href={getLocalizedHref('/contact')} onClick={() => setIsOpen(false)}
