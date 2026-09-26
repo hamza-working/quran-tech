@@ -13,7 +13,7 @@ export default function MushafPage() {
   const [imgError, setImgError] = useState(false);
 
   const surah = surahPages[selectedSurah];
-  const imageUrl = getPageUrl(surah.slug, currentPage);
+  const imageUrl = getPageUrl(surah.slug, currentPage, surah.pages);
 
   const texts = {
     ar: {
