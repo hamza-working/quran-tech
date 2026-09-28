@@ -1,7 +1,7 @@
 export const surahPages: Record<number, { name: string; slug: string; pages: number }> = {
   1: { name: 'الفاتحة', slug: 'surah-al-fatiha', pages: 1 },
   2: { name: 'البقرة', slug: 'surah-al-baqarah', pages: 48 },
-  3: { name: 'آل عمران', slug: 'surah-al-imran', pages: 27 },
+  3: { name: 'آل عمران', slug: 'surah-ali-imran', pages: 27 },
   4: { name: 'النساء', slug: 'surah-an-nisa', pages: 29 },
   5: { name: 'المائدة', slug: 'surah-al-maidah', pages: 22 },
   6: { name: 'الأنعام', slug: 'surah-al-anam', pages: 23 },
@@ -23,7 +23,7 @@ export const surahPages: Record<number, { name: string; slug: string; pages: num
   22: { name: 'الحج', slug: 'surah-al-hajj', pages: 10 },
   23: { name: 'المؤمنون', slug: 'surah-al-muminun', pages: 8 },
   24: { name: 'النور', slug: 'surah-an-nur', pages: 9 },
-  25: { name: 'الفرقان', slug: 'surah-al-furqan', pages: 8 },
+  25: { name: 'الفرقان', slug: 'surah-furqan', pages: 8 },
   26: { name: 'الشعراء', slug: 'surah-ash-shuara', pages: 10 },
   27: { name: 'النمل', slug: 'surah-an-naml', pages: 8 },
   28: { name: 'القصص', slug: 'surah-al-qasas', pages: 11 },
