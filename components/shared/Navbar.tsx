@@ -232,88 +232,88 @@ export default function Navbar() {
         </div>
 
         {/* قائمة الجوال */}
-        {isOpen && (
-          <div style={{background: '#0e6b55'}} className="lg:hidden px-4 py-4 flex flex-col gap-2">
-            <Link href={getLocalizedHref('/')} onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              {t.home}
-            </Link>
-            <button onClick={() => { handleProtectedLink('/program'); setIsOpen(false); }}
-              className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              {t.program}
-            </button>
-            <button onClick={() => { handleProtectedLink('/english'); setIsOpen(false); }}
-              className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              🇬🇧 {t.english}
-            </button>
-            <button onClick={() => { handleProtectedLink('/french'); setIsOpen(false); }}
-              className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              🇫🇷 {t.french}
-            </button>
-            <button onClick={() => { handleProtectedLink('/tajweed'); setIsOpen(false); }}
-              className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              📖 {t.tajweed}
-            </button>
-            <button onClick={() => { handleProtectedLink('/technology'); setIsOpen(false); }}
-  className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-  💻 {locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}
-</button>
-            <button onClick={() => { handleProtectedLink('/quiz'); setIsOpen(false); }}
-              className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              🧠 {t.quiz}
-            </button>
-            <button onClick={() => { handleProtectedLink('/mushaf'); setShowLearn(false); }}
-            className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-           📖 {locale === 'ar' ? 'المصحف' : locale === 'fr' ? 'Mushaf' : 'Mushaf'}
-            </button>
-            <Link href={getLocalizedHref('/contact')} onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
-              {t.contact}
-            </Link>
+{isOpen && (
+  <div style={{background: '#0e6b55'}} className="lg:hidden px-4 py-4 flex flex-col gap-1">
+    <Link href={getLocalizedHref('/')} onClick={() => setIsOpen(false)}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full block">
+      {t.home}
+    </Link>
+    <button onClick={() => { handleProtectedLink('/program'); setIsOpen(false); }}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full">
+      {t.program}
+    </button>
+    <button onClick={() => { handleProtectedLink('/english'); setIsOpen(false); }}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
+      🇬🇧 {t.english}
+    </button>
+    <button onClick={() => { handleProtectedLink('/french'); setIsOpen(false); }}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
+      🇫🇷 {t.french}
+    </button>
+    <button onClick={() => { handleProtectedLink('/tajweed'); setIsOpen(false); }}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
+      📖 {t.tajweed}
+    </button>
+    <button onClick={() => { handleProtectedLink('/technology'); setIsOpen(false); }}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
+      💻 {locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}
+    </button>
+    <button onClick={() => { handleProtectedLink('/quiz'); setIsOpen(false); }}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
+      🧠 {t.quiz}
+    </button>
+    <button onClick={() => { handleProtectedLink('/mushaf'); setIsOpen(false); }}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
+      📖 {locale === 'ar' ? 'المصحف' : 'Mushaf'}
+    </button>
+    <Link href={getLocalizedHref('/contact')} onClick={() => setIsOpen(false)}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full block">
+      {t.contact}
+    </Link>
 
-            <div className="border-t border-white/20 mt-2 pt-2 flex items-center justify-between">
-              <div className="flex gap-2">
-                {languages.map(lang => (
-                  <button
-                    key={lang.code}
-                    onClick={() => changeLanguage(lang.code)}
-                    className="text-xs px-3 py-1 rounded-full font-bold transition"
-                    style={locale === lang.code
-                      ? {background: '#fbbf24', color: '#0e6b55'}
-                      : {color: 'white', border: '1px solid rgba(255,255,255,0.3)'}
-                    }
-                  >
-                    {lang.label}
-                  </button>
-                ))}
-              </div>
-              <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-xl hover:bg-white/10">
-                {darkMode ? <Sun size={16} /> : <Moon size={16} />}
-              </button>
-            </div>
+    <div className="border-t border-white/20 mt-2 pt-3 flex items-center justify-between">
+      <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-xl hover:bg-white/10">
+        {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+      </button>
+      <div className="flex gap-2">
+        {languages.map(lang => (
+          <button
+            key={lang.code}
+            onClick={() => changeLanguage(lang.code)}
+            className="text-xs px-3 py-1 rounded-full font-bold transition"
+            style={locale === lang.code
+              ? {background: '#fbbf24', color: '#006a67'}
+              : {color: 'white', border: '1px solid rgba(255,255,255,0.3)'}
+            }
+          >
+            {lang.label}
+          </button>
+        ))}
+      </div>
+    </div>
 
-            {user ? (
-              <div className="flex items-center gap-2 mt-2">
-                <Link href={getLocalizedHref('/profile')}
-                  className="flex items-center gap-1 text-xs hover:opacity-80 flex-1 px-3 py-2 rounded-xl hover:bg-white/10">
-                  <User size={14} />
-                  {user.email?.split('@')[0]}
-                </Link>
-                <button onClick={handleSignOut}
-                  className="text-xs px-3 py-2 rounded-xl font-bold"
-                  style={{background: '#fee2e2', color: '#dc2626'}}>
-                  <LogOut size={14} />
-                </button>
-              </div>
-            ) : (
-              <button onClick={() => { setShowLogin(true); setIsOpen(false); }}
-                className="w-full py-2 rounded-xl font-bold mt-2"
-                style={{background: '#fbbf24', color: '#0e6b55'}}>
-                {t.login}
-              </button>
-            )}
-          </div>
-        )}
+    {user ? (
+      <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/20">
+        <button onClick={handleSignOut}
+          className="text-xs px-3 py-2 rounded-xl font-bold"
+          style={{background: '#fee2e2', color: '#dc2626'}}>
+          <LogOut size={14} />
+        </button>
+        <Link href={getLocalizedHref('/profile')}
+          className="flex items-center gap-1 text-xs hover:opacity-80 px-3 py-2 rounded-xl hover:bg-white/10">
+          <User size={14} />
+          {user.email?.split('@')[0]}
+        </Link>
+      </div>
+    ) : (
+      <button onClick={() => { setShowLogin(true); setIsOpen(false); }}
+        className="w-full py-3 rounded-xl font-bold mt-2"
+        style={{background: '#fbbf24', color: '#006a67'}}>
+        {t.login}
+      </button>
+    )}
+  </div>
+)}
       </nav>
 
       {/* نافذة Login */}
