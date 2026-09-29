@@ -151,27 +151,6 @@ export default function MushafPage() {
           </button>
         </div>
 
-        {/* مفتاح الألوان */}
-        <div className="bg-white rounded-2xl p-4 shadow-md" style={{border: '2px solid #d4af37'}}>
-          <h3 className="font-bold text-sm mb-3 text-center" style={{color: '#d4af37'}}>
-            🎨 {t.colorKey}
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-            {[
-              { color: '#cc0000', label: locale === 'ar' ? 'مد 2 أو 4 أو 6 حركات' : 'Madd 2, 4 or 6 harakats' },
-              { color: '#008800', label: locale === 'ar' ? 'غنة وإخفاء' : 'Ghunna & Ikhfa' },
-              { color: '#006600', label: locale === 'ar' ? 'لفظ الجلالة' : 'Lafzul Jalala' },
-              { color: '#0000cc', label: locale === 'ar' ? 'قلقلة' : 'Qalqala' },
-              { color: '#ff6600', label: locale === 'ar' ? 'مد واجب 4 أو 5 حركات' : 'Madd Wajib 4-5' },
-              { color: '#000000', label: locale === 'ar' ? 'نص عادي' : 'Normal text' },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded-full shrink-0" style={{background: item.color}} />
-                <span className="text-xs" style={{color: '#444'}}>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </main>
   );
