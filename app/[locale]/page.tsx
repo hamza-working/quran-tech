@@ -62,7 +62,6 @@ const projectDetails = [
         'Quand on clique, fais dire une douaa différente',
         'Ajoute 5 douaas différentes avec des sons',
         'Ajoute un bouton "Suivant" pour passer à la douaa suivante',
-        'Ajoute une musique douce en fond',
         'Sauvegarde et partage ton application!',
       ],
       en: [
@@ -71,7 +70,6 @@ const projectDetails = [
         'When clicked, make it say a different dua',
         'Add 5 different duas with sounds',
         'Add a "Next" button to go to the next dua',
-        'Add soft background music',
         'Save and share your app!',
       ],
     },

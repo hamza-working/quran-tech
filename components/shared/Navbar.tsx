@@ -235,39 +235,39 @@ export default function Navbar() {
 {isOpen && (
   <div style={{background: '#0e6b55'}} className="lg:hidden px-4 py-4 flex flex-col gap-1">
     <Link href={getLocalizedHref('/')} onClick={() => setIsOpen(false)}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       {t.home}
     </Link>
     <button onClick={() => { handleProtectedLink('/program'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       {t.program}
     </button>
     <button onClick={() => { handleProtectedLink('/english'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       🇬🇧 {t.english}
     </button>
     <button onClick={() => { handleProtectedLink('/french'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       🇫🇷 {t.french}
     </button>
     <button onClick={() => { handleProtectedLink('/tajweed'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       📖 {t.tajweed}
     </button>
     <button onClick={() => { handleProtectedLink('/technology'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       💻 {locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}
     </button>
     <button onClick={() => { handleProtectedLink('/quiz'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       🧠 {t.quiz}
     </button>
     <button onClick={() => { handleProtectedLink('/mushaf'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       📖 {locale === 'ar' ? 'المصحف' : 'Mushaf'}
     </button>
     <Link href={getLocalizedHref('/contact')} onClick={() => setIsOpen(false)}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-left w-full flex items-center justify-end gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
       {t.contact}
     </Link>
 
