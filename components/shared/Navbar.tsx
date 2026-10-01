@@ -235,11 +235,11 @@ export default function Navbar() {
 {isOpen && (
   <div style={{background: '#0e6b55'}} className="lg:hidden px-4 py-4 flex flex-col gap-1">
     <Link href={getLocalizedHref('/')} onClick={() => setIsOpen(false)}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full block">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
       {t.home}
     </Link>
     <button onClick={() => { handleProtectedLink('/program'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
       {t.program}
     </button>
     <button onClick={() => { handleProtectedLink('/english'); setIsOpen(false); }}
@@ -267,7 +267,7 @@ export default function Navbar() {
       📖 {locale === 'ar' ? 'المصحف' : 'Mushaf'}
     </button>
     <Link href={getLocalizedHref('/contact')} onClick={() => setIsOpen(false)}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full block">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-end gap-2">
       {t.contact}
     </Link>
 
