@@ -235,39 +235,49 @@ export default function Navbar() {
 {isOpen && (
   <div style={{background: '#0e6b55'}} className="lg:hidden px-4 py-4 flex flex-col gap-1">
     <Link href={getLocalizedHref('/')} onClick={() => setIsOpen(false)}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full block"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
       {t.home}
     </Link>
     <button onClick={() => { handleProtectedLink('/program'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
       {t.program}
     </button>
     <button onClick={() => { handleProtectedLink('/english'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
-      🇬🇧 {t.english}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
+      <span>{t.english}</span> <span>🇬🇧</span>
     </button>
     <button onClick={() => { handleProtectedLink('/french'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
-      🇫🇷 {t.french}
-    </button>
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
+      <span>{t.french}</span> <span>🇫🇷</span>
+    </button> 
     <button onClick={() => { handleProtectedLink('/tajweed'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
-      📖 {t.tajweed}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
+      <span>{t.tajweed}</span> <span>📖</span>
     </button>
     <button onClick={() => { handleProtectedLink('/technology'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
-      💻 {locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
+      <span>{locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}</span>
+      <span>💻</span>
     </button>
     <button onClick={() => { handleProtectedLink('/quiz'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
-      🧠 {t.quiz}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
+      <span>{t.quiz}</span> <span>🧠</span>
     </button>
     <button onClick={() => { handleProtectedLink('/mushaf'); setIsOpen(false); }}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
-      📖 {locale === 'ar' ? 'المصحف' : 'Mushaf'}
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
+      <span>{locale === 'ar' ? 'المصحف' : 'Mushaf'}</span>
     </button>
     <Link href={getLocalizedHref('/contact')} onClick={() => setIsOpen(false)}
-      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium text-right w-full flex items-center justify-start gap-2">
+      className="py-3 px-4 rounded-xl hover:bg-white/10 transition font-medium w-full block"
+      style={{textAlign: locale === 'ar' ? 'right' : 'left',flexDirection: locale === 'ar' ? 'row-reverse' : 'row'}}>
       {t.contact}
     </Link>
 
