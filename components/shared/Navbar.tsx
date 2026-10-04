@@ -3,11 +3,10 @@
 import { useState, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
-import { Menu, X, LogOut, User, Moon, Sun, ChevronDown } from 'lucide-react';
+import { Menu, X, Moon, Sun, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { auth } from '@/lib/firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import LoginForm from '@/components/shared/LoginForm';
 
 const languages = [
   { code: 'ar', label: 'ع' },
@@ -17,7 +16,6 @@ const languages = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [showLanguages, setShowLanguages] = useState(false);
   const [showLearn, setShowLearn] = useState(false);
@@ -56,19 +54,15 @@ export default function Navbar() {
   const getLocalizedHref = (href: string) => {
     return `/${locale}${href === '/' ? '' : href}`;
   };
-
+  
   const handleProtectedLink = (href: string) => {
-    if (!user) {
-      setShowLogin(true);
-      return;
-    }
     router.push(getLocalizedHref(href));
   };
 
   const navTexts = {
-    ar: { home: 'الرئيسية', program: 'البرنامج', learn: 'التعلم', english: 'الإنجليزية', french: 'الفرنسية', tajweed: 'التجويد', quiz: 'الاختبار', dashboard: 'تقدمي', contact: 'تواصل', login: 'دخول', logout: 'خروج', mushaf: 'المصحف'  },
-    fr: { home: 'Accueil', program: 'Programme', learn: 'Apprendre', english: 'Anglais', french: 'Français', tajweed: 'Tajwid', quiz: 'Quiz', dashboard: 'Progrès', contact: 'Contact', login: 'Connexion', logout: 'Déconnexion', mushaf: 'Mushaf'  },
-    en: { home: 'Home', program: 'Program', learn: 'Learn', english: 'English', french: 'French', tajweed: 'Tajweed', quiz: 'Quiz', dashboard: 'Progress', contact: 'Contact', login: 'Login', logout: 'Logout', mushaf: 'Mushaf' },
+    ar: { home: 'الرئيسية', program: 'البرنامج', learn: 'التعلم', english: 'الإنجليزية', french: 'الفرنسية', tajweed: 'التجويد', quiz: 'الاختبار', dashboard: 'تقدمي', contact: 'تواصل', mushaf: 'المصحف'  },
+    fr: { home: 'Accueil', program: 'Programme', learn: 'Apprendre', english: 'Anglais', french: 'Français', tajweed: 'Tajwid', quiz: 'Quiz', dashboard: 'Progrès', contact: 'Contact',  mushaf: 'Mushaf'  },
+    en: { home: 'Home', program: 'Program', learn: 'Learn', english: 'English', french: 'French', tajweed: 'Tajweed', quiz: 'Quiz', dashboard: 'Progress', contact: 'Contact', mushaf: 'Mushaf' },
   };
 
   const t = navTexts[locale as keyof typeof navTexts] || navTexts.ar;
@@ -194,34 +188,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* المستخدم */}
-            {user ? (
-              <div className="flex items-center gap-2">
-                <Link
-                  href={getLocalizedHref('/profile')}
-                  className="flex items-center gap-1 text-xs hover:opacity-80 transition px-2 py-1 rounded-xl hover:bg-white/10"
-                >
-                  <User size={14} />
-                  <span>{user.email?.split('@')[0]}</span>
-                </Link>
-                <button
-                  onClick={handleSignOut}
-                  className="flex items-center gap-1 text-xs px-3 py-1 rounded-xl font-bold transition hover:opacity-90"
-                  style={{background: '#fee2e2', color: '#dc2626'}}
-                >
-                  <LogOut size={14} />
-                  {t.logout}
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={() => setShowLogin(true)}
-                className="text-xs px-4 py-2 rounded-xl font-bold transition hover:opacity-90"
-                style={{background: '#fbbf24', color: '#0e6b55'}}
-              >
-                {t.login}
-              </button>
-            )}
+
           </div>
 
           {/* زر الجوال */}
@@ -302,52 +269,12 @@ export default function Navbar() {
       </div>
     </div>
 
-    {user ? (
-      <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/20">
-        <button onClick={handleSignOut}
-          className="text-xs px-3 py-2 rounded-xl font-bold"
-          style={{background: '#fee2e2', color: '#dc2626'}}>
-          <LogOut size={14} />
-        </button>
-        <Link href={getLocalizedHref('/profile')}
-          className="flex items-center gap-1 text-xs hover:opacity-80 px-3 py-2 rounded-xl hover:bg-white/10">
-          <User size={14} />
-          {user.email?.split('@')[0]}
-        </Link>
-      </div>
-    ) : (
-      <button onClick={() => { setShowLogin(true); setIsOpen(false); }}
-        className="w-full py-3 rounded-xl font-bold mt-2"
-        style={{background: '#fbbf24', color: '#006a67'}}>
-        {t.login}
-      </button>
-    )}
+
   </div>
 )}
       </nav>
 
-      {/* نافذة Login */}
-      {showLogin && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center"
-          style={{background: 'rgba(0,0,0,0.5)'}}
-          onClick={() => setShowLogin(false)}
-        >
-          <div
-            className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md mx-4"
-            style={{border: '3px solid #079992'}}
-            onClick={e => e.stopPropagation()}
-          >
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold" style={{color: '#0e6b55'}}>
-                {locale === 'ar' ? '🔑 تسجيل الدخول' : locale === 'fr' ? '🔑 Connexion' : '🔑 Login'}
-              </h2>
-              <button onClick={() => setShowLogin(false)} className="text-gray-400 hover:text-gray-600 text-2xl">✕</button>
-            </div>
-            <LoginForm locale={locale} onSuccess={() => setShowLogin(false)} />
-          </div>
-        </div>
-      )}
+
     </>
   );
 }
