@@ -73,8 +73,9 @@ export default function MushafPage() {
     }
   };
 
-const getWarshUrl = (page: number): string => {
-  return `/api/warsh?page=${page}`;
+const getWarshPageUrl = (page: number): string => {
+  const pageNum = String(page - 1).padStart(4, '0');
+  return `https://ia601600.us.archive.org/BookReader/BookReaderImages.php?zip=/23/items/20231115_20231115_2341/%D9%85%D8%B5%D8%AD%D9%81-%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%86-%D8%A8%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D9%88%D8%B1%D8%B4-%D8%B9%D9%86-%D9%86%D8%A7%D9%81%D8%B9_jp2.zip&file=%D9%85%D8%B5%D8%AD%D9%81-%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%86-%D8%A8%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D9%88%D8%B1%D8%B4-%D8%B9%D9%86-%D9%86%D8%A7%D9%81%D8%B9_jp2/%D9%85%D8%B5%D8%AD%D9%81-%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%86-%D8%A8%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D9%88%D8%B1%D8%B4-%D8%B9%D9%86-%D9%86%D8%A7%D9%81%D8%B9_${pageNum}.jp2&id=20231115_20231115_2341&scale=2&rotate=0`;
 };
 
   return (
@@ -206,15 +207,12 @@ const getWarshUrl = (page: number): string => {
           </p>
         </div>
       ) : (
-        <img
-  src={getWarshUrl(warshPage)}
-  alt={`ورش - ${t.page} ${warshPage}`}
-  className="w-full h-auto"
-  onError={() => setWarshImgError(true)}
-  referrerPolicy="no-referrer"
-  crossOrigin="anonymous"
-  style={{display: 'block'}}
-/>
+   <img
+        src={getWarshPageUrl(warshPage)}
+        alt={`ورش - صفحة ${warshPage}`}
+        className="w-full h-auto"
+        style={{display: 'block'}}
+      />
       )}
     </div>
 
