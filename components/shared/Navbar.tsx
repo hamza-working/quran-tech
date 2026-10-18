@@ -91,7 +91,7 @@ export default function Navbar() {
 
             {/* البرنامج */}
             <button onClick={() => handleProtectedLink('/program')}
-              className="px-3 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition">
+              className="px-3 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition cursor-pointer">
               {t.program}
             </button>
 
@@ -99,7 +99,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setShowLearn(!showLearn)}
-                className="flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition"
+                className="flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition cursor-pointer"
               >
                 📚 {t.learn} <ChevronDown size={14} />
               </button>
@@ -110,20 +110,20 @@ export default function Navbar() {
                   onMouseLeave={() => setShowLearn(false)}
                 >
                   <button onClick={() => { handleProtectedLink('/english'); setShowLearn(false); }}
-                    className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
+                    className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2 cursor-pointer">
                     🇬🇧 {t.english}
                   </button>
                   <button onClick={() => { handleProtectedLink('/french'); setShowLearn(false); }}
-                    className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
+                    className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2 cursor-pointer">
                     🇫🇷 {t.french}
                   </button>
                   <button onClick={() => { handleProtectedLink('/tajweed'); setShowLearn(false); }}
-                    className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
+                    className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2 cursor-pointer">
                     📖 {t.tajweed}
                   </button>
                   
                   <button onClick={() => { handleProtectedLink('/technology'); setShowLearn(false); }}
-  className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2">
+  className="w-full text-right px-4 py-3 text-sm hover:bg-white/10 transition flex items-center gap-2 cursor-pointer">
   💻 {locale === 'ar' ? 'التكنولوجيا' : locale === 'fr' ? 'Technologie' : 'Technology'}
 </button>
                 </div>
@@ -132,13 +132,13 @@ export default function Navbar() {
 
             {/* الاختبار */}
             <button onClick={() => handleProtectedLink('/quiz')}
-              className="px-3 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition">
+              className="px-3 py-2 rounded-xl text-sm font-medium hover:bg-white/10 transition cursor-pointer">
               🧠 {t.quiz}
             </button>
 
             {/* المصحف */}
             <button onClick={() => { handleProtectedLink('/mushaf'); setIsOpen(false); }}
-            className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium">
+            className="text-right px-3 py-2 rounded-xl hover:bg-white/10 transition font-medium cursor-pointer">
             📖 {locale === 'ar' ? 'المصحف' : locale === 'fr' ? 'Mushaf' : 'Mushaf'}
             </button>
 
