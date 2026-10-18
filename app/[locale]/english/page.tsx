@@ -224,7 +224,127 @@ export default function EnglishPage() {
           <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
+{/* قسم مكتبة دليلك */}
+<div className="mb-8 bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '3px solid #1abc9c'}}>
+  <div className="p-4 text-white text-center" style={{background: 'linear-gradient(135deg, #1abc9c, #148f77)'}}>
+    <div className="text-3xl mb-1">📚</div>
+    <h2 className="font-bold text-lg">
+      {locale === 'ar' ? 'مكتبة دليلك — تعلم الإنجليزية مجاناً' :
+       locale === 'fr' ? 'Bibliothèque Dalilk — Apprendre l\'anglais gratuitement' :
+       'Dalilk Library — Learn English for Free'}
+    </h2>
+    <p className="text-sm opacity-80 mt-1">
+      {locale === 'ar' ? 'أفضل مصادر تعلم الإنجليزية بالعربية — مجاناً 100%' :
+       locale === 'fr' ? 'Les meilleures ressources pour apprendre l\'anglais en arabe' :
+       'Best Arabic resources to learn English — 100% Free'}
+    </p>
+  </div>
 
+  <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+    {[
+      {
+        icon: '🌱',
+        titleAr: 'مسار التأسيس',
+        titleFr: 'Parcours Fondation',
+        titleEn: 'Foundation Track',
+        descAr: 'ابدأ من الصفر مع تحدي 7 أيام + روتين يومي 30 دقيقة',
+        descFr: 'Commencez de zéro avec défi 7 jours + routine quotidienne',
+        descEn: 'Start from scratch with 7-day challenge + daily routine',
+        url: 'https://dalilk.com/library/#foundation',
+        color: '#1abc9c',
+      },
+      {
+        icon: '🚀',
+        titleAr: 'مسار الاحتراف',
+        titleFr: 'Parcours Maîtrise',
+        titleEn: 'Fluency Track',
+        descAr: 'حوّل معرفتك لكلام طلق مع روتين الاحتراف اليومي',
+        descFr: 'Transformez vos connaissances en fluidité',
+        descEn: 'Transform your knowledge into fluent speech',
+        url: 'https://dalilk.com/library/#fluency',
+        color: '#148f77',
+      },
+      {
+        icon: '📖',
+        titleAr: 'كتيب أهم 350 كلمة',
+        titleFr: 'Livret 350 mots essentiels',
+        titleEn: 'Top 350 Words Booklet',
+        descAr: 'الكلمات التي تتكرر في 80% من الكلام اليومي',
+        descFr: 'Les mots qui apparaissent dans 80% des conversations',
+        descEn: 'Words that appear in 80% of daily conversations',
+        url: 'https://dalilk.com/resources/foundation/words',
+        color: '#f59e0b',
+      },
+      {
+        icon: '📝',
+        titleAr: 'كتيب الـ 17 قاعدة',
+        titleFr: 'Livret des 17 règles',
+        titleEn: '17 Grammar Rules Booklet',
+        descAr: '17 قاعدة فقط تكفيك تكون جمل صحيحة من أول شهر',
+        descFr: '17 règles suffisent pour faire des phrases correctes',
+        descEn: '17 rules enough to form correct sentences from month one',
+        url: 'https://dalilk.com/resources/foundation/grammar',
+        color: '#8b5cf6',
+      },
+      {
+        icon: '🎧',
+        titleAr: 'بودكاست الاستماع اليومي',
+        titleFr: 'Podcast d\'écoute quotidienne',
+        titleEn: 'Daily Listening Podcast',
+        descAr: 'مدخلاتك اليومية المتجددة لتطوير الاستماع',
+        descFr: 'Vos entrées quotidiennes pour améliorer l\'écoute',
+        descEn: 'Your daily renewed input to improve listening',
+        url: 'https://dalilk.com/links/daily-podcast',
+        color: '#06b6d4',
+      },
+      {
+        icon: '📊',
+        titleAr: 'اختبر مستواك في 3 دقائق',
+        titleFr: 'Testez votre niveau en 3 minutes',
+        titleEn: 'Test Your Level in 3 Minutes',
+        descAr: 'اعرف من أين تبدأ بدقة',
+        descFr: 'Sachez exactement où commencer',
+        descEn: 'Know exactly where to start',
+        url: 'https://dalilk.com/tests/3min',
+        color: '#ef4444',
+      },
+    ].map((item, i) => (
+      <a
+        key={i}
+        href={item.url}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-start gap-3 p-4 rounded-2xl transition hover:scale-105 hover:opacity-90"
+        style={{background: `${item.color}15`, border: `2px solid ${item.color}`}}
+      >
+        <span className="text-3xl shrink-0">{item.icon}</span>
+        <div className="flex-1">
+          <div className="font-bold text-sm" style={{color: item.color}}>
+            {locale === 'ar' ? item.titleAr : locale === 'fr' ? item.titleFr : item.titleEn}
+          </div>
+          <div className="text-xs text-gray-500 mt-1">
+            {locale === 'ar' ? item.descAr : locale === 'fr' ? item.descFr : item.descEn}
+          </div>
+        </div>
+        <span className="text-lg shrink-0" style={{color: item.color}}>←</span>
+      </a>
+    ))}
+  </div>
+
+  <div className="p-4 text-center border-t" style={{borderColor: '#e6fffe'}}>
+    <a
+      href="https://dalilk.com/library/"
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-white transition hover:opacity-90"
+      style={{background: 'linear-gradient(135deg, #1abc9c, #148f77)'}}
+    >
+      {locale === 'ar' ? 'تصفح المكتبة كاملة ←' :
+       locale === 'fr' ? 'Parcourir toute la bibliothèque →' :
+       'Browse the full library →'}
+    </a>
+  </div>
+</div>
         {/* تبديل التبويبات */}
         <div className="flex rounded-2xl overflow-hidden mb-8 shadow-md bg-white">
           {(['vocab', 'grammar', 'quiz'] as const).map(tab => (
