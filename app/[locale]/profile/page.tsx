@@ -61,18 +61,18 @@ export default function ProfilePage() {
   };
 
   const getLevelColor = () => {
-    if (!profile) return '#079992';
-    if (profile.level === 1) return '#079992';
-    if (profile.level === 2) return '#fbbf24';
-    return '#f59e0b';
+    if (!profile) return '#1f7a55';
+    if (profile.level === 1) return '#1f7a55';
+    if (profile.level === 2) return '#c9a24a';
+    return '#b8893a';
   };
 
   if (loading) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
-          <div className="text-2xl font-bold" style={{color: '#0e6b55'}}>{t.loading}</div>
+          <div className="text-2xl font-bold" style={{color: '#0b5d4b'}}>{t.loading}</div>
         </div>
       </main>
     );
@@ -81,26 +81,26 @@ export default function ProfilePage() {
   if (!profile) return null;
 
   const stats = [
-    { icon: '📖', label: t.memorized, value: `${profile.memorizedSurahs} / 114`, color: '#079992' },
-    { icon: '🧠', label: t.quizzes, value: profile.completedQuizzes, color: '#fbbf24' },
-    { icon: '🇬🇧', label: t.english, value: `${profile.englishProgress}%`, color: '#06b6d4' },
-    { icon: '🇫🇷', label: t.french, value: `${profile.frenchProgress}%`, color: '#8b5cf6' },
+    { icon: '📖', label: t.memorized, value: `${profile.memorizedSurahs} / 114`, color: '#1f7a55' },
+    { icon: '🧠', label: t.quizzes, value: profile.completedQuizzes, color: '#c9a24a' },
+    { icon: '🇬🇧', label: t.english, value: `${profile.englishProgress}%`, color: '#2f7f8f' },
+    { icon: '🇫🇷', label: t.french, value: `${profile.frenchProgress}%`, color: '#6d5aa0' },
   ];
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-2xl mx-auto px-4 py-12">
 
         {/* رأس الملف الشخصي */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 mb-6 text-center" style={{border: '3px solid #079992'}}>
+        <div className="bg-white rounded-3xl shadow-xl p-8 mb-6 text-center" style={{border: '1px solid #1f7a55'}}>
           <div
             className="w-24 h-24 rounded-full flex items-center justify-center text-5xl mx-auto mb-4"
-            style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
+            style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
           >
             {profile.name.charAt(0).toUpperCase()}
           </div>
-          <h1 className="text-3xl font-bold mb-2" style={{color: '#0e6b55'}}>{profile.name}</h1>
+          <h1 className="text-3xl font-bold mb-2" style={{color: '#0b5d4b'}}>{profile.name}</h1>
           <p className="text-gray-400 mb-4">{profile.email}</p>
           <span
             className="px-4 py-2 rounded-full font-bold text-white text-sm"
@@ -113,7 +113,7 @@ export default function ProfilePage() {
         {/* الإحصائيات */}
         <div className="grid grid-cols-2 gap-4 mb-6">
           {stats.map((stat, i) => (
-            <div key={i} className="bg-white rounded-3xl p-5 shadow-md text-center" style={{border: `3px solid ${stat.color}`}}>
+            <div key={i} className="bg-white rounded-3xl p-5 shadow-md text-center" style={{border: `1px solid ${stat.color}`}}>
               <div className="text-4xl mb-2">{stat.icon}</div>
               <div className="text-2xl font-bold mb-1" style={{color: stat.color}}>{stat.value}</div>
               <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -122,14 +122,14 @@ export default function ProfilePage() {
         </div>
 
         {/* شريط التقدم العام */}
-        <div className="bg-white rounded-3xl p-6 shadow-md mb-6" style={{border: '3px solid #079992'}}>
-          <h2 className="font-bold text-lg mb-4" style={{color: '#0e6b55'}}>📊 {t.memorized}</h2>
-          <div className="w-full rounded-full h-4 mb-2" style={{background: '#e8f8f5'}}>
+        <div className="bg-white rounded-3xl p-6 shadow-md mb-6" style={{border: '1px solid #1f7a55'}}>
+          <h2 className="font-bold text-lg mb-4" style={{color: '#0b5d4b'}}>📊 {t.memorized}</h2>
+          <div className="w-full rounded-full h-4 mb-2" style={{background: '#eaf2ed'}}>
             <div
               className="h-4 rounded-full transition-all"
               style={{
                 width: `${(profile.memorizedSurahs / 114) * 100}%`,
-                background: 'linear-gradient(to right, #079992, #0e6b55)'
+                background: 'linear-gradient(to right, #1f7a55, #0b5d4b)'
               }}
             />
           </div>
@@ -143,13 +143,13 @@ export default function ProfilePage() {
           <button
             onClick={() => router.push(`/${locale}/dashboard`)}
             className="py-4 rounded-2xl font-bold text-white transition hover:opacity-90"
-            style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
+            style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
           >
             🏆 {t.goToDashboard}
           </button>
           <button
             className="py-4 rounded-2xl font-bold transition hover:opacity-90"
-            style={{background: '#e8f8f5', color: '#0e6b55', border: '2px solid #079992'}}
+            style={{background: '#eaf2ed', color: '#0b5d4b', border: '1.5px solid #1f7a55'}}
           >
             ✏️ {t.editProfile}
           </button>

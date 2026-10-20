@@ -79,24 +79,24 @@ const getWarshPageUrl = (page: number): string => {
 };
 
   return (
-    <main className="min-h-screen" style={{background: '#f5f0e8'}}>
+    <main className="min-h-screen" style={{background: '#faf6ec'}}>
       <Navbar />
 
       {/* رأس الصفحة */}
-      <div className="text-center py-4" style={{background: 'linear-gradient(135deg, #2d5a27, #4a7c3f)', color: 'white'}}>
-        <h1 className="text-2xl font-bold">📖 {t.title}</h1>
-        <p className="text-sm opacity-80">{t.subtitle}</p>
+      <div className="qt-keep islamic-pattern text-center py-8 px-4">
+        <h1 className="text-3xl md:text-4xl font-bold" style={{color: '#f3eddc'}}>{t.title}</h1>
+        <p className="text-sm md:text-base mt-1" style={{color: '#e6d3a0'}}>{t.subtitle}</p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-3 py-4">
+      <div className="max-w-3xl mx-auto px-3 sm:px-4 py-6">
 {/* تبديل بين حفص وورش */}
-<div className="flex rounded-2xl overflow-hidden shadow-md mb-4" style={{border: '2px solid #2d5a27'}}>
+<div className="flex rounded-2xl overflow-hidden shadow-md mb-4" style={{border: '1px solid #e3dcc8'}}>
   <button
     onClick={() => setMushafType('hafs')}
     className="flex-1 py-3 font-bold transition"
     style={mushafType === 'hafs'
-      ? {background: '#2d5a27', color: 'white'}
-      : {background: 'white', color: '#2d5a27'}
+      ? {background: '#0b5d4b', color: 'white'}
+      : {background: 'white', color: '#0b5d4b'}
     }
   >
     📖 {locale === 'ar' ? 'رواية حفص' : locale === 'fr' ? 'Riwayah Hafs' : 'Hafs'}
@@ -105,8 +105,8 @@ const getWarshPageUrl = (page: number): string => {
     onClick={() => setMushafType('warsh')}
     className="flex-1 py-3 font-bold transition"
     style={mushafType === 'warsh'
-      ? {background: '#2d5a27', color: 'white'}
-      : {background: 'white', color: '#2d5a27'}
+      ? {background: '#0b5d4b', color: 'white'}
+      : {background: 'white', color: '#0b5d4b'}
     }
   >
     📗 {locale === 'ar' ? 'رواية ورش' : locale === 'fr' ? 'Riwayah Warsh' : 'Warsh'}
@@ -116,15 +116,15 @@ const getWarshPageUrl = (page: number): string => {
 {mushafType === 'hafs' ? (
   <>
     {/* اختيار السورة */}
-    <div className="bg-white rounded-2xl p-4 mb-4 shadow-md" style={{border: '2px solid #2d5a27'}}>
-      <label className="block text-sm font-bold mb-2" style={{color: '#2d5a27'}}>
+    <div className="bg-white rounded-2xl p-4 mb-4 shadow-md" style={{border: '1px solid #e3dcc8'}}>
+      <label className="block text-sm font-bold mb-2" style={{color: '#0b5d4b'}}>
         📚 {t.selectSurah}
       </label>
       <select
         value={selectedSurah}
         onChange={e => handleSurahChange(Number(e.target.value))}
-        className="w-full rounded-xl p-3 font-bold outline-none text-right"
-        style={{border: '2px solid #2d5a27', color: '#2d5a27', background: '#f9fff9'}}
+        className="w-full rounded-xl p-3 font-bold outline-none text-start"
+        style={{border: '1.5px solid #0b5d4b', color: '#0b5d4b', background: '#faf6ec'}}
       >
         {Object.entries(surahPages).map(([num, s]) => (
           <option key={num} value={num}>
@@ -135,11 +135,11 @@ const getWarshPageUrl = (page: number): string => {
     </div>
 
     {/* صورة الصفحة */}
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-4" style={{border: '4px solid #d4af37'}}>
+    <div className="bg-white rounded-xl shadow-xl overflow-hidden mb-4" style={{border: '1px solid #c9a24a', outline: '6px solid #f3eddc'}}>
       {imgError ? (
         <div className="text-center py-20">
           <div className="text-5xl mb-4">📖</div>
-          <p style={{color: '#2d5a27'}}>
+          <p style={{color: '#0b5d4b'}}>
             {locale === 'ar' ? 'الصفحة غير متوفرة' : 'Page not available'}
           </p>
         </div>
@@ -155,19 +155,19 @@ const getWarshPageUrl = (page: number): string => {
     </div>
 
     {/* أزرار التنقل */}
-    <div className="flex items-center justify-between bg-white rounded-2xl p-3 shadow-md mb-4" style={{border: '2px solid #2d5a27'}}>
+    <div className="flex items-center justify-between bg-white rounded-2xl p-3 shadow-md mb-4" style={{border: '1px solid #e3dcc8'}}>
       <button onClick={handlePrev} disabled={currentPage === 1}
         className="px-5 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
-        style={{background: '#2d5a27'}}>
+        style={{background: '#0b5d4b'}}>
         ← {t.prev}
       </button>
       <div className="text-center">
-        <div className="font-bold" style={{color: '#2d5a27'}}>{surah.name}</div>
-        <div className="text-sm" style={{color: '#d4af37'}}>{t.page} {currentPage} {t.of} {surah.pages}</div>
+        <div className="font-bold" style={{color: '#0b5d4b'}}>{surah.name}</div>
+        <div className="text-sm" style={{color: '#c9a24a'}}>{t.page} {currentPage} {t.of} {surah.pages}</div>
       </div>
       <button onClick={handleNext} disabled={currentPage === surah.pages}
         className="px-5 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
-        style={{background: '#2d5a27'}}>
+        style={{background: '#0b5d4b'}}>
         {t.next} →
       </button>
     </div>
@@ -175,8 +175,8 @@ const getWarshPageUrl = (page: number): string => {
 ) : (
   <>
   {/* اختيار السورة في ورش */}
-<div className="bg-white rounded-2xl p-4 mb-4 shadow-md" style={{border: '2px solid #2d5a27'}}>
-  <label className="block text-sm font-bold mb-2" style={{color: '#2d5a27'}}>
+<div className="bg-white rounded-2xl p-4 mb-4 shadow-md" style={{border: '1px solid #e3dcc8'}}>
+  <label className="block text-sm font-bold mb-2" style={{color: '#0b5d4b'}}>
     📚 {t.selectSurah}
   </label>
   <select
@@ -187,8 +187,8 @@ const getWarshPageUrl = (page: number): string => {
       setWarshPage(surahPages[num].startPage || 1);
       setWarshImgError(false);
     }}
-    className="w-full rounded-xl p-3 font-bold outline-none text-right"
-    style={{border: '2px solid #2d5a27', color: '#2d5a27', background: '#f9fff9'}}
+    className="w-full rounded-xl p-3 font-bold outline-none text-start"
+    style={{border: '1.5px solid #0b5d4b', color: '#0b5d4b', background: '#faf6ec'}}
   >
     {Object.entries(surahPages).map(([num, s]) => (
       <option key={num} value={num}>
@@ -198,11 +198,11 @@ const getWarshPageUrl = (page: number): string => {
   </select>
 </div>
     {/* مصحف ورش */}
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-4" style={{border: '4px solid #d4af37'}}>
+    <div className="bg-white rounded-xl shadow-xl overflow-hidden mb-4" style={{border: '1px solid #c9a24a', outline: '6px solid #f3eddc'}}>
       {warshImgError ? (
         <div className="text-center py-20">
           <div className="text-5xl mb-4">📗</div>
-          <p style={{color: '#2d5a27'}}>
+          <p style={{color: '#0b5d4b'}}>
             {locale === 'ar' ? 'الصفحة غير متوفرة' : 'Page not available'}
           </p>
         </div>
@@ -217,16 +217,16 @@ const getWarshPageUrl = (page: number): string => {
     </div>
 
     {/* أزرار التنقل ورش */}
-    <div className="flex items-center justify-between bg-white rounded-2xl p-3 shadow-md mb-4" style={{border: '2px solid #2d5a27'}}>
+    <div className="flex items-center justify-between bg-white rounded-2xl p-3 shadow-md mb-4" style={{border: '1px solid #e3dcc8'}}>
       <button
         onClick={() => { setWarshPage(p => Math.max(1, p - 1)); setWarshImgError(false); }}
         disabled={warshPage === 1}
         className="px-5 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
-        style={{background: '#2d5a27'}}>
+        style={{background: '#0b5d4b'}}>
         ← {t.prev}
       </button>
       <div className="text-center">
-        <div className="font-bold" style={{color: '#2d5a27'}}>
+        <div className="font-bold" style={{color: '#0b5d4b'}}>
           {locale === 'ar' ? 'مصحف ورش' : locale === 'fr' ? 'Mushaf Warsh' : 'Warsh Mushaf'}
         </div>
         <div className="flex items-center gap-2 justify-center mt-1">
@@ -240,16 +240,16 @@ const getWarshPageUrl = (page: number): string => {
               if (val >= 1 && val <= 604) { setWarshPage(val); setWarshImgError(false); }
             }}
             className="w-16 text-center rounded-xl p-1 font-bold outline-none text-sm"
-            style={{border: '2px solid #2d5a27', color: '#2d5a27'}}
+            style={{border: '1.5px solid #0b5d4b', color: '#0b5d4b'}}
           />
-          <span className="text-sm" style={{color: '#d4af37'}}>/ 604</span>
+          <span className="text-sm" style={{color: '#c9a24a'}}>/ 604</span>
         </div>
       </div>
       <button
         onClick={() => { setWarshPage(p => Math.min(604, p + 1)); setWarshImgError(false); }}
         disabled={warshPage === 604}
         className="px-5 py-2 rounded-xl font-bold text-white transition disabled:opacity-30"
-        style={{background: '#2d5a27'}}>
+        style={{background: '#0b5d4b'}}>
         {t.next} →
       </button>
     </div>

@@ -296,9 +296,9 @@ const questions: Question[] = [
 ];
 
 const categoryColors = {
-  religious: '#079992',
-  scientific: '#fbbf24',
-  cultural: '#f59e0b',
+  religious: '#1f7a55',
+  scientific: '#c9a24a',
+  cultural: '#b8893a',
 };
 
 const categoryIcons = {
@@ -428,31 +428,31 @@ const handleNext = () => {
 
   if (finished) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
         <Navbar />
         <div className="max-w-lg mx-auto px-4 py-16 text-center">
-          <div className="bg-white rounded-3xl shadow-xl p-10" style={{border: '3px solid #079992'}}>
+          <div className="bg-white rounded-3xl shadow-xl p-10" style={{border: '1px solid #1f7a55'}}>
             <div className="text-7xl mb-4">🏆</div>
-            <h2 className="text-3xl font-bold mb-2" style={{color: '#0e6b55'}}>{t.result}</h2>
-            <div className="text-6xl font-bold my-6" style={{color: '#079992'}}>
+            <h2 className="text-3xl font-bold mb-2" style={{color: '#0b5d4b'}}>{t.result}</h2>
+            <div className="text-6xl font-bold my-6" style={{color: '#1f7a55'}}>
               {score} / {filteredQuestions.length}
             </div>
-            <div className="text-2xl font-bold mb-6" style={{color: '#fbbf24'}}>
+            <div className="text-2xl font-bold mb-6" style={{color: '#c9a24a'}}>
               {getResultText()}
             </div>
-            <div className="w-full rounded-full h-4 mb-8" style={{background: '#e8f8f5'}}>
+            <div className="w-full rounded-full h-4 mb-8" style={{background: '#eaf2ed'}}>
               <div
                 className="h-4 rounded-full transition-all"
                 style={{
                   width: `${(score / filteredQuestions.length) * 100}%`,
-                  background: 'linear-gradient(to right, #079992, #0e6b55)'
+                  background: 'linear-gradient(to right, #1f7a55, #0b5d4b)'
                 }}
               />
             </div>
             <button
               onClick={handleRestart}
               className="w-full py-4 rounded-2xl font-bold text-lg text-white transition hover:opacity-90"
-              style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
+              style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
             >
               🔄 {t.restart}
             </button>
@@ -463,13 +463,13 @@ const handleNext = () => {
   }
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-2xl mx-auto px-4 py-12">
 
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🧠</div>
-          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
 
@@ -481,8 +481,8 @@ const handleNext = () => {
               onClick={() => { setFilter(cat); handleRestart(); }}
               className="px-4 py-2 rounded-full font-bold text-sm transition"
               style={filter === cat
-                ? {background: '#0e6b55', color: 'white'}
-                : {background: 'white', color: '#0e6b55', border: '2px solid #079992'}
+                ? {background: '#0b5d4b', color: 'white'}
+                : {background: 'white', color: '#0b5d4b', border: '1.5px solid #1f7a55'}
               }
             >
               {cat === 'all' ? t.all : `${categoryIcons[cat]} ${t[cat]}`}
@@ -491,7 +491,7 @@ const handleNext = () => {
         </div>
 
         {/* بطاقة السؤال */}
-        <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: `3px solid ${categoryColors[currentQuestion.category]}`}}>
+        <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: `1px solid ${categoryColors[currentQuestion.category]}`}}>
 
           {/* رأس السؤال */}
           <div className="flex items-center justify-between mb-6">
@@ -505,7 +505,7 @@ const handleNext = () => {
           </div>
 
           {/* شريط التقدم */}
-          <div className="w-full rounded-full h-2 mb-6" style={{background: '#e8f8f5'}}>
+          <div className="w-full rounded-full h-2 mb-6" style={{background: '#eaf2ed'}}>
             <div
               className="h-2 rounded-full transition-all"
               style={{
@@ -516,7 +516,7 @@ const handleNext = () => {
           </div>
 
           {/* نص السؤال */}
-          <h2 className="text-xl font-bold text-center mb-8" style={{color: '#0e6b55'}}>
+          <h2 className="text-xl font-bold text-center mb-8" style={{color: '#0b5d4b'}}>
             {currentQuestion[locale].question}
           </h2>
 
@@ -525,8 +525,8 @@ const handleNext = () => {
             <div className="grid grid-cols-2 gap-3">
               {currentQuestion[locale].options?.map((option, i) => {
                 let bg = 'white';
-                let border = '#a9dfbf';
-                let color = '#0e6b55';
+                let border = '#cfe0d6';
+                let color = '#0b5d4b';
 
                 if (isAnswered) {
                   if (option === currentQuestion[locale].answer) {
@@ -541,7 +541,7 @@ const handleNext = () => {
                     key={i}
                     onClick={() => handleAnswer(option)}
                     className="p-4 rounded-2xl font-bold text-sm transition hover:opacity-90"
-                    style={{background: bg, border: `2px solid ${border}`, color}}
+                    style={{background: bg, border: `1.5px solid ${border}`, color}}
                   >
                     {option}
                   </button>
@@ -552,8 +552,8 @@ const handleNext = () => {
             <div className="grid grid-cols-2 gap-4">
               {[true, false].map((val) => {
                 let bg = 'white';
-                let border = '#a9dfbf';
-                let color = '#0e6b55';
+                let border = '#cfe0d6';
+                let color = '#0b5d4b';
 
                 if (isAnswered) {
                   if (val === currentQuestion[locale].answer) {
@@ -568,7 +568,7 @@ const handleNext = () => {
                     key={String(val)}
                     onClick={() => handleAnswer(val)}
                     className="p-5 rounded-2xl font-bold text-lg transition hover:opacity-90"
-                    style={{background: bg, border: `2px solid ${border}`, color}}
+                    style={{background: bg, border: `1.5px solid ${border}`, color}}
                   >
                     {val ? t.true : t.false}
                   </button>
@@ -595,7 +595,7 @@ const handleNext = () => {
             <button
               onClick={handleNext}
               className="w-full mt-6 py-4 rounded-2xl font-bold text-lg text-white transition hover:opacity-90"
-              style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
+              style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
             >
               {currentIndex + 1 >= filteredQuestions.length ? `🏁 ${t.finish}` : `${t.next} ←`}
             </button>
@@ -605,7 +605,7 @@ const handleNext = () => {
 
         {/* النقاط الحالية */}
         <div className="text-center mt-6">
-          <span className="font-bold text-lg" style={{color: '#0e6b55'}}>
+          <span className="font-bold text-lg" style={{color: '#0b5d4b'}}>
             ⭐ {score} / {currentIndex + (isAnswered ? 1 : 0)}
           </span>
         </div>
