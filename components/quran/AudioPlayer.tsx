@@ -95,15 +95,15 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl p-6 max-w-md mx-auto" style={{border: '3px solid #079992'}}>
+    <div className="card-premium p-6 md:p-7 max-w-md mx-auto" style={{borderTop: '1px solid #c9a24a'}}>
 
       {/* اسم السورة */}
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold" style={{color: '#0e6b55'}}>
+        <h2 className="text-2xl md:text-3xl font-bold" style={{color: '#0b5d4b'}}>
           سورة {currentSurah?.name}
         </h2>
-        <p className="text-gray-400 text-sm mt-1">الشيخ ياسين الجزائري — رواية ورش</p>
-        <p className="text-xs mt-1" style={{color: '#079992'}}>
+        <p className="text-gray-500 text-sm mt-1">الشيخ ياسين الجزائري — رواية ورش</p>
+        <p className="text-xs mt-1 font-semibold" style={{color: '#8f6b1c'}}>
           {currentSurahId} / {surahs.length}
         </p>
       </div>
@@ -111,16 +111,16 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
       {/* شريط التقدم قابل للنقر */}
       <div className="mb-4">
         <div
-          className="w-full rounded-full h-3 cursor-pointer"
-          style={{background: '#e8f8f5'}}
+          className="w-full rounded-full h-2 cursor-pointer"
+          style={{background: '#e3dcc8'}}
           onClick={handleProgressClick}
         >
           <div
-            className="h-3 rounded-full transition-all"
-            style={{width: `${progress}%`, background: 'linear-gradient(to right, #079992, #0e6b55)'}}
+            className="h-2 rounded-full transition-all"
+            style={{width: `${progress}%`, background: 'linear-gradient(to right, #c9a24a, #1f7a55)'}}
           />
         </div>
-        <div className="flex justify-between text-xs text-gray-400 mt-1">
+        <div dir="ltr" className="flex justify-between text-xs text-gray-500 mt-1.5 tabular-nums">
           <span>{formatTime((progress / 100) * duration)}</span>
           <span>{formatTime(duration)}</span>
         </div>
@@ -128,13 +128,14 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
 
       {/* أزرار التحكم */}
       <div className="flex items-center justify-center gap-6 mb-6">
-        <button onClick={handlePrev} className="transition hover:opacity-70" style={{color: '#0e6b55'}}>
+        <button onClick={handlePrev} aria-label="Previous" className="p-2 rounded-full transition hover:bg-black/5 cursor-pointer" style={{color: '#0b5d4b'}}>
           <SkipBack size={28} />
         </button>
         <button
           onClick={togglePlay}
-          className="text-white rounded-full p-4 transition hover:opacity-90"
-          style={{background: 'linear-gradient(135deg, #079992, #0e6b55)', boxShadow: '0 4px 15px rgba(0,206,201,0.4)'}}
+          aria-label="Play / Pause"
+          className="text-white rounded-full p-4 transition hover:brightness-110 cursor-pointer"
+          style={{background: '#0b5d4b', boxShadow: '0 6px 18px rgba(11,93,75,0.35), inset 0 0 0 2px rgba(201,162,74,0.55)'}}
         >
           {isLoading && !isPlaying
             ? <span className="text-sm px-1">...</span>
@@ -143,18 +144,18 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
             : <Play size={28} />
           }
         </button>
-        <button onClick={handleNext} className="transition hover:opacity-70" style={{color: '#0e6b55'}}>
+        <button onClick={handleNext} aria-label="Next" className="p-2 rounded-full transition hover:bg-black/5 cursor-pointer" style={{color: '#0b5d4b'}}>
           <SkipForward size={28} />
         </button>
       </div>
 
       {/* قائمة السور */}
-      <div className="mb-4 rounded-2xl overflow-hidden" style={{border: '2px solid #e8f8f5'}}>
+      <div className="mb-4 rounded-xl overflow-hidden" style={{border: '1px solid #e3dcc8'}}>
         <select
           value={currentSurahId}
           onChange={e => setCurrentSurahId(Number(e.target.value))}
           className="w-full px-4 py-3 text-right outline-none font-bold"
-          style={{color: '#0e6b55', background: '#f0fffe'}}
+          style={{color: '#0b5d4b', background: '#faf6ec'}}
         >
           {surahs.map(surah => (
             <option key={surah.id} value={surah.id}>
@@ -166,7 +167,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
 
       {/* التحكم في الصوت */}
       <div className="flex items-center gap-3">
-        <Volume2 size={18} style={{color: '#0e6b55'}} />
+        <Volume2 size={18} style={{color: '#0b5d4b'}} />
         <input
           type="range"
           min="0"
@@ -175,7 +176,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
           value={volume}
           onChange={handleVolumeChange}
           className="w-full"
-          style={{accentColor: '#079992'}}
+          style={{accentColor: '#1f7a55'}}
         />
       </div>
 

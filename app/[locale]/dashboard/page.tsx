@@ -91,10 +91,10 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
-          <div className="text-2xl font-bold" style={{color: '#0e6b55'}}>{t.loading}</div>
+          <div className="text-2xl font-bold" style={{color: '#0b5d4b'}}>{t.loading}</div>
         </div>
       </main>
     );
@@ -102,7 +102,7 @@ export default function DashboardPage() {
 
   if (!profile) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
           <div className="text-2xl font-bold" style={{color: '#dc2626'}}>{t.notFound}</div>
@@ -112,20 +112,20 @@ export default function DashboardPage() {
   }
 
   const techCards = [
-    { icon: '🐱', title: t.scratchTitle, desc: t.scratchDesc, color: '#079992', progress: 40 },
-    { icon: '🇬🇧', title: t.englishTitle, desc: t.englishDesc, color: '#fbbf24', progress: profile.englishProgress },
-    { icon: '🧠', title: t.quizTitle, desc: `${profile.completedQuizzes} ${t.quizDesc}`, color: '#f59e0b', progress: Math.min(100, profile.completedQuizzes * 10) },
+    { icon: '🐱', title: t.scratchTitle, desc: t.scratchDesc, color: '#1f7a55', progress: 40 },
+    { icon: '🇬🇧', title: t.englishTitle, desc: t.englishDesc, color: '#c9a24a', progress: profile.englishProgress },
+    { icon: '🧠', title: t.quizTitle, desc: `${profile.completedQuizzes} ${t.quizDesc}`, color: '#b8893a', progress: Math.min(100, profile.completedQuizzes * 10) },
   ];
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
 
         {/* ترحيب */}
         <div className="text-center mb-10">
           <div className="text-6xl mb-4">🏆</div>
-          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>
+          <h1 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>
             {t.hello} {profile.name}! 👋
           </h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
@@ -134,23 +134,23 @@ export default function DashboardPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-8">
 
           {/* تقدم الحفظ */}
-          <div className="bg-white rounded-3xl p-6 shadow-lg" style={{border: '3px solid #079992'}}>
-            <h2 className="text-xl font-bold mb-4" style={{color: '#0e6b55'}}>📖 {t.quranProgress}</h2>
+          <div className="bg-white rounded-3xl p-6 shadow-lg" style={{border: '1px solid #1f7a55'}}>
+            <h2 className="text-xl font-bold mb-4" style={{color: '#0b5d4b'}}>📖 {t.quranProgress}</h2>
             <div className="text-center mb-4">
-              <span className="text-5xl font-bold" style={{color: '#079992'}}>{profile.memorizedSurahs}</span>
+              <span className="text-5xl font-bold" style={{color: '#1f7a55'}}>{profile.memorizedSurahs}</span>
               <span className="text-gray-400"> / 114</span>
             </div>
-            <div className="w-full rounded-full h-3 mb-4" style={{background: '#e8f8f5'}}>
+            <div className="w-full rounded-full h-3 mb-4" style={{background: '#eaf2ed'}}>
               <div
                 className="h-3 rounded-full transition-all"
                 style={{
                   width: `${(profile.memorizedSurahs / 114) * 100}%`,
-                  background: 'linear-gradient(to right, #079992, #0e6b55)'
+                  background: 'linear-gradient(to right, #1f7a55, #0b5d4b)'
                 }}
               />
             </div>
             <div className="text-center mb-4">
-              <span className="text-sm font-bold px-3 py-1 rounded-full" style={{background: '#e8f8f5', color: '#0e6b55'}}>
+              <span className="text-sm font-bold px-3 py-1 rounded-full" style={{background: '#eaf2ed', color: '#0b5d4b'}}>
                 {t.level}: {getLevel()}
               </span>
             </div>
@@ -159,7 +159,7 @@ export default function DashboardPage() {
                 onClick={handleAddSurah}
                 disabled={saving}
                 className="flex-1 py-2 rounded-2xl font-bold text-white transition hover:opacity-90"
-                style={{background: saving ? '#a9dfbf' : '#079992'}}
+                style={{background: saving ? '#cfe0d6' : '#1f7a55'}}
               >
                 {saving ? '⏳' : t.addSurah}
               </button>
@@ -175,8 +175,8 @@ export default function DashboardPage() {
           </div>
 
           {/* تقدم التكنولوجيا */}
-          <div className="bg-white rounded-3xl p-6 shadow-lg" style={{border: '3px solid #fbbf24'}}>
-            <h2 className="text-xl font-bold mb-4" style={{color: '#d97706'}}>💻 {t.techProgress}</h2>
+          <div className="bg-white rounded-3xl p-6 shadow-lg" style={{border: '1px solid #c9a24a'}}>
+            <h2 className="text-xl font-bold mb-4" style={{color: '#8f6b1c'}}>💻 {t.techProgress}</h2>
             <div className="space-y-4">
               {techCards.map((card, i) => (
                 <div key={i} className="rounded-2xl p-3" style={{background: `${card.color}15`}}>
@@ -199,7 +199,7 @@ export default function DashboardPage() {
         </div>
 
         {/* نظام الشارات */}
-        <div className="bg-white rounded-3xl shadow-lg" style={{border: '3px solid #079992'}}>
+        <div className="bg-white rounded-3xl shadow-lg" style={{border: '1px solid #1f7a55'}}>
           <BadgeSystem memorizedSurahs={profile.memorizedSurahs} locale={locale} />
         </div>
 

@@ -215,18 +215,18 @@ export default function EnglishPage() {
   };
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
 
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🇬🇧</div>
-          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
 {/* قسم مكتبة دليلك */}
-<div className="mb-8 bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '3px solid #1abc9c'}}>
-  <div className="p-4 text-white text-center" style={{background: 'linear-gradient(135deg, #1abc9c, #148f77)'}}>
+<div className="mb-8 bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '1px solid #1f7a55'}}>
+  <div className="p-4 text-white text-center" style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}>
     <div className="text-3xl mb-1">📚</div>
     <h2 className="font-bold text-lg">
       {locale === 'ar' ? 'مكتبة دليلك — تعلم الإنجليزية مجاناً' :
@@ -251,7 +251,7 @@ export default function EnglishPage() {
         descFr: 'Commencez de zéro avec défi 7 jours + routine quotidienne',
         descEn: 'Start from scratch with 7-day challenge + daily routine',
         url: 'https://dalilk.com/library/#foundation',
-        color: '#1abc9c',
+        color: '#1f7a55',
       },
       {
         icon: '🚀',
@@ -262,7 +262,7 @@ export default function EnglishPage() {
         descFr: 'Transformez vos connaissances en fluidité',
         descEn: 'Transform your knowledge into fluent speech',
         url: 'https://dalilk.com/library/#fluency',
-        color: '#148f77',
+        color: '#0b5d4b',
       },
       {
         icon: '📖',
@@ -273,7 +273,7 @@ export default function EnglishPage() {
         descFr: 'Les mots qui apparaissent dans 80% des conversations',
         descEn: 'Words that appear in 80% of daily conversations',
         url: 'https://dalilk.com/resources/foundation/words',
-        color: '#f59e0b',
+        color: '#b8893a',
       },
       {
         icon: '📝',
@@ -284,7 +284,7 @@ export default function EnglishPage() {
         descFr: '17 règles suffisent pour faire des phrases correctes',
         descEn: '17 rules enough to form correct sentences from month one',
         url: 'https://dalilk.com/resources/foundation/grammar',
-        color: '#8b5cf6',
+        color: '#6d5aa0',
       },
       {
         icon: '🎧',
@@ -295,7 +295,7 @@ export default function EnglishPage() {
         descFr: 'Vos entrées quotidiennes pour améliorer l\'écoute',
         descEn: 'Your daily renewed input to improve listening',
         url: 'https://dalilk.com/links/daily-podcast',
-        color: '#06b6d4',
+        color: '#2f7f8f',
       },
       {
         icon: '📊',
@@ -315,7 +315,7 @@ export default function EnglishPage() {
         target="_blank"
         rel="noreferrer"
         className="flex items-start gap-3 p-4 rounded-2xl transition hover:scale-105 hover:opacity-90"
-        style={{background: `${item.color}15`, border: `2px solid ${item.color}`}}
+        style={{background: `${item.color}15`, border: `1.5px solid ${item.color}`}}
       >
         <span className="text-3xl shrink-0">{item.icon}</span>
         <div className="flex-1">
@@ -331,13 +331,13 @@ export default function EnglishPage() {
     ))}
   </div>
 
-  <div className="p-4 text-center border-t" style={{borderColor: '#e6fffe'}}>
+  <div className="p-4 text-center border-t" style={{borderColor: '#f7f3e8'}}>
     <a
       href="https://dalilk.com/library/"
       target="_blank"
       rel="noreferrer"
       className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-white transition hover:opacity-90"
-      style={{background: 'linear-gradient(135deg, #1abc9c, #148f77)'}}
+      style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
     >
       {locale === 'ar' ? 'تصفح المكتبة كاملة ←' :
        locale === 'fr' ? 'Parcourir toute la bibliothèque →' :
@@ -353,8 +353,8 @@ export default function EnglishPage() {
               onClick={() => setActiveTab(tab)}
               className="flex-1 py-3 font-bold text-sm transition"
               style={activeTab === tab
-                ? {background: '#079992', color: 'white'}
-                : {color: '#0e6b55'}
+                ? {background: '#1f7a55', color: 'white'}
+                : {color: '#0b5d4b'}
               }
             >
               {tab === 'vocab' ? `📖 ${t.vocab}` : tab === 'grammar' ? `📝 ${t.grammar}` : `🎯 ${t.quiz}`}
@@ -373,8 +373,8 @@ export default function EnglishPage() {
                   onClick={() => setVocabFilter(cat)}
                   className="px-3 py-1 rounded-full text-sm font-bold transition"
                   style={vocabFilter === cat
-                    ? {background: '#0e6b55', color: 'white'}
-                    : {background: 'white', color: '#0e6b55', border: '2px solid #079992'}
+                    ? {background: '#0b5d4b', color: 'white'}
+                    : {background: 'white', color: '#0b5d4b', border: '1.5px solid #1f7a55'}
                   }
                 >
                   {t[cat as keyof typeof t]}
@@ -389,17 +389,17 @@ export default function EnglishPage() {
                   key={i}
                   onClick={() => setFlipped(flipped === i ? null : i)}
                   className="bg-white rounded-3xl p-6 text-center cursor-pointer transition hover:scale-105 shadow-md"
-                  style={{border: '3px solid #079992', minHeight: '140px'}}
+                  style={{border: '1px solid #1f7a55', minHeight: '140px'}}
                 >
                   <div className="text-5xl mb-3">{word.emoji}</div>
                   {flipped === i ? (
                     <div>
-                      <div className="font-bold text-lg" style={{color: '#0e6b55'}}>{word.translation}</div>
+                      <div className="font-bold text-lg" style={{color: '#0b5d4b'}}>{word.translation}</div>
                       <div className="text-sm text-gray-400 mt-1">{word.word}</div>
                     </div>
                   ) : (
                     <div>
-                      <div className="font-bold text-lg" style={{color: '#0e6b55'}}>{word.word}</div>
+                      <div className="font-bold text-lg" style={{color: '#0b5d4b'}}>{word.word}</div>
                       <div className="text-xs text-gray-400 mt-1">{t.clickToFlip}</div>
                     </div>
                   )}
@@ -413,8 +413,8 @@ export default function EnglishPage() {
         {activeTab === 'grammar' && (
           <div className="space-y-6">
             {grammar.map((section, i) => (
-              <div key={i} className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: '3px solid #fbbf24'}}>
-                <div className="p-4 flex items-center gap-3" style={{background: '#fbbf24'}}>
+              <div key={i} className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: '1px solid #c9a24a'}}>
+                <div className="p-4 flex items-center gap-3" style={{background: '#c9a24a'}}>
                   <span className="text-3xl">{section.icon}</span>
                   <h2 className="font-bold text-lg text-white">
                     {locale === 'ar' ? section.titleAr : locale === 'fr' ? section.titleFr : section.titleEn}
@@ -422,9 +422,9 @@ export default function EnglishPage() {
                 </div>
                 <div className="p-4 grid grid-cols-2 md:grid-cols-3 gap-3">
                   {section.items.map((item, j) => (
-                    <div key={j} className="rounded-2xl p-3 text-center" style={{background: '#fffbeb', border: '2px solid #fbbf24'}}>
-                      <div className="font-bold text-lg" style={{color: '#d97706'}}>{item.en}</div>
-                      <div className="text-sm font-bold" style={{color: '#0e6b55'}}>{item.ar}</div>
+                    <div key={j} className="rounded-2xl p-3 text-center" style={{background: '#faf3dc', border: '1.5px solid #c9a24a'}}>
+                      <div className="font-bold text-lg" style={{color: '#8f6b1c'}}>{item.en}</div>
+                      <div className="text-sm font-bold" style={{color: '#0b5d4b'}}>{item.ar}</div>
                       <div className="text-xs text-gray-400 mt-1 italic">{item.example}</div>
                     </div>
                   ))}
@@ -438,38 +438,38 @@ export default function EnglishPage() {
         {activeTab === 'quiz' && (
           <div className="max-w-lg mx-auto">
             {quizFinished ? (
-              <div className="bg-white rounded-3xl shadow-xl p-10 text-center" style={{border: '3px solid #079992'}}>
+              <div className="bg-white rounded-3xl shadow-xl p-10 text-center" style={{border: '1px solid #1f7a55'}}>
                 <div className="text-7xl mb-4">🏆</div>
-                <h2 className="text-2xl font-bold mb-4" style={{color: '#0e6b55'}}>{t.result}</h2>
-                <div className="text-5xl font-bold mb-6" style={{color: '#079992'}}>
+                <h2 className="text-2xl font-bold mb-4" style={{color: '#0b5d4b'}}>{t.result}</h2>
+                <div className="text-5xl font-bold mb-6" style={{color: '#1f7a55'}}>
                   {quizScore} / {quizWords.length}
                 </div>
                 <button
                   onClick={handleQuizRestart}
                   className="w-full py-3 rounded-2xl font-bold text-white"
-                  style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
+                  style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
                 >
                   🔄 {t.restart}
                 </button>
               </div>
             ) : (
-              <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: '3px solid #079992'}}>
+              <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: '1px solid #1f7a55'}}>
                 <div className="flex justify-between mb-4">
                   <span className="text-sm text-gray-400">{quizIndex + 1} / {quizWords.length}</span>
-                  <span className="text-sm font-bold" style={{color: '#079992'}}>⭐ {quizScore}</span>
+                  <span className="text-sm font-bold" style={{color: '#1f7a55'}}>⭐ {quizScore}</span>
                 </div>
-                <div className="w-full rounded-full h-2 mb-6" style={{background: '#e8f8f5'}}>
-                  <div className="h-2 rounded-full" style={{width: `${((quizIndex + 1) / quizWords.length) * 100}%`, background: '#079992'}} />
+                <div className="w-full rounded-full h-2 mb-6" style={{background: '#eaf2ed'}}>
+                  <div className="h-2 rounded-full" style={{width: `${((quizIndex + 1) / quizWords.length) * 100}%`, background: '#1f7a55'}} />
                 </div>
                 <div className="text-center mb-8">
                   <div className="text-6xl mb-4">{currentQuizWord.emoji}</div>
-                  <h2 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{currentQuizWord.word}</h2>
+                  <h2 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>{currentQuizWord.word}</h2>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {quizOptions.map((option, i) => {
                     let bg = 'white';
-                    let border = '#a9dfbf';
-                    let color = '#0e6b55';
+                    let border = '#cfe0d6';
+                    let color = '#0b5d4b';
                     if (quizAnswered) {
                       if (option === currentQuizWord.translation) { bg = '#dcfce7'; border = '#16a34a'; color = '#16a34a'; }
                       else if (option === quizSelected) { bg = '#fee2e2'; border = '#dc2626'; color = '#dc2626'; }
@@ -479,7 +479,7 @@ export default function EnglishPage() {
                         key={i}
                         onClick={() => handleQuizAnswer(option)}
                         className="p-4 rounded-2xl font-bold transition hover:opacity-90"
-                        style={{background: bg, border: `2px solid ${border}`, color}}
+                        style={{background: bg, border: `1.5px solid ${border}`, color}}
                       >
                         {option}
                       </button>
@@ -498,7 +498,7 @@ export default function EnglishPage() {
                     <button
                       onClick={handleQuizNext}
                       className="w-full mt-4 py-3 rounded-2xl font-bold text-white"
-                      style={{background: 'linear-gradient(135deg, #079992, #0e6b55)'}}
+                      style={{background: 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
                     >
                       {quizIndex + 1 >= quizWords.length ? `🏁 ${t.finish}` : `${t.next} →`}
                     </button>

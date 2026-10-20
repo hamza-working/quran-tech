@@ -42,36 +42,36 @@ export default function AdminPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+      <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
         <Navbar />
         <div className="flex items-center justify-center h-96">
-          <div className="text-2xl font-bold" style={{color: '#0e6b55'}}>جاري التحميل...</div>
+          <div className="text-2xl font-bold" style={{color: '#0b5d4b'}}>جاري التحميل...</div>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-6xl mx-auto px-4 py-12">
 
         {/* رأس الصفحة */}
         <div className="text-center mb-10">
           <div className="text-5xl mb-3">⚙️</div>
-          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>لوحة تحكم المشرف</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>لوحة تحكم المشرف</h1>
           <p className="text-gray-400 mt-2">إدارة الأطفال المسجلين ومتابعة تقدمهم</p>
         </div>
 
         {/* إحصائيات عامة */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { icon: '👦', label: 'الأطفال المسجلين', value: children.length, color: '#079992' },
-            { icon: '📖', label: 'متوسط السور المحفوظة', value: avgMemorized, color: '#fbbf24' },
-            { icon: '🧠', label: 'إجمالي الاختبارات', value: totalQuizzes, color: '#f59e0b' },
-            { icon: '⭐', label: 'إجمالي السور المحفوظة', value: totalMemorized, color: '#06b6d4' },
+            { icon: '👦', label: 'الأطفال المسجلين', value: children.length, color: '#1f7a55' },
+            { icon: '📖', label: 'متوسط السور المحفوظة', value: avgMemorized, color: '#c9a24a' },
+            { icon: '🧠', label: 'إجمالي الاختبارات', value: totalQuizzes, color: '#b8893a' },
+            { icon: '⭐', label: 'إجمالي السور المحفوظة', value: totalMemorized, color: '#2f7f8f' },
           ].map((stat, i) => (
-            <div key={i} className="bg-white rounded-3xl p-5 text-center shadow-md" style={{border: `3px solid ${stat.color}`}}>
+            <div key={i} className="bg-white rounded-3xl p-5 text-center shadow-md" style={{border: `1px solid ${stat.color}`}}>
               <div className="text-3xl mb-2">{stat.icon}</div>
               <div className="text-2xl font-bold" style={{color: stat.color}}>{stat.value}</div>
               <div className="text-gray-400 text-xs mt-1">{stat.label}</div>
@@ -84,14 +84,14 @@ export default function AdminPage() {
           <button
             onClick={() => setActiveTab('children')}
             className="flex-1 py-3 font-bold transition"
-            style={activeTab === 'children' ? {background: '#079992', color: 'white'} : {color: '#0e6b55'}}
+            style={activeTab === 'children' ? {background: '#1f7a55', color: 'white'} : {color: '#0b5d4b'}}
           >
             👦 قائمة الأطفال
           </button>
           <button
             onClick={() => setActiveTab('stats')}
             className="flex-1 py-3 font-bold transition"
-            style={activeTab === 'stats' ? {background: '#079992', color: 'white'} : {color: '#0e6b55'}}
+            style={activeTab === 'stats' ? {background: '#1f7a55', color: 'white'} : {color: '#0b5d4b'}}
           >
             📊 إحصائيات تفصيلية
           </button>
@@ -108,16 +108,16 @@ export default function AdminPage() {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 className="w-full rounded-2xl px-4 py-3 text-right outline-none bg-white"
-                style={{border: '2px solid #a9dfbf', color: '#333'}}
+                style={{border: '1.5px solid #cfe0d6', color: '#333'}}
               />
             </div>
 
             {/* جدول الأطفال */}
-            <div className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: '3px solid #079992'}}>
+            <div className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: '1px solid #1f7a55'}}>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr style={{background: '#0e6b55', color: 'white'}}>
+                    <tr style={{background: '#0b5d4b', color: 'white'}}>
                       <th className="p-4 text-right">الاسم</th>
                       <th className="p-4 text-right">البريد</th>
                       <th className="p-4 text-center">المستوى</th>
@@ -132,15 +132,15 @@ export default function AdminPage() {
                         key={child.uid}
                         className="border-b transition hover:opacity-90"
                         style={{
-                          borderColor: '#e8f8f5',
-                          background: i % 2 === 0 ? 'white' : '#f0fffe'
+                          borderColor: '#eaf2ed',
+                          background: i % 2 === 0 ? 'white' : '#f7f3e8'
                         }}
                       >
-                        <td className="p-4 font-bold" style={{color: '#0e6b55'}}>
+                        <td className="p-4 font-bold" style={{color: '#0b5d4b'}}>
                           <div className="flex items-center gap-2">
                             <div
                               className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
-                              style={{background: '#079992'}}
+                              style={{background: '#1f7a55'}}
                             >
                               {child.name.charAt(0).toUpperCase()}
                             </div>
@@ -150,20 +150,20 @@ export default function AdminPage() {
                         <td className="p-4 text-gray-400 text-sm">{child.email}</td>
                         <td className="p-4 text-center">
                           <span className="px-2 py-1 rounded-full text-white text-xs font-bold"
-                            style={{background: child.level === 1 ? '#079992' : child.level === 2 ? '#fbbf24' : '#f59e0b'}}>
+                            style={{background: child.level === 1 ? '#1f7a55' : child.level === 2 ? '#c9a24a' : '#b8893a'}}>
                             {child.level === 1 ? 'مبتدئ' : child.level === 2 ? 'متوسط' : 'متقدم'}
                           </span>
                         </td>
                         <td className="p-4 text-center">
                           <div className="flex items-center gap-2 justify-center">
-                            <div className="w-16 rounded-full h-2" style={{background: '#e8f8f5'}}>
-                              <div className="h-2 rounded-full" style={{width: `${(child.memorizedSurahs / 114) * 100}%`, background: '#079992'}} />
+                            <div className="w-16 rounded-full h-2" style={{background: '#eaf2ed'}}>
+                              <div className="h-2 rounded-full" style={{width: `${(child.memorizedSurahs / 114) * 100}%`, background: '#1f7a55'}} />
                             </div>
-                            <span className="font-bold text-sm" style={{color: '#079992'}}>{child.memorizedSurahs}</span>
+                            <span className="font-bold text-sm" style={{color: '#1f7a55'}}>{child.memorizedSurahs}</span>
                           </div>
                         </td>
-                        <td className="p-4 text-center font-bold" style={{color: '#fbbf24'}}>{child.completedQuizzes}</td>
-                        <td className="p-4 text-center font-bold" style={{color: '#06b6d4'}}>{child.englishProgress}%</td>
+                        <td className="p-4 text-center font-bold" style={{color: '#8f6b1c'}}>{child.completedQuizzes}</td>
+                        <td className="p-4 text-center font-bold" style={{color: '#2f7f8f'}}>{child.englishProgress}%</td>
                       </tr>
                     ))}
                   </tbody>
@@ -181,12 +181,12 @@ export default function AdminPage() {
           <div className="grid md:grid-cols-2 gap-6">
 
             {/* توزيع المستويات */}
-            <div className="bg-white rounded-3xl p-6 shadow-md" style={{border: '3px solid #079992'}}>
-              <h2 className="font-bold text-lg mb-4" style={{color: '#0e6b55'}}>📊 توزيع المستويات</h2>
+            <div className="bg-white rounded-3xl p-6 shadow-md" style={{border: '1px solid #1f7a55'}}>
+              <h2 className="font-bold text-lg mb-4" style={{color: '#0b5d4b'}}>📊 توزيع المستويات</h2>
               {[
-                { label: 'مبتدئ 🌱', level: 1, color: '#079992' },
-                { label: 'متوسط ⭐', level: 2, color: '#fbbf24' },
-                { label: 'متقدم 👑', level: 3, color: '#f59e0b' },
+                { label: 'مبتدئ 🌱', level: 1, color: '#1f7a55' },
+                { label: 'متوسط ⭐', level: 2, color: '#c9a24a' },
+                { label: 'متقدم 👑', level: 3, color: '#b8893a' },
               ].map((lvl, i) => {
                 const count = children.filter(c => c.level === lvl.level).length;
                 const percentage = children.length > 0 ? Math.round((count / children.length) * 100) : 0;
@@ -205,24 +205,24 @@ export default function AdminPage() {
             </div>
 
             {/* أفضل الأطفال حفظاً */}
-            <div className="bg-white rounded-3xl p-6 shadow-md" style={{border: '3px solid #fbbf24'}}>
-              <h2 className="font-bold text-lg mb-4" style={{color: '#d97706'}}>🏆 أكثر الأطفال حفظاً</h2>
+            <div className="bg-white rounded-3xl p-6 shadow-md" style={{border: '1px solid #c9a24a'}}>
+              <h2 className="font-bold text-lg mb-4" style={{color: '#8f6b1c'}}>🏆 أكثر الأطفال حفظاً</h2>
               {children
                 .sort((a, b) => b.memorizedSurahs - a.memorizedSurahs)
                 .slice(0, 5)
                 .map((child, i) => (
                   <div key={i} className="flex items-center gap-3 mb-3">
-                    <span className="font-bold text-lg" style={{color: '#fbbf24'}}>#{i + 1}</span>
+                    <span className="font-bold text-lg" style={{color: '#8f6b1c'}}>#{i + 1}</span>
                     <div
                       className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
-                      style={{background: '#079992'}}
+                      style={{background: '#1f7a55'}}
                     >
                       {child.name.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-sm" style={{color: '#0e6b55'}}>{child.name}</div>
+                      <div className="font-bold text-sm" style={{color: '#0b5d4b'}}>{child.name}</div>
                     </div>
-                    <span className="font-bold" style={{color: '#079992'}}>{child.memorizedSurahs} سورة</span>
+                    <span className="font-bold" style={{color: '#1f7a55'}}>{child.memorizedSurahs} سورة</span>
                   </div>
                 ))}
               {children.length === 0 && (

@@ -211,13 +211,13 @@ export default function TajweedPage() {
   const selected = rules.find(r => r.id === selectedRule);
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
 
         <div className="text-center mb-10">
           <div className="text-5xl mb-3">📖</div>
-          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
 
@@ -229,7 +229,7 @@ export default function TajweedPage() {
                 key={rule.id}
                 onClick={() => setSelectedRule(rule.id)}
                 className="bg-white rounded-3xl p-6 cursor-pointer transition hover:scale-105 shadow-md"
-                style={{border: `3px solid ${rule.color}`}}
+                style={{border: `1px solid ${rule.color}`}}
               >
                 <div className="flex items-center gap-4 mb-3">
                   <span className="text-4xl">{rule.icon}</span>
@@ -258,12 +258,12 @@ export default function TajweedPage() {
             <button
               onClick={() => setSelectedRule(null)}
               className="mb-6 px-4 py-2 rounded-2xl font-bold transition hover:opacity-90"
-              style={{background: '#e8f8f5', color: '#0e6b55', border: '2px solid #079992'}}
+              style={{background: '#eaf2ed', color: '#0b5d4b', border: '1.5px solid #1f7a55'}}
             >
               ← {t.back}
             </button>
 
-            <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: `4px solid ${selected.color}`}}>
+            <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: `1px solid ${selected.color}`}}>
               <div className="text-center mb-8">
                 <div className="text-6xl mb-4">{selected.icon}</div>
                 <h2 className="text-3xl font-bold mb-2" style={{color: selected.color}}>
@@ -276,26 +276,26 @@ export default function TajweedPage() {
 
               <div className="grid md:grid-cols-3 gap-4">
                 {/* الحروف */}
-                <div className="rounded-2xl p-5 text-center" style={{background: `${selected.color}15`, border: `2px solid ${selected.color}`}}>
+                <div className="rounded-2xl p-5 text-center" style={{background: `${selected.color}15`, border: `1.5px solid ${selected.color}`}}>
                   <div className="font-bold mb-2" style={{color: selected.color}}>📝 {t.letters}</div>
-                  <div className="text-2xl font-bold" style={{color: '#0e6b55', lineHeight: '2'}}>
+                  <div className="text-2xl font-bold" style={{color: '#0b5d4b', lineHeight: '2'}}>
                     {selected.lettersAr}
                   </div>
                 </div>
 
                 {/* المثال */}
-                <div className="rounded-2xl p-5 text-center" style={{background: '#fffbeb', border: '2px solid #fbbf24'}}>
-                  <div className="font-bold mb-2" style={{color: '#d97706'}}>💡 {t.example}</div>
-                  <div className="text-4xl font-bold mb-2" style={{color: '#0e6b55'}}>
+                <div className="rounded-2xl p-5 text-center" style={{background: '#faf3dc', border: '1.5px solid #c9a24a'}}>
+                  <div className="font-bold mb-2" style={{color: '#8f6b1c'}}>💡 {t.example}</div>
+                  <div className="text-4xl font-bold mb-2" style={{color: '#0b5d4b'}}>
                     {selected.example}
                   </div>
                   <div className="text-sm text-gray-400">{selected.exampleTranslation}</div>
                 </div>
 
                 {/* المدة */}
-                <div className="rounded-2xl p-5 text-center" style={{background: '#e8f8f5', border: '2px solid #079992'}}>
-                  <div className="font-bold mb-2" style={{color: '#0e6b55'}}>⏱️ {t.duration}</div>
-                  <div className="text-xl font-bold" style={{color: '#079992'}}>
+                <div className="rounded-2xl p-5 text-center" style={{background: '#eaf2ed', border: '1.5px solid #1f7a55'}}>
+                  <div className="font-bold mb-2" style={{color: '#0b5d4b'}}>⏱️ {t.duration}</div>
+                  <div className="text-xl font-bold" style={{color: '#1f7a55'}}>
                     {selected.duration}
                   </div>
                 </div>
@@ -306,7 +306,7 @@ export default function TajweedPage() {
   <h3 className="font-bold mb-3 text-center" style={{color: selected.color}}>
     🎧 {locale === 'ar' ? 'استمع للمثال' : locale === 'fr' ? 'Écouter l\'exemple' : 'Listen to Example'}
   </h3>
-  <div className="rounded-2xl p-4 text-center" style={{background: `${selected.color}10`, border: `2px solid ${selected.color}`}}>
+  <div className="rounded-2xl p-4 text-center" style={{background: `${selected.color}10`, border: `1.5px solid ${selected.color}`}}>
     <p className="text-sm text-gray-500 mb-3">
       {locale === 'ar' ? `من سورة ${selected.audioSurah} — برواية ورش` :
        locale === 'fr' ? `De la sourate ${selected.audioSurah} — Warsh` :
@@ -328,18 +328,18 @@ export default function TajweedPage() {
                 onClick={() => setSelectedRule(prev => prev && prev > 1 ? prev - 1 : prev)}
                 disabled={selectedRule === 1}
                 className="px-6 py-3 rounded-2xl font-bold transition hover:opacity-90 disabled:opacity-30"
-                style={{background: '#0e6b55', color: 'white'}}
+                style={{background: '#0b5d4b', color: 'white'}}
               >
                 ← {locale === 'ar' ? 'السابق' : locale === 'fr' ? 'Précédent' : 'Previous'}
               </button>
-              <span className="flex items-center font-bold" style={{color: '#0e6b55'}}>
+              <span className="flex items-center font-bold" style={{color: '#0b5d4b'}}>
                 {selectedRule} / {rules.length}
               </span>
               <button
                 onClick={() => setSelectedRule(prev => prev && prev < rules.length ? prev + 1 : prev)}
                 disabled={selectedRule === rules.length}
                 className="px-6 py-3 rounded-2xl font-bold transition hover:opacity-90 disabled:opacity-30"
-                style={{background: '#0e6b55', color: 'white'}}
+                style={{background: '#0b5d4b', color: 'white'}}
               >
                 {locale === 'ar' ? 'التالي' : locale === 'fr' ? 'Suivant' : 'Next'} →
               </button>
