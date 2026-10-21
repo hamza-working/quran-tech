@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
+import PageIcon from '@/components/shared/PageIcon';
+import { MessageCircle } from 'lucide-react';
 
 const whatsappUrl = 'https://wa.me/212600000000';
 const emailUrl = 'mailto:info@quran-tech.ma';
@@ -14,7 +16,8 @@ export default function ContactPage() {
       <Navbar />
       <div className="max-w-2xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <div className="text-6xl mb-4">💬</div>
+          
+          <PageIcon icon={MessageCircle} />
           <h1 className="text-4xl font-bold" style={{color: '#0b5d4b'}}>{t('title')}</h1>
           <p className="text-gray-400 mt-2">{t('subtitle')}</p>
         </div>
