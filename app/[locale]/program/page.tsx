@@ -1,5 +1,8 @@
 'use client';
 
+import { readableOn, textTone } from '@/lib/contrast';
+import PageIcon from '@/components/shared/PageIcon';
+import { GraduationCap } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
 
@@ -70,7 +73,7 @@ export default function ProgramPage() {
       <div className="max-w-5xl mx-auto px-4 py-12">
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">📚</div>
+          <PageIcon icon={GraduationCap} />
           <h1 className="text-4xl font-bold" style={{color: '#0b5d4b'}}>{t('title')}</h1>
           <p className="text-gray-400 mt-3 text-lg">{t('subtitle')}</p>
         </div>
@@ -80,7 +83,7 @@ export default function ProgramPage() {
             <div key={lvl.level} className="bg-white rounded-3xl shadow-lg overflow-hidden" style={{border: `1px solid ${lvl.color}`}}>
 
               {/* رأس المستوى */}
-              <div className="p-6 flex items-center gap-4 text-white" style={{background: lvl.color}}>
+              <div className="p-6 flex items-center gap-4" style={{background: lvl.color, color: readableOn(lvl.color)}}>
                 <span className="text-5xl">{lvl.icon}</span>
                 <div>
                   <h2 className="text-2xl font-bold">
@@ -163,13 +166,13 @@ export default function ProgramPage() {
                 style={{background: `${card.color}15`, border: `1.5px solid ${card.color}`}}
               >
                 <div className="text-5xl mb-3">{card.icon}</div>
-                <h3 className="font-bold text-lg mb-2" style={{color: card.color}}>
+                <h3 className="font-bold text-lg mb-2" style={{color: textTone(card.color)}}>
                   {locale === 'ar' ? card.titleAr : locale === 'fr' ? card.titleFr : card.titleEn}
                 </h3>
                 <p className="text-gray-500 text-sm">
                   {locale === 'ar' ? card.descAr : locale === 'fr' ? card.descFr : card.descEn}
                 </p>
-                <div className="mt-4 font-bold text-sm py-2 px-4 rounded-full text-white inline-block" style={{background: card.color}}>
+                <div className="mt-4 font-bold text-sm py-2 px-4 rounded-full inline-block" style={{background: card.color, color: readableOn(card.color)}}>
                   {locale === 'ar' ? 'ابدأ الآن' : locale === 'fr' ? 'Commencer' : 'Start Now'}
                 </div>
               </a>

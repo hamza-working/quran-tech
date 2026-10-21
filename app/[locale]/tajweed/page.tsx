@@ -1,5 +1,8 @@
 'use client';
 
+import { readableOn, textTone } from '@/lib/contrast';
+import PageIcon from '@/components/shared/PageIcon';
+import { BookOpenText } from 'lucide-react';
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
@@ -216,7 +219,7 @@ export default function TajweedPage() {
       <div className="max-w-4xl mx-auto px-4 py-12">
 
         <div className="text-center mb-10">
-          <div className="text-5xl mb-3">📖</div>
+          <PageIcon icon={BookOpenText} />
           <h1 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
@@ -234,7 +237,7 @@ export default function TajweedPage() {
                 <div className="flex items-center gap-4 mb-3">
                   <span className="text-4xl">{rule.icon}</span>
                   <div>
-                    <h2 className="font-bold text-lg" style={{color: rule.color}}>
+                    <h2 className="font-bold text-lg" style={{color: textTone(rule.color)}}>
                       {locale === 'ar' ? rule.nameAr : locale === 'fr' ? rule.nameFr : rule.nameEn}
                     </h2>
                     <span className="text-xs text-gray-400">{t.clickToLearn}</span>
@@ -244,7 +247,7 @@ export default function TajweedPage() {
                   {locale === 'ar' ? rule.descAr : locale === 'fr' ? rule.descFr : rule.descEn}
                 </div>
                 <div className="mt-3 flex items-center gap-2">
-                  <span className="text-xs px-2 py-1 rounded-full text-white font-bold" style={{background: rule.color}}>
+                  <span className="text-xs px-2 py-1 rounded-full font-bold" style={{background: rule.color, color: readableOn(rule.color)}}>
                     {rule.example}
                   </span>
                   <span className="text-xs text-gray-400">{rule.duration}</span>
@@ -266,7 +269,7 @@ export default function TajweedPage() {
             <div className="bg-white rounded-3xl shadow-xl p-8" style={{border: `1px solid ${selected.color}`}}>
               <div className="text-center mb-8">
                 <div className="text-6xl mb-4">{selected.icon}</div>
-                <h2 className="text-3xl font-bold mb-2" style={{color: selected.color}}>
+                <h2 className="text-3xl font-bold mb-2" style={{color: textTone(selected.color)}}>
                   {locale === 'ar' ? selected.nameAr : locale === 'fr' ? selected.nameFr : selected.nameEn}
                 </h2>
                 <p className="text-gray-500 max-w-lg mx-auto">
@@ -277,7 +280,7 @@ export default function TajweedPage() {
               <div className="grid md:grid-cols-3 gap-4">
                 {/* الحروف */}
                 <div className="rounded-2xl p-5 text-center" style={{background: `${selected.color}15`, border: `1.5px solid ${selected.color}`}}>
-                  <div className="font-bold mb-2" style={{color: selected.color}}>📝 {t.letters}</div>
+                  <div className="font-bold mb-2" style={{color: textTone(selected.color)}}>📝 {t.letters}</div>
                   <div className="text-2xl font-bold" style={{color: '#0b5d4b', lineHeight: '2'}}>
                     {selected.lettersAr}
                   </div>
@@ -303,7 +306,7 @@ export default function TajweedPage() {
 
             {/* مشغل الصوت */}
 <div className="mt-6">
-  <h3 className="font-bold mb-3 text-center" style={{color: selected.color}}>
+  <h3 className="font-bold mb-3 text-center" style={{color: textTone(selected.color)}}>
     🎧 {locale === 'ar' ? 'استمع للمثال' : locale === 'fr' ? 'Écouter l\'exemple' : 'Listen to Example'}
   </h3>
   <div className="rounded-2xl p-4 text-center" style={{background: `${selected.color}10`, border: `1.5px solid ${selected.color}`}}>
