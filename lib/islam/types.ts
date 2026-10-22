@@ -16,6 +16,8 @@ export interface Dhikr {
   note?: string;
   /** Verified references (Arabic citation strings). Empty when not yet verified. */
   refs: string[];
+  /** Grading statement exactly as given by the source (who graded it, where). */
+  grading?: string;
   /** True when the takhrij/grading still needs scholarly review. */
   review: boolean;
   /** True when scholars differ on the grading of the hadith. */

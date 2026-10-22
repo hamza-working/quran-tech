@@ -148,10 +148,16 @@ export default function DhikrCard({ dhikr, index, period, current, favorite, onT
       <footer className="mt-5 pt-4 text-xs space-y-1.5" style={{ borderTop: '1px solid var(--qt-line)', color: 'var(--qt-muted)' }}>
         <p>
           <span className="font-bold">{t('source')}:</span>{' '}
-          <span lang="ar" dir="rtl" className="font-quranic text-base align-middle">
-            {dhikr.refs.length > 0 ? dhikr.refs.join('، ') : 'حصن المسلم'}
+          <span lang="ar" dir="rtl" className="font-quranic text-base align-middle inline-block">
+            {(dhikr.refs.length > 0 ? dhikr.refs : ['حصن المسلم']).map((r) => (<span key={r} className="block">{r}</span>))}
           </span>
         </p>
+        {dhikr.grading && (
+          <p>
+            <span className="font-bold">{t('grading')}:</span>{' '}
+            <span lang="ar" dir="rtl" className="font-quranic text-base align-middle">{dhikr.grading}</span>
+          </p>
+        )}
         {dhikr.review && (
           <p className="flex items-start gap-1.5" style={{ color: '#8f6b1c' }}>
             <Info size={14} className="mt-0.5 shrink-0" aria-hidden="true" /> {t('review')}
