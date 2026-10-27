@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
 import AudioPlayer from '@/components/quran/AudioPlayer';
 import Logo from '@/components/shared/Logo';
+import PageCards from '@/components/home/PageCards';
 
 export default function HomePage() {
   const t = useTranslations('home');
@@ -314,6 +315,9 @@ return (
         </div>
       </section>
 
+      {/* اكتشف صفحات الموقع  */}
+         <PageCards />
+      
       {/* مشغل الصوت */}
       <section className="py-16 px-4" style={{background: '#eaf2ed'}}>
         <div className="max-w-4xl mx-auto text-center">

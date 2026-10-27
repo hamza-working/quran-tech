@@ -4,7 +4,6 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getLocale } from 'next-intl/server';
 import '../globals.css';
 import Footer from '@/components/shared/Footer';
-import Script from 'next/script';
 
 const cairo = Cairo({
   subsets: ['arabic', 'latin'],
@@ -107,18 +106,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={`${cairo.variable} ${amiri.variable} ${cormorant.variable}`}>
       <head>
-        <Script id="dark-mode-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              try {
-                var darkMode = localStorage.getItem('darkMode');
-                if (darkMode === 'true') {
-                  document.documentElement.classList.add('dark');
-                }
-              } catch(e) {}
-            })();
-          `
-        }} />
         <meta name="google-site-verification" content="38pkk5hCr98IRpZMrmID4wRVjjmU0yD2m7B5nKpUIGw" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0b5d4b" />

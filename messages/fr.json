@@ -23,7 +23,20 @@
     "hadith_text": "«يا غلام، إني أُعلِّمُكَ كلماتٍ: احفظِ اللهَ يحفظْكَ، احفظِ اللهَ تجِدْهُ تجاهَكَ، إذا سألتَ فاسألِ اللهَ، وإذا استعنتَ فاستعنْ باللهِ، واعلمْ أنَّ الأمةَ لو اجتمعتْ على أن ينفعوكَ بشيءٍ لم ينفعوكَ إلا بشيءٍ قد كتبهُ اللهُ لكَ، وإنِ اجتمعوا على أن يضرُّوكَ بشيءٍ لم يضرُّوكَ إلا بشيءٍ قد كتبهُ اللهُ عليكَ، رُفعتِ الأقلامُ وجفَّتِ الصُّحُفُ»",
     "hadith_source": "Rapporté par at-Tirmidhi (hadith 2516), d'après Abdallah ibn Abbas (qu'Allah les agrée)",
     "footer_rights": "Tous droits réservés — {author} — {title} © 2026",
-    "footer_author": "ALIOUI Hamza"
+    "footer_author": "ALIOUI Hamza",
+    "pages_heading": "Découvrez les pages du site",
+    "pages_subtitle": "Tout pour apprendre au même endroit : choisissez la page qui vous intéresse.",
+    "pages_open": "Ouvrir la page",
+    "pages_desc_program": "Trois niveaux d’apprentissage alliant Coran et technologie.",
+    "pages_desc_mushaf": "Lisez le Saint Coran selon les lectures de Hafs et de Warsh.",
+    "pages_desc_tajweed": "Apprenez les règles du tajwid avec exemples et audio.",
+    "pages_desc_islam": "Piliers de l’islam, piliers de la prière, adhkar du matin et du soir.",
+    "pages_desc_quiz": "Testez vos connaissances religieuses, scientifiques et culturelles.",
+    "pages_desc_technology": "De la programmation à l’intelligence artificielle, de façon ludique.",
+    "pages_desc_english": "Apprenez l’anglais pas à pas.",
+    "pages_desc_french": "Apprenez le français pas à pas.",
+    "pages_desc_dashboard": "Suivez votre progression : mémorisation, apprentissage et badges.",
+    "pages_desc_contact": "Nous sommes là pour répondre à vos questions."
   },
   "program": {
     "title": "Programme éducatif",

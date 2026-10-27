@@ -23,7 +23,20 @@
     "hadith_text": "«يا غلام، إني أُعلِّمُكَ كلماتٍ: احفظِ اللهَ يحفظْكَ، احفظِ اللهَ تجِدْهُ تجاهَكَ، إذا سألتَ فاسألِ اللهَ، وإذا استعنتَ فاستعنْ باللهِ، واعلمْ أنَّ الأمةَ لو اجتمعتْ على أن ينفعوكَ بشيءٍ لم ينفعوكَ إلا بشيءٍ قد كتبهُ اللهُ لكَ، وإنِ اجتمعوا على أن يضرُّوكَ بشيءٍ لم يضرُّوكَ إلا بشيءٍ قد كتبهُ اللهُ عليكَ، رُفعتِ الأقلامُ وجفَّتِ الصُّحُفُ»",
     "hadith_source": "Narrated by Jami' at-Tirmidhi (Hadith 2516), from Abdullah ibn Abbas (may Allah be pleased with them)",
     "footer_rights": "All rights reserved — {author} — {title} © 2026",
-    "footer_author": "ALIOUI Hamza"
+    "footer_author": "ALIOUI Hamza",
+    "pages_heading": "Explore the site",
+    "pages_subtitle": "Everything you need to learn in one place: pick the page you want.",
+    "pages_open": "Open page",
+    "pages_desc_program": "Three learning levels combining the Quran and technology.",
+    "pages_desc_mushaf": "Read the Holy Quran in the Hafs and Warsh recitations.",
+    "pages_desc_tajweed": "Learn the rules of tajweed with examples and audio.",
+    "pages_desc_islam": "Pillars of Islam, pillars of prayer, and morning and evening adhkar.",
+    "pages_desc_quiz": "Test your religious, scientific and general knowledge.",
+    "pages_desc_technology": "From programming to artificial intelligence, in a fun way.",
+    "pages_desc_english": "Learn English step by step.",
+    "pages_desc_french": "Learn French step by step.",
+    "pages_desc_dashboard": "Follow your progress in memorisation, learning and badges.",
+    "pages_desc_contact": "We are here to answer your questions."
   },
   "program": {
     "title": "Educational Program",

@@ -2,7 +2,7 @@
 export type NavLocale = 'ar' | 'fr' | 'en';
 
 export const navTexts = {
-  ar: { home: 'الرئيسية', program: 'البرنامج', learn: 'التعلم', english: 'الإنجليزية', french: 'الفرنسية', tajweed: 'التجويد', technology: 'التكنولوجيا', quiz: 'الاختبار', dashboard: 'تقدمي', contact: 'التواصل', mushaf: 'المصحف', islam: 'تعلّم دينك' },
+  ar: { home: 'الرئيسية', program: 'البرنامج', learn: 'التعلم', english: 'الإنجليزية', french: 'الفرنسية', tajweed: 'التجويد', technology: 'التكنولوجيا', quiz: 'الاختبار', dashboard: 'تقدمي', contact: 'التواصل', mushaf: 'المصحف', islam: 'إسلام' },
   fr: { home: 'Accueil', program: 'Programme', learn: 'Apprendre', english: 'Anglais', french: 'Français', tajweed: 'Tajwid', technology: 'Technologie', quiz: 'Quiz', dashboard: 'Progrès', contact: 'Contact', mushaf: 'Mushaf', islam: 'Apprendre l’islam' },
   en: { home: 'Home', program: 'Program', learn: 'Learn', english: 'English', french: 'French', tajweed: 'Tajweed', technology: 'Technology', quiz: 'Quiz', dashboard: 'Progress', contact: 'Contact', mushaf: 'Mushaf', islam: 'Learn Islam' },
 } as const;

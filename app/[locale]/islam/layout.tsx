@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 const titles = {
-  ar: 'تعلّم دينك — أركان الإسلام وأركان الصلاة وأذكار الصباح والمساء | القرآن والتكنولوجيا',
+  ar: 'إسلام — أركان الإسلام وأركان الصلاة وأذكار الصباح والمساء | القرآن والتكنولوجيا',
   fr: 'Apprends ta religion — Piliers de l’islam, de la prière et adhkar | Coran & Technologie',
   en: 'Learn Your Religion — Pillars of Islam, Prayer and Daily Adhkar | Quran & Technology',
 };
