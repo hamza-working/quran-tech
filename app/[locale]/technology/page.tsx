@@ -8,7 +8,7 @@ const sections = [
   {
     id: 'scratch',
     icon: '🐱',
-    color: '#f59e0b',
+    color: '#b8893a',
     nameAr: 'Scratch — البرمجة للأطفال',
     nameFr: 'Scratch — Programmation pour enfants',
     nameEn: 'Scratch — Programming for Kids',
@@ -57,7 +57,7 @@ const sections = [
   {
     id: 'microbit',
     icon: '🤖',
-    color: '#0e6b55',
+    color: '#0b5d4b',
     nameAr: 'micro:bit والروبوتيكس',
     nameFr: 'micro:bit et Robotique',
     nameEn: 'micro:bit and Robotics',
@@ -106,7 +106,7 @@ const sections = [
   {
     id: 'html',
     icon: '🌐',
-    color: '#06b6d4',
+    color: '#2f7f8f',
     nameAr: 'HTML/CSS والمواقع',
     nameFr: 'HTML/CSS et Sites Web',
     nameEn: 'HTML/CSS and Websites',
@@ -136,9 +136,9 @@ const sections = [
         titleAr: 'تلوين الموقع بـ CSS',
         titleFr: 'Colorier le site avec CSS',
         titleEn: 'Styling with CSS',
-        contentAr: 'CSS يجمّل الموقع. أضف داخل <head>:\n<style>\n  body {\n    background: #0e6b55;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
-        contentFr: 'CSS embellit le site. Ajoute dans <head>:\n<style>\n  body {\n    background: #0e6b55;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
-        contentEn: 'CSS beautifies the site. Add inside <head>:\n<style>\n  body {\n    background: #0e6b55;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
+        contentAr: 'CSS يجمّل الموقع. أضف داخل <head>:\n<style>\n  body {\n    background: #0b5d4b;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
+        contentFr: 'CSS embellit le site. Ajoute dans <head>:\n<style>\n  body {\n    background: #0b5d4b;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
+        contentEn: 'CSS beautifies the site. Add inside <head>:\n<style>\n  body {\n    background: #0b5d4b;\n    color: white;\n  }\n  h1 {\n    font-size: 40px;\n    color: gold;\n  }\n</style>',
         icon: '🎨',
       },
       {
@@ -155,7 +155,7 @@ const sections = [
   {
     id: 'ai',
     icon: '🧠',
-    color: '#8b5cf6',
+    color: '#6d5aa0',
     nameAr: 'الذكاء الاصطناعي للأطفال',
     nameFr: 'Intelligence Artificielle pour enfants',
     nameEn: 'AI for Kids',
@@ -219,13 +219,13 @@ export default function TechnologyPage() {
   const t = texts[locale] || texts.ar;
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-6xl mx-auto px-4 py-12">
 
         <div className="text-center mb-10">
           <div className="text-5xl mb-3">💻</div>
-          <h1 className="text-3xl font-bold" style={{color: '#0e6b55'}}>{t.title}</h1>
+          <h1 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>{t.title}</h1>
           <p className="text-gray-400 mt-2">{t.subtitle}</p>
         </div>
 
@@ -237,8 +237,8 @@ export default function TechnologyPage() {
               onClick={() => { setActiveSection(section.id); setActiveLesson(0); }}
               className="rounded-2xl p-4 text-center transition hover:scale-105 font-bold"
               style={activeSection === section.id
-                ? {background: section.color, color: 'white', border: `3px solid ${section.color}`}
-                : {background: 'white', color: section.color, border: `3px solid ${section.color}`}
+                ? {background: section.color, color: 'white', border: `1px solid ${section.color}`}
+                : {background: 'white', color: section.color, border: `1px solid ${section.color}`}
               }
             >
               <div className="text-3xl mb-1">{section.icon}</div>
@@ -255,7 +255,7 @@ export default function TechnologyPage() {
 
           {/* قائمة الدروس */}
           <div className="md:col-span-1">
-            <div className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: `3px solid ${currentSection.color}`}}>
+            <div className="bg-white rounded-3xl shadow-md overflow-hidden" style={{border: `1px solid ${currentSection.color}`}}>
               <div className="p-4 text-white font-bold" style={{background: currentSection.color}}>
                 {currentSection.icon} {t.lessons}
               </div>
@@ -280,7 +280,7 @@ export default function TechnologyPage() {
 
           {/* محتوى الدرس */}
           <div className="md:col-span-2">
-            <div className="bg-white rounded-3xl shadow-md p-6" style={{border: `3px solid ${currentSection.color}`}}>
+            <div className="bg-white rounded-3xl shadow-md p-6" style={{border: `1px solid ${currentSection.color}`}}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-4xl">{currentSection.lessons[activeLesson].icon}</span>
                 <h2 className="text-xl font-bold" style={{color: currentSection.color}}>

@@ -1,12 +1,27 @@
 import type { Metadata } from 'next';
-import { Cairo } from 'next/font/google';
+import { Cairo, Amiri, Cormorant_Garamond } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getLocale } from 'next-intl/server';
 import '../globals.css';
+import Footer from '@/components/shared/Footer';
 
 const cairo = Cairo({
   subsets: ['arabic', 'latin'],
   variable: '--font-cairo',
+});
+
+// Elegant naskh for Quranic / Prophetic text and Arabic headings
+const amiri = Amiri({
+  subsets: ['arabic', 'latin'],
+  weight: ['400', '700'],
+  variable: '--font-amiri',
+});
+
+// Refined serif for Latin (English / French) headings
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-cormorant',
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -89,29 +104,17 @@ export default async function LocaleLayout({
   const isRTL = locale === 'ar';
 
   return (
-    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={cairo.variable}>
+    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={`${cairo.variable} ${amiri.variable} ${cormorant.variable}`}>
       <head>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              try {
-                var darkMode = localStorage.getItem('darkMode');
-                if (darkMode === 'true') {
-                  document.documentElement.classList.add('dark');
-                }
-              } catch(e) {}
-            })();
-          `
-        }} />
         <meta name="google-site-verification" content="38pkk5hCr98IRpZMrmID4wRVjjmU0yD2m7B5nKpUIGw" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0e6b55" />
+        <meta name="theme-color" content="#0b5d4b" />
         <link rel="canonical" href="https://quran-techn.netlify.app" />
-        <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-white text-gray-900 font-cairo" suppressHydrationWarning>
+      <body className="font-cairo" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

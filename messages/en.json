@@ -18,7 +18,33 @@
     "quran_track": "Quran Track",
     "tech_track": "Technology Track",
     "listen_title": "Listen to the Quran",
-    "listen_subtitle": "By Sheikh Maher Al Muaiqly"
+    "listen_subtitle": "By Sheikh Maher Al Muaiqly",
+    "hadith_intro": "The Prophet ﷺ said:",
+    "hadith_text": "O young boy, I shall teach you some words: Be mindful of Allah, and He will protect you. Be mindful of Allah, and you will find Him before you. When you ask, ask Allah; and when you seek help, seek help from Allah. Know that if the entire nation were to gather together to benefit you with anything, they would not benefit you except with something that Allah has already decreed for you. And if they were to gather together to harm you with anything, they would not harm you except with something that Allah has already decreed against you. The pens have been lifted, and the pages have dried.",
+    "hadith_source": "Narrated by Jami' at-Tirmidhi (Hadith 2516), from Abdullah ibn Abbas (may Allah be pleased with them)",
+    "footer_rights": "All rights reserved — {author} — {title} © 2026",
+    "footer_author": "ALIOUI Hamza",
+    "pages_heading": "Explore the site",
+    "pages_subtitle": "Everything you need to learn in one place: pick the page you want.",
+    "pages_open": "Open page",
+    "pages_desc_program": "Three learning levels combining the Quran and technology.",
+    "pages_desc_mushaf": "Read the Holy Quran in the Hafs and Warsh recitations.",
+    "pages_desc_tajweed": "Learn the rules of tajweed with examples and audio.",
+    "pages_desc_islam": "Pillars of Islam, pillars of prayer, and morning and evening adhkar.",
+    "pages_desc_quiz": "Test your religious, scientific and general knowledge.",
+    "pages_desc_technology": "From programming to artificial intelligence, in a fun way.",
+    "pages_desc_english": "Learn English step by step.",
+    "pages_desc_french": "Learn French step by step.",
+    "pages_desc_dashboard": "Follow your progress in memorisation, learning and badges.",
+    "pages_desc_contact": "We are here to answer your questions.",
+    "track_quran_1": "Quran memorization",
+    "track_quran_2": "Tajweed",
+    "track_quran_3": "Recitation",
+    "track_quran_4": "Competitions",
+    "track_tech_1": "Scratch",
+    "track_tech_2": "Robotics",
+    "track_tech_3": "Artificial intelligence",
+    "track_tech_4": "Projects"
   },
   "program": {
     "title": "Educational Program",
@@ -64,5 +90,196 @@
     "form_email": "Your email",
     "form_message": "Your message...",
     "form_submit": "Send Message 📨"
+  },
+  "islam": {
+    "hero": {
+      "eyebrow": "Islamic Learning",
+      "title": "Learn Your Religion",
+      "subtitle": "Learn the basics of Islam, the pillars of prayer, and keep up with your daily adhkar.",
+      "cta": "Start learning"
+    },
+    "breadcrumb": {
+      "label": "Breadcrumb",
+      "home": "Home",
+      "root": "Learn Your Religion",
+      "back": "Back to categories"
+    },
+    "categories": {
+      "heading": "Choose what you want to learn",
+      "open": "Open section",
+      "tabs": "Islamic learning sections",
+      "pillars": {
+        "title": "Pillars of Islam",
+        "desc": "Discover the five pillars on which Islam is built."
+      },
+      "salah": {
+        "title": "Pillars of Salah",
+        "desc": "Learn the pillars and obligations of prayer, step by step."
+      },
+      "morning": {
+        "title": "Morning Adhkar",
+        "desc": "Read the morning remembrance with a repetition counter and progress tracking."
+      },
+      "evening": {
+        "title": "Evening Adhkar",
+        "desc": "Read the evening remembrance with a repetition counter and progress tracking."
+      }
+    },
+    "pillars": {
+      "heading": "The Five Pillars of Islam",
+      "intro": "Ibn Umar (may Allah be pleased with them) reported that the Prophet ﷺ said Islam is built upon five. Select a pillar to read more.",
+      "readMore": "Read more",
+      "close": "Close",
+      "evidence": "Evidence",
+      "hadith": "Hadith of the pillars of Islam",
+      "pillarNumber": "Pillar {n}",
+      "items": {
+        "shahada": {
+          "name": "The Two Testimonies",
+          "short": "Testifying that none has the right to be worshipped but Allah and that Muhammad is His messenger.",
+          "detail": "The Muslim testifies that none is worthy of worship except Allah and that Muhammad ﷺ is His servant and messenger. It is the entrance to Islam, and fulfilling it means understanding its meaning, being sincere to Allah and following His Messenger."
+        },
+        "salah": {
+          "name": "Establishing the Prayer",
+          "short": "The five daily prayers, a link between the servant and his Lord.",
+          "detail": "Allah made five prayers obligatory each day and night: Fajr, Dhuhr, Asr, Maghrib and Isha. They are performed at their set times, in a state of purity and facing the Qibla. Its pillars, obligatory and recommended acts are covered in the “Pillars of Salah” section."
+        },
+        "zakat": {
+          "name": "Giving Zakat",
+          "short": "An obligatory due on wealth that reaches the minimum threshold, given to those entitled to it.",
+          "detail": "Zakat is an obligatory act of worship concerning wealth, due on anyone whose wealth reaches the nisab and has been held for a lunar year, under its conditions. It is given to the eight categories mentioned by Allah in Surat at-Tawba; it purifies wealth and soul and supports solidarity in society."
+        },
+        "sawm": {
+          "name": "Fasting Ramadan",
+          "short": "Abstaining from what breaks the fast, from dawn to sunset, throughout the month of Ramadan.",
+          "detail": "Every able Muslim fasts the month of Ramadan by abstaining from food, drink and other things that break the fast, from dawn until sunset, with the intention to fast. The sick and the traveller are allowed to break the fast and make up the missed days. The aim of fasting is God-consciousness (taqwa)."
+        },
+        "hajj": {
+          "name": "Pilgrimage (Hajj)",
+          "short": "Travelling to the Sacred House of Allah to perform the rites, once in a lifetime for those who are able.",
+          "detail": "Hajj is an act of worship performed in Makkah and its surroundings during the months of Hajj. It is obligatory once in a lifetime for the Muslim who is mature, sane and physically and financially able. Its rites include ihram, tawaf, sa’i and standing at Arafah."
+        }
+      }
+    },
+    "salah": {
+      "heading": "Pillars of Salah",
+      "intro": "Learn the pillars of prayer in order, then tell them apart from the obligatory and recommended acts.",
+      "schoolTitle": "Scholarly note",
+      "school": "The counting and classification of the prayer’s pillars differ between the schools of Islamic jurisprudence. This section presents the classification of the Hanbali school (fourteen pillars and eight obligatory acts) as found in the two sources listed below; what you learned in your own school may differ. For further study or in case of difference, consult a trusted scholar.",
+      "sources": "Sources",
+      "tabSteps": "Pillars step by step",
+      "tabObligatory": "Obligatory acts",
+      "tabSunnah": "Recommended acts",
+      "tabCompare": "The difference",
+      "step": "Pillar {n} of {total}",
+      "prev": "Previous",
+      "next": "Next",
+      "goTo": "Go to pillar {n}",
+      "kind": {
+        "pillar": "Pillar",
+        "obligatory": "Obligatory",
+        "sunnah": "Sunnah"
+      },
+      "kindDesc": {
+        "pillar": "Pillar: the prayer is invalid without it, and it cannot be made up by the prostration of forgetfulness.",
+        "obligatory": "Obligatory act: if forgotten, it is made up by the prostration of forgetfulness; leaving it on purpose invalidates the prayer.",
+        "sunnah": "Recommended act (Sunnah): encouraged, and the prayer remains valid without it."
+      },
+      "obligatoryIntro": "In this school there are eight obligatory acts, distinct from the pillars.",
+      "sunnahIntro": "Examples of recommended acts, not an exhaustive list; the fiqh books mention others.",
+      "compareIntro": "Three levels of acts in the prayer:",
+      "items": {
+        "qiyam": "Praying the obligatory prayer standing if able; if unable, praying seated, and if unable, on one’s side.",
+        "takbir": "Saying “Allahu akbar” to begin the prayer; with it the worshipper enters the state of prayer.",
+        "fatiha": "Reciting Surat al-Fatiha in the prayer.",
+        "ruku": "Bowing in the prayer, in glorification of Allah.",
+        "itidal": "Rising from the bowing to stand upright.",
+        "sujud": "Placing the forehead (with the nose), both hands, both knees and the toes of both feet on the ground: the seven limbs.",
+        "raf": "Rising from the prostration.",
+        "jalsa": "Sitting between the two prostrations.",
+        "tuma": "Stillness in every physical pillar of the prayer, so that each limb settles in its place.",
+        "tashahhud": "Reciting the tashahhud at the end of the prayer.",
+        "julus": "Sitting to recite the final tashahhud.",
+        "salawat": "Sending blessings upon the Prophet ﷺ in the final tashahhud.",
+        "taslim": "The salutation to the right and then to the left, ending the prayer.",
+        "tartib": "Performing the pillars of the prayer in the order established in the Sunnah.",
+        "takbirat": "The takbirs in the prayer other than the opening one, such as when moving between positions.",
+        "tasmi": "Said by the imam and by one praying alone when rising from the bowing.",
+        "tahmid": "Said after rising from the bowing.",
+        "tasbih_ruku": "The obligatory glorification in the bowing, once.",
+        "tasbih_sujud": "The obligatory glorification in the prostration, once.",
+        "rabbighfir": "Said while sitting between the two prostrations.",
+        "tashahhud1": "The tashahhud recited in the middle sitting of three- and four-rak’a prayers.",
+        "julus1": "Sitting to recite the first tashahhud.",
+        "raf_yadayn": "One of the recommended acts of the prayer mentioned in the fiqh books.",
+        "istiftah": "One of the recommended acts of the prayer mentioned in the fiqh books.",
+        "surah": "One of the recommended acts of the prayer mentioned in the fiqh books.",
+        "tasbih_more": "One of the recommended acts of the prayer mentioned in the fiqh books."
+      }
+    },
+    "adhkar": {
+      "morning": {
+        "title": "Morning Adhkar",
+        "intro": "Recited after the Fajr prayer until sunrise; they may still be recited later in the day if the time was missed."
+      },
+      "evening": {
+        "title": "Evening Adhkar",
+        "intro": "Recited after the Asr prayer until sunset; the time extends into the night."
+      },
+      "progress": "{done} of {total} completed",
+      "remaining": "Remaining: {n}",
+      "allDone": "You have completed the adhkar for this time of day. May Allah accept from you.",
+      "repeat": "Repeat: {count}",
+      "counter": "{current} / {target}",
+      "tap": "Tap to count",
+      "done": "Done",
+      "countAria": "Counter for dhikr {n}: {current} of {target}",
+      "resetOne": "Reset this dhikr",
+      "resetAll": "Reset all",
+      "resetConfirm": "Your progress for this time of day will be cleared for today. Continue?",
+      "resetYes": "Yes, reset",
+      "cancel": "Cancel",
+      "copy": "Copy text",
+      "copied": "Copied",
+      "copyFailed": "Could not copy",
+      "favAdd": "Add to favorites",
+      "favRemove": "Remove from favorites",
+      "favorite": "Favorites",
+      "search": "Search the adhkar",
+      "searchLabel": "Search the text of the adhkar",
+      "filterAll": "All",
+      "filterRemaining": "Not completed",
+      "filterFavorites": "Favorites",
+      "filterLabel": "Filter adhkar",
+      "emptySearch": "No adhkar match your search.",
+      "emptyFavorites": "You have not added any dhikr to your favorites yet.",
+      "emptyRemaining": "Nothing left to do. Masha’Allah!",
+      "dhikrNumber": "Dhikr {n}",
+      "source": "Source",
+      "textSource": "Text from “Hisn al-Muslim” by Sheikh Sa’id ibn Ali ibn Wahf al-Qahtani.",
+      "review": "The detailed referencing of this dhikr is still under scholarly review.",
+      "disputed": "Scholars differ about the grading of this hadith; please review it.",
+      "eveningNotes": "In the evening (as given in the source)",
+      "eveningShort": "The source abbreviates the evening wording; please refer to “Hisn al-Muslim” for the full text.",
+      "note": "Note from the source",
+      "storageNote": "Your progress is saved on this device only and restarts every day.",
+      "loading": "Loading…",
+      "error": "This section could not be displayed. Please reload the page.",
+      "onlyMorning": "This dhikr is for the morning",
+      "onlyEvening": "This dhikr is for the evening",
+      "grading": "Grading"
+    },
+    "review": {
+      "banner": "Note: the religious content in this section comes from recognised sources, and items still needing scholarly review are marked. If you notice a mistake, please let us know through the contact page."
+    }
+  },
+  "player": {
+    "surah": "Surah {name}",
+    "reciter": "Sheikh Yassine Al-Jazairi — Warsh recitation",
+    "prev": "Previous surah",
+    "next": "Next surah",
+    "playPause": "Play / Pause",
+    "volume": "Volume",
+    "chooseSurah": "Choose a surah"
   }
 }

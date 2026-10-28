@@ -1,5 +1,8 @@
 'use client';
 
+import { readableOn, textTone } from '@/lib/contrast';
+import PageIcon from '@/components/shared/PageIcon';
+import { GraduationCap } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
 
@@ -12,7 +15,7 @@ export default function ProgramPage() {
       level: 1,
       age: '6-8',
       icon: '🌱',
-      color: '#079992',
+      color: '#1f7a55',
       quran: {
         ar: ['حفظ قصار السور', 'سورة الفاتحة والإخلاص والفلق والناس', 'أحكام النون الساكنة'],
         fr: ['Mémorisation des courtes sourates', 'Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas', 'Règles de la noon saakin'],
@@ -28,7 +31,7 @@ export default function ProgramPage() {
       level: 2,
       age: '8-10',
       icon: '⭐',
-      color: '#fbbf24',
+      color: '#c9a24a',
       quran: {
         ar: ['حفظ جزء عم كاملاً', 'أحكام التجويد الأساسية', 'مسابقات الحفظ بين الأطفال'],
         fr: ['Mémorisation du Juz Amma complet', 'Règles de tajwid de base', 'Concours de mémorisation'],
@@ -44,7 +47,7 @@ export default function ProgramPage() {
       level: 3,
       age: '10-12',
       icon: '👑',
-      color: '#f59e0b',
+      color: '#b8893a',
       quran: {
         ar: ['حفظ جزء تبارك', 'قواعد التجويد الكاملة', 'تسجيل وتحليل التلاوة بالذكاء الاصطناعي'],
         fr: ['Mémorisation du Juz Tabarak', 'Règles complètes du tajwid', 'Enregistrement et analyse par IA'],
@@ -65,22 +68,22 @@ export default function ProgramPage() {
   };
 
   return (
-    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #e8f8f5 0%, #fff9e6 100%)'}}>
+    <main className="min-h-screen" style={{background: 'linear-gradient(135deg, #eaf2ed 0%, #faf3dc 100%)'}}>
       <Navbar />
       <div className="max-w-5xl mx-auto px-4 py-12">
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">📚</div>
-          <h1 className="text-4xl font-bold" style={{color: '#0e6b55'}}>{t('title')}</h1>
+          <PageIcon icon={GraduationCap} />
+          <h1 className="text-4xl font-bold" style={{color: '#0b5d4b'}}>{t('title')}</h1>
           <p className="text-gray-400 mt-3 text-lg">{t('subtitle')}</p>
         </div>
 
         <div className="space-y-8">
           {levels.map((lvl) => (
-            <div key={lvl.level} className="bg-white rounded-3xl shadow-lg overflow-hidden" style={{border: `3px solid ${lvl.color}`}}>
+            <div key={lvl.level} className="bg-white rounded-3xl shadow-lg overflow-hidden" style={{border: `1px solid ${lvl.color}`}}>
 
               {/* رأس المستوى */}
-              <div className="p-6 flex items-center gap-4 text-white" style={{background: lvl.color}}>
+              <div className="p-6 flex items-center gap-4" style={{background: lvl.color, color: readableOn(lvl.color)}}>
                 <span className="text-5xl">{lvl.icon}</span>
                 <div>
                   <h2 className="text-2xl font-bold">
@@ -92,22 +95,22 @@ export default function ProgramPage() {
 
               {/* المحتوى */}
               <div className="grid md:grid-cols-2 gap-6 p-6">
-                <div className="rounded-2xl p-5" style={{background: '#e8f8f5'}}>
-                  <h3 className="text-lg font-bold mb-3" style={{color: '#0e6b55'}}>📖 {t('quran')}</h3>
+                <div className="rounded-2xl p-5" style={{background: '#eaf2ed'}}>
+                  <h3 className="text-lg font-bold mb-3" style={{color: '#0b5d4b'}}>📖 {t('quran')}</h3>
                   <ul className="space-y-2">
                     {getLang(lvl.quran).map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
-                        <span style={{color: '#079992'}}>✅</span> {item}
+                        <span style={{color: '#1f7a55'}}>✅</span> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-2xl p-5" style={{background: '#fffbeb'}}>
-                  <h3 className="text-lg font-bold mb-3" style={{color: '#d97706'}}>💻 {t('tech')}</h3>
+                <div className="rounded-2xl p-5" style={{background: '#faf3dc'}}>
+                  <h3 className="text-lg font-bold mb-3" style={{color: '#8f6b1c'}}>💻 {t('tech')}</h3>
                   <ul className="space-y-2">
                     {getLang(lvl.tech).map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
-                        <span style={{color: '#fbbf24'}}>✅</span> {item}
+                        <span style={{color: '#c9a24a'}}>✅</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -119,10 +122,10 @@ export default function ProgramPage() {
         </div>
 
         {/* قسم تعلم البرمجة للأطفال */}
-        <div className="mt-12 bg-white rounded-3xl p-8" style={{border: '3px solid #079992'}}>
+        <div className="mt-12 bg-white rounded-3xl p-8" style={{border: '1px solid #1f7a55'}}>
           <div className="text-center mb-8">
             <div className="text-5xl mb-3">🎮</div>
-            <h2 className="text-3xl font-bold" style={{color: '#0e6b55'}}>
+            <h2 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>
               {locale === 'ar' ? 'تعلم البرمجة بالألعاب' : locale === 'fr' ? 'Apprendre à coder en jouant' : 'Learn Coding by Playing'}
             </h2>
             <p className="text-gray-400 mt-2">
@@ -136,21 +139,21 @@ export default function ProgramPage() {
                 icon: '🐢',
                 titleAr: 'المبتدئ', titleFr: 'Débutant', titleEn: 'Beginner',
                 descAr: 'تعلم البرمجة بالتسلسل والألوان', descFr: 'Apprendre avec des séquences et couleurs', descEn: 'Learn with sequences and colors',
-                color: '#079992',
+                color: '#1f7a55',
                 href: 'https://scratch.mit.edu/projects/editor/',
               },
               {
                 icon: '🦊',
                 titleAr: 'المتوسط', titleFr: 'Intermédiaire', titleEn: 'Intermediate',
                 descAr: 'الحلقات والشروط والمتغيرات', descFr: 'Boucles, conditions et variables', descEn: 'Loops, conditions and variables',
-                color: '#fbbf24',
+                color: '#c9a24a',
                 href: 'https://scratch.mit.edu/projects/editor/',
               },
               {
                 icon: '🦅',
                 titleAr: 'المتقدم', titleFr: 'Avancé', titleEn: 'Advanced',
                 descAr: 'مشاريع كاملة وألعاب إسلامية', descFr: 'Projets complets et jeux islamiques', descEn: 'Full projects and Islamic games',
-                color: '#f59e0b',
+                color: '#b8893a',
                 href: 'https://scratch.mit.edu/projects/editor/',
               },
             ].map((card, i) => (
@@ -160,16 +163,16 @@ export default function ProgramPage() {
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-2xl p-6 text-center block transition hover:scale-105"
-                style={{background: `${card.color}15`, border: `2px solid ${card.color}`}}
+                style={{background: `${card.color}15`, border: `1.5px solid ${card.color}`}}
               >
                 <div className="text-5xl mb-3">{card.icon}</div>
-                <h3 className="font-bold text-lg mb-2" style={{color: card.color}}>
+                <h3 className="font-bold text-lg mb-2" style={{color: textTone(card.color)}}>
                   {locale === 'ar' ? card.titleAr : locale === 'fr' ? card.titleFr : card.titleEn}
                 </h3>
                 <p className="text-gray-500 text-sm">
                   {locale === 'ar' ? card.descAr : locale === 'fr' ? card.descFr : card.descEn}
                 </p>
-                <div className="mt-4 font-bold text-sm py-2 px-4 rounded-full text-white inline-block" style={{background: card.color}}>
+                <div className="mt-4 font-bold text-sm py-2 px-4 rounded-full inline-block" style={{background: card.color, color: readableOn(card.color)}}>
                   {locale === 'ar' ? 'ابدأ الآن' : locale === 'fr' ? 'Commencer' : 'Start Now'}
                 </div>
               </a>

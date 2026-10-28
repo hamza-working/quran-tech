@@ -1,174 +1,291 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   Quran Tech — Design System
+   زمرّد عميق · عاجي دافئ · ذهبي عتيق
+   ========================================================================== */
+
 @theme {
-  --color-primary-50: #e8f8f5;
-  --color-primary-100: #ccfffd;
-  --color-primary-400: #00e5e0;
-  --color-primary-500: #079992;
-  --color-primary-600: #00b5b0;
-  --color-primary-700: #009c98;
-  --color-primary-800: #008380;
-  --color-primary-900: #0e6b55;
+  /* Brand — emerald */
+  --color-primary-50: #eef5f1;
+  --color-primary-100: #dcebe3;
+  --color-primary-400: #3f9a78;
+  --color-primary-500: #1f7a55;
+  --color-primary-600: #12664a;
+  --color-primary-700: #0b5d4b;
+  --color-primary-800: #094a3c;
+  --color-primary-900: #073f33;
 
-  --color-gold-300: #fde68a;
-  --color-gold-400: #fbbf24;
-  --color-gold-500: #f59e0b;
-  --color-gold-600: #d97706;
+  /* Antique gold */
+  --color-gold-300: #e6d3a0;
+  --color-gold-400: #c9a24a;
+  --color-gold-500: #b8893a;
+  --color-gold-600: #8f6b1c;
 
-  --font-amiri: 'Amiri', sans-serif;
+  /* Ivory */
+  --color-ivory-50: #fdfbf5;
+  --color-ivory-100: #faf6ec;
+  --color-ivory-200: #f3eddc;
+
+  /* Radii & shadows: calmer than the previous "kids" look.
+     Overriding the theme tokens restyles every existing rounded-* / shadow-* utility. */
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.875rem;
+  --radius-3xl: 1.125rem;
+  --shadow-sm: 0 1px 2px rgba(7, 63, 51, 0.06);
+  --shadow-md: 0 2px 6px rgba(7, 63, 51, 0.06), 0 8px 20px rgba(7, 63, 51, 0.06);
+  --shadow-lg: 0 4px 10px rgba(7, 63, 51, 0.06), 0 14px 30px rgba(7, 63, 51, 0.08);
+  --shadow-xl: 0 6px 14px rgba(7, 63, 51, 0.07), 0 22px 44px rgba(7, 63, 51, 0.1);
+  --shadow-2xl: 0 10px 24px rgba(7, 63, 51, 0.1), 0 30px 60px rgba(7, 63, 51, 0.14);
+
+  --font-display-ar: var(--font-amiri), 'Amiri', serif;
 }
 
 :root {
-  --color-bg: #f0fffe;
+  --qt-bg: #faf6ec;
+  --qt-surface: #fffdf8;
+  --qt-ink: #1c2b27;
+  --qt-muted: #5f6f69;
+  --qt-line: #e3dcc8;
+  --qt-emerald: #0b5d4b;
+  --qt-emerald-deep: #073f33;
+  --qt-forest: #1f7a55;
+  --qt-gold: #c9a24a;
+  --qt-gold-deep: #8f6b1c;
+  --qt-font-ui: var(--font-cairo), system-ui, sans-serif;
+  --qt-font-display: var(--font-cormorant), Georgia, serif;
+}
+
+html[lang='ar'] {
+  --qt-font-display: var(--font-amiri), 'Amiri', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--color-bg);
-  font-family: var(--font-amiri), sans-serif;
+  background-color: var(--qt-bg);
+  color: var(--qt-ink);
+  font-family: var(--qt-font-ui);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-.kids-card {
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 30px rgba(0, 206, 201, 0.15);
-  transition: transform 0.2s ease;
+h1, h2, h3 {
+  font-family: var(--qt-font-display);
+  letter-spacing: 0;
+  line-height: 1.25;
 }
 
-.kids-card:hover {
-  transform: translateY(-4px);
+html[lang='ar'] h1,
+html[lang='ar'] h2,
+html[lang='ar'] h3 {
+  line-height: 1.5;
 }
 
-.gold-btn {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #0e6b55;
-  font-weight: 700;
-  border-radius: 9999px;
-  padding: 0.75rem 2rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+/* Keyboard focus: visible, on-brand */
+:focus-visible {
+  outline: 2px solid var(--qt-gold);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
-.gold-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
-}
-
-.primary-btn {
-  background: linear-gradient(135deg, #079992, #009c98);
-  color: white;
-  font-weight: 700;
-  border-radius: 9999px;
-  padding: 0.75rem 2rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0, 206, 201, 0.4);
-}
-
-.primary-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 206, 201, 0.5);
+::selection {
+  background: rgba(201, 162, 74, 0.35);
 }
 
 ::placeholder {
-  color: #aaa;
+  color: #9aa49f;
   opacity: 1;
 }
 
-/* أنيميشن النجاح */
-@keyframes successPop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+/* Heavier "kids" borders become fine, refined lines */
+.border-2 { border-width: 1.5px; }
+.border-4 { border-width: 1px; }
+
+/* ---- Reusable building blocks ---- */
+
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
 }
 
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--qt-gold-deep);
+}
+
+html[lang='ar'] .eyebrow {
+  letter-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.islamic-pattern {
+  background-color: var(--qt-emerald-deep);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(201, 162, 74, 0.16), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-opacity='0.10' stroke-width='1'%3E%3Cpath d='M36 6l8.5 15.5L60 30l-15.5 8.5L36 54l-8.5-15.5L12 30l15.5-8.5z'/%3E%3Crect x='19' y='19' width='34' height='34' transform='rotate(45 36 36)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 72px 72px;
+}
+
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--qt-gold);
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, currentColor);
+  opacity: 0.7;
+}
+.divider-ornament::after {
+  background: linear-gradient(to left, transparent, currentColor);
+}
+
+.card-premium {
+  background: var(--qt-surface);
+  border: 1px solid var(--qt-line);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--qt-gold);
+}
+
+.btn-gold,
+.btn-emerald,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.8rem 1.75rem;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.btn-gold {
+  background: var(--qt-gold);
+  color: var(--qt-emerald-deep);
+  box-shadow: 0 6px 18px rgba(201, 162, 74, 0.3);
+}
+.btn-gold:hover { background: #d6b25c; transform: translateY(-1px); }
+.btn-emerald {
+  background: var(--qt-forest);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(31, 122, 85, 0.25);
+}
+.btn-emerald:hover { background: #17673f; transform: translateY(-1px); }
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* Legacy class names kept so existing markup keeps working */
+.kids-card {
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease;
+}
+.kids-card:hover { transform: translateY(-2px); }
+.gold-btn,
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.2s ease;
+}
+.gold-btn { background: var(--qt-gold); color: var(--qt-emerald-deep); box-shadow: 0 6px 18px rgba(201, 162, 74, 0.3); }
+.primary-btn { background: var(--qt-forest); color: #fff; box-shadow: 0 6px 18px rgba(31, 122, 85, 0.25); }
+.gold-btn:hover, .primary-btn:hover { transform: translateY(-1px); }
+
+/* ---- Hadith / Quranic Arabic typography ---- */
+.font-quranic {
+  font-family: var(--font-amiri), 'Amiri', 'Scheherazade New', serif;
+  line-height: 2.1;
+}
+
+/* ---- Motion: subtle, and respectful of user settings ---- */
+@keyframes successPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
   75% { transform: translateX(5px); }
 }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.success-pop { animation: successPop 0.4s ease; }
+.shake { animation: shake 0.4s ease; }
+.fade-up { animation: fadeUp 0.7s ease both; }
+.fade-up-2 { animation: fadeUp 0.7s 0.12s ease both; }
+.fade-up-3 { animation: fadeUp 0.7s 0.24s ease both; }
 
-.success-pop {
-  animation: successPop 0.4s ease;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-.shake {
-  animation: shake 0.4s ease;
+/* ==========================================================================
+   Dark mode (class-based, toggled by the Navbar; behaviour unchanged)
+   ========================================================================== */
+.dark {
+  --qt-bg: #0c1613;
+  --qt-surface: #12201b;
+  --qt-ink: #e7ece9;
+  --qt-muted: #9fb0a9;
+  --qt-line: #25382f;
 }
-/* Dark Mode */
-.dark body {
-  background-color: #0f172a !important;
-  color: #e2e8f0 !important;
-}
-
-.dark main {
-  background: #0f172a !important;
-}
-
-.dark nav {
-  background: #0a1628 !important;
-}
-
-.dark .bg-white {
-  background-color: #1e293b !important;
-  color: #e2e8f0 !important;
-}
-
-.dark section {
-  background: #0f172a !important;
-}
-
-.dark h1, .dark h2, .dark h3, .dark h4 {
-  color: #e2e8f0 !important;
-}
-
-.dark p, .dark span, .dark li {
-  color: #94a3b8 !important;
-}
-
+.dark body { background-color: #0c1613 !important; color: #e7ece9 !important; }
+.dark main { background: #0c1613 !important; }
+.dark nav { background: #061f19 !important; }
+.dark footer { background: #061f19 !important; }
+.dark section:not(.qt-keep) { background: transparent !important; }
+.dark .bg-white,
+.dark .card-premium { background-color: #12201b !important; color: #e7ece9 !important; }
+.dark h1:not(.qt-keep *), .dark h2:not(.qt-keep *), .dark h3:not(.qt-keep *), .dark h4:not(.qt-keep *) { color: #ecf1ee !important; }
+.dark p:not(.qt-keep *), .dark span:not(.qt-keep *), .dark li:not(.qt-keep *), .dark label:not(.qt-keep *) { color: #a9b9b2 !important; }
 .dark input, .dark select, .dark textarea {
-  background-color: #1e293b !important;
-  color: #e2e8f0 !important;
-  border-color: #334155 !important;
+  background-color: #12201b !important;
+  color: #e7ece9 !important;
+  border-color: #2c433a !important;
 }
-
-.dark button {
-  color: inherit;
-}
-
-.dark .rounded-3xl {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-}
-
-.dark .rounded-2xl {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-}
-
-.dark .shadow-lg, .dark .shadow-xl, .dark .shadow-md, .dark .shadow-sm {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
-}
-
-.dark .text-gray-400,
-.dark .text-gray-500,
-.dark .text-gray-600 {
-  color: #64748b !important;
-}
-
-.dark footer {
-  background: #0a1628 !important;
-}
-
+.dark .rounded-3xl,
+.dark .rounded-2xl { background-color: #12201b !important; border-color: #25382f !important; }
+.dark .shadow-lg, .dark .shadow-xl, .dark .shadow-md, .dark .shadow-sm { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45) !important; }
+.dark .text-gray-400, .dark .text-gray-500, .dark .text-gray-600 { color: #7f938b !important; }
 .dark [style*="background: white"],
 .dark [style*="background-color: white"],
 .dark [style*="background:#fff"],
-.dark [style*="background: #fff"] {
-  background-color: #1e293b !important;
-}
-
-.dark [style*="color: #0e6b55"] {
-  color: #079992 !important;
-}
-
-.dark [style*="background: linear-gradient(135deg, #e8f8f5"],
-.dark [style*="background: linear-gradient(135deg, #e6fff"] {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-}
+.dark [style*="background: #fff"],
+.dark [style*="background:white"] { background-color: #12201b !important; }

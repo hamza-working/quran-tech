@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/shared/Navbar';
 import AudioPlayer from '@/components/quran/AudioPlayer';
+import Logo from '@/components/shared/Logo';
+import PageCards from '@/components/home/PageCards';
 
 export default function HomePage() {
   const t = useTranslations('home');
@@ -42,7 +44,7 @@ const projectDetails = [
         'Share your project with friends!',
       ],
     },
-    color: '#0e6b55', tag: 'Scratch',
+    color: '#0b5d4b', tag: 'Scratch',
   },
   {
     icon: '📱',
@@ -73,7 +75,7 @@ const projectDetails = [
         'Save and share your app!',
       ],
     },
-    color: '#fbbf24', tag: 'Scratch',
+    color: '#c9a24a', tag: 'Scratch',
   },
   {
     icon: '🤖',
@@ -107,7 +109,7 @@ const projectDetails = [
         'Download the code to the board and test it!',
       ],
     },
-    color: '#f59e0b', tag: 'micro:bit',
+    color: '#b8893a', tag: 'micro:bit',
   },
   {
     icon: '🌐',
@@ -141,7 +143,7 @@ const projectDetails = [
         'Open the file in browser and enjoy your website!',
       ],
     },
-    color: '#06b6d4', tag: 'HTML/CSS',
+    color: '#2f7f8f', tag: 'HTML/CSS',
   },
   {
     icon: '🧠',
@@ -175,7 +177,7 @@ const projectDetails = [
         'Export the model and share it!',
       ],
     },
-    color: '#8b5cf6', tag: 'AI',
+    color: '#6d5aa0', tag: 'AI',
   },
   {
     icon: '✨',
@@ -209,7 +211,7 @@ const projectDetails = [
         'Share your project with the world!',
       ],
     },
-    color: '#0e6b55', tag: '🚀',
+    color: '#0b5d4b', tag: '🚀',
   },
 ];  
 return (
@@ -217,23 +219,45 @@ return (
       <Navbar />
 
       {/* Hero Section */}
-      <section style={{background: 'linear-gradient(to bottom, #0e6b55, #0e6b55)'}} className="text-white py-20 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-6xl mb-6">🕌</div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{color: '#fbbf24'}}>
+      <section className="qt-keep islamic-pattern text-white relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
+          <div className="fade-up flex justify-center mb-6" aria-hidden="true">
+            <Logo size={56} />
+          </div>
+
+          <h1 className="fade-up text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style={{color: '#f3eddc'}}>
             {t('title')}
           </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{color: '#e0fffe'}}>
+
+          {/* Slogan (unchanged text, from t('subtitle')) */}
+          <p className="fade-up-2 text-xl sm:text-2xl md:text-3xl leading-relaxed max-w-3xl mx-auto mb-8"
+            style={{color: '#e6d3a0', fontFamily: 'var(--qt-font-display)', fontWeight: 600}}>
             {t('subtitle')}
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Link href="register"
-              className="font-bold px-8 py-3 rounded-full transition text-lg"
-              style={{background: '#fbbf24', color: '#0e6b55'}}>
+
+          <div className="fade-up-2 divider-ornament max-w-xs mx-auto mb-8" aria-hidden="true"><span>✦</span></div>
+
+          {/* Prophetic hadith */}
+          <figure className="fade-up-3 max-w-2xl mx-auto rounded-2xl px-6 py-6 md:px-10 md:py-8 mb-10"
+            style={{background: 'rgba(255,253,248,0.06)', border: '1px solid rgba(201,162,74,0.4)'}}>
+            <figcaption lang="ar" dir="rtl" className="text-sm md:text-base font-bold mb-3" style={{color: '#c9a24a'}}>
+              {t('hadith_intro')}
+            </figcaption>
+            <blockquote lang="ar" dir="rtl"
+              className="font-quranic text-xl sm:text-2xl md:text-[1.7rem] text-center"
+              style={{color: '#faf6ec'}}>
+              {t('hadith_text')}
+            </blockquote>
+            <p className="mt-4 text-xs md:text-sm" style={{color: 'rgba(250,246,236,0.7)'}}>
+              {t('hadith_source')}
+            </p>
+          </figure>
+
+          <div className="fade-up-3 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Link href="register" className="btn-gold text-base md:text-lg">
               {t('cta_register')}
             </Link>
-            <Link href="program"
-              className="border-2 border-white text-white font-bold px-8 py-3 rounded-full transition text-lg">
+            <Link href="program" className="btn-ghost text-base md:text-lg">
               {t('cta_program')}
             </Link>
           </div>
@@ -241,16 +265,16 @@ return (
       </section>
 
       {/* الإحصائيات */}
-      <section className="py-12" style={{background: '#e8f8f5'}}>
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center px-4">
+      <section className="py-12" style={{background: '#eaf2ed'}}>
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-3 md:gap-6 text-center px-4">
           {[
             { number: '+50', label: t('stats_children') },
             { number: '114', label: t('stats_surahs') },
             { number: '3', label: t('stats_levels') },
           ].map((stat, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="text-3xl font-bold" style={{color: '#0e6b55'}}>{stat.number}</div>
-              <div className="text-gray-500 text-sm mt-1">{stat.label}</div>
+            <div key={i} className="card-premium p-5 md:p-6">
+              <div className="text-3xl md:text-4xl font-bold" style={{color: '#0b5d4b', fontFamily: 'var(--qt-font-display)'}}>{stat.number}</div>
+              <div className="text-gray-500 text-xs md:text-sm mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -259,25 +283,25 @@ return (
       {/* المسارات التعليمية */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10" style={{color: '#0e6b55'}}>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10" style={{color: '#0b5d4b'}}>
             {t('tracks_title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl p-8 border-2" style={{background: '#e8f8f5', borderColor: '#0e6b55'}}>
+            <div className="rounded-2xl p-8 border-2" style={{background: '#eaf2ed', borderColor: '#0b5d4b'}}>
               <div className="text-4xl mb-4">📖</div>
-              <h3 className="text-xl font-bold mb-3" style={{color: '#0e6b55'}}>
+              <h3 className="text-xl font-bold mb-3" style={{color: '#0b5d4b'}}>
                 {t('quran_track')}
               </h3>
               <ul className="text-gray-600 space-y-2">
                 <li>✅ {t('quran_track')}</li>
-                <li>✅ التجويد</li>
-                <li>✅ التلاوة</li>
-                <li>✅ المسابقات</li>
+                <li>✅ {t('track_quran_2')}</li>
+                <li>✅ {t('track_quran_3')}</li>
+                <li>✅ {t('track_quran_4')}</li>
               </ul>
             </div>
-            <div className="rounded-2xl p-8 border-2" style={{background: '#fffbeb', borderColor: '#fbbf24'}}>
+            <div className="rounded-2xl p-8 border-2" style={{background: '#faf3dc', borderColor: '#c9a24a'}}>
               <div className="text-4xl mb-4">💻</div>
-              <h3 className="text-xl font-bold mb-3" style={{color: '#d97706'}}>
+              <h3 className="text-xl font-bold mb-3" style={{color: '#8f6b1c'}}>
                 {t('tech_track')}
               </h3>
               <ul className="text-gray-600 space-y-2">
@@ -291,10 +315,13 @@ return (
         </div>
       </section>
 
+      {/* اكتشف صفحات الموقع  */}
+         <PageCards />
+      
       {/* مشغل الصوت */}
-      <section className="py-16 px-4" style={{background: '#e8f8f5'}}>
+      <section className="py-16 px-4" style={{background: '#eaf2ed'}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{color: '#0e6b55'}}>
+          <h2 className="text-3xl font-bold mb-4" style={{color: '#0b5d4b'}}>
             {t('listen_title')}
           </h2>
           <p className="text-gray-500 mb-8">{t('listen_subtitle')}</p>
@@ -303,16 +330,16 @@ return (
       </section>
 
       {/* مشروع الأسبوع */}
-      <section className="py-16 px-4" style={{background: '#f0fdf9'}}>
+      <section className="py-16 px-4" style={{background: '#f7f3e8'}}>
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '3px solid #0e6b55'}}>
-            <div className="p-2 text-center text-white text-sm font-bold" style={{background: '#0e6b55'}}>
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden" style={{border: '1px solid #0b5d4b'}}>
+            <div className="p-2 text-center text-white text-sm font-bold" style={{background: '#0b5d4b'}}>
               🌟 {locale === 'ar' ? 'مشروع الأسبوع' : locale === 'fr' ? 'Projet de la semaine' : 'Project of the Week'}
             </div>
             <div className="p-8 md:flex items-center gap-8">
               <div className="text-8xl text-center mb-6 md:mb-0">🎮</div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold mb-3" style={{color: '#0e6b55'}}>
+                <h2 className="text-2xl font-bold mb-3" style={{color: '#0b5d4b'}}>
                   {locale === 'ar' ? 'صممنا لعبة لتعلم أسماء سور القرآن' :
                    locale === 'fr' ? 'Nous avons créé un jeu pour apprendre les noms des sourates' :
                    'We designed a game to learn Quran surah names'}
@@ -323,14 +350,14 @@ return (
                    'Level 2 children programmed an interactive Scratch game to memorize Quran surah names in a fun way.'}
                 </p>
                 <div className="flex items-center gap-3 flex-wrap">
-                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#0e6b55'}}>Scratch</span>
-                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#fbbf24', color: '#78350f'}}>
+                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#0b5d4b'}}>Scratch</span>
+                  <span className="text-xs px-3 py-1 rounded-full text-white font-bold" style={{background: '#c9a24a', color: '#78350f'}}>
                     {locale === 'ar' ? 'المستوى 2' : locale === 'fr' ? 'Niveau 2' : 'Level 2'}
                   </span>
                   <a
                     href="#projects"
                     className="flex items-center gap-1 text-sm font-bold transition hover:opacity-80"
-                    style={{color: '#0e6b55'}}
+                    style={{color: '#0b5d4b'}}
                   >
                     {locale === 'ar' ? 'اكتشف المشروع ←' : locale === 'fr' ? 'Découvrir le projet →' : 'Discover the project →'}
                   </a>
@@ -345,7 +372,7 @@ return (
       <section id="projects" className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold" style={{color: '#0e6b55'}}>
+            <h2 className="text-3xl font-bold" style={{color: '#0b5d4b'}}>
               👨‍💻 {locale === 'ar' ? 'ماذا صنع أطفالنا؟' : locale === 'fr' ? 'Que font nos enfants?' : 'What did our children make?'}
             </h2>
             <p className="text-gray-400 mt-2">
@@ -355,7 +382,7 @@ return (
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 min-[420px]:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
             {[
               {
                 icon: '🎮',
@@ -363,7 +390,7 @@ return (
                 descAr: 'لعبة Scratch لتعلم أسماء السور',
                 descFr: 'Jeu Scratch pour apprendre les sourates',
                 descEn: 'Scratch game to learn surah names',
-                tag: 'Scratch', color: '#0e6b55',
+                tag: 'Scratch', color: '#0b5d4b',
                 level: locale === 'ar' ? 'المستوى 1' : locale === 'fr' ? 'Niveau 1' : 'Level 1',
               },
               {
@@ -372,7 +399,7 @@ return (
                 descAr: 'تطبيق لحفظ الأدعية اليومية',
                 descFr: 'Application pour mémoriser les douaas',
                 descEn: 'App to memorize daily duas',
-                tag: 'Scratch', color: '#fbbf24',
+                tag: 'Scratch', color: '#c9a24a',
                 level: locale === 'ar' ? 'المستوى 2' : locale === 'fr' ? 'Niveau 2' : 'Level 2',
               },
               {
@@ -381,7 +408,7 @@ return (
                 descAr: 'روبوت يؤذن في أوقات الصلاة',
                 descFr: 'Robot qui appelle à la prière',
                 descEn: 'Robot that calls to prayer',
-                tag: 'micro:bit', color: '#f59e0b',
+                tag: 'micro:bit', color: '#b8893a',
                 level: locale === 'ar' ? 'المستوى 2' : locale === 'fr' ? 'Niveau 2' : 'Level 2',
               },
               {
@@ -390,7 +417,7 @@ return (
                 descAr: 'موقع لعرض آيات قرآنية مختارة',
                 descFr: 'Site pour afficher des versets coraniques',
                 descEn: 'Website to display selected Quranic verses',
-                tag: 'HTML/CSS', color: '#06b6d4',
+                tag: 'HTML/CSS', color: '#2f7f8f',
                 level: locale === 'ar' ? 'المستوى 3' : locale === 'fr' ? 'Niveau 3' : 'Level 3',
               },
               {
@@ -399,7 +426,7 @@ return (
                 descAr: 'نموذج يتعرف على أسماء السور بالصوت',
                 descFr: 'Modèle qui reconnaît les sourates par la voix',
                 descEn: 'Model that recognizes surahs by voice',
-                tag: 'AI', color: '#8b5cf6',
+                tag: 'AI', color: '#6d5aa0',
                 level: locale === 'ar' ? 'المستوى 3' : locale === 'fr' ? 'Niveau 3' : 'Level 3',
               },
               {
@@ -408,16 +435,16 @@ return (
                 descAr: 'انضم وابدأ مشروعك الخاص اليوم!',
                 descFr: 'Rejoignez-nous et commencez votre projet!',
                 descEn: 'Join us and start your own project today!',
-                tag: '🚀', color: '#0e6b55', level: '',
+                tag: '🚀', color: '#0b5d4b', level: '',
               },
             ].map((project, i) => (
   <div
     key={i}
     onClick={() => setSelectedProject(i)}
-    className="rounded-3xl p-5 shadow-md transition hover:scale-105 cursor-pointer"
+    className="card-premium p-5 cursor-pointer"
                 style={{
                   background: i === 5 ? `${project.color}15` : 'white',
-                  border: `3px solid ${project.color}`,
+                  border: `1px solid ${project.color}`,
                 }}
               >
                 <div className="text-5xl mb-3 text-center">{project.icon}</div>
@@ -441,12 +468,6 @@ return (
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="text-white text-center py-6" style={{background: '#0e6b55'}}>
-        <p className="text-sm" style={{color: '#ccfffd'}}>
-          جميع الحقوق محفوظة — عليوي حمزة — {t('title')} © 2026
-        </p>
-      </footer>
       {/* نافذة تفاصيل المشروع */}
 {selectedProject !== null && (
   <div
@@ -456,7 +477,7 @@ return (
   >
     <div
       className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg max-h-screen overflow-y-auto"
-      style={{border: `4px solid ${projectDetails[selectedProject].color}`}}
+      style={{border: `1px solid ${projectDetails[selectedProject].color}`}}
       onClick={e => e.stopPropagation()}
     >
       <div className="flex justify-between items-center mb-6">
@@ -475,12 +496,12 @@ return (
       </div>
 
       <div className="mb-4">
-        <h3 className="font-bold mb-4 text-lg" style={{color: '#0e6b55'}}>
+        <h3 className="font-bold mb-4 text-lg" style={{color: '#0b5d4b'}}>
           {locale === 'ar' ? '🛠️ كيف تصنعه؟' : locale === 'fr' ? '🛠️ Comment le faire?' : '🛠️ How to make it?'}
         </h3>
         <div className="space-y-3">
           {projectDetails[selectedProject].steps[locale as 'ar' | 'fr' | 'en'].map((step, i) => (
-            <div key={i} className="flex items-start gap-3 p-3 rounded-2xl" style={{background: '#f0fdf9'}}>
+            <div key={i} className="flex items-start gap-3 p-3 rounded-2xl" style={{background: '#f7f3e8'}}>
               <span
                 className="w-7 h-7 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
                 style={{background: projectDetails[selectedProject].color}}
@@ -503,7 +524,7 @@ return (
         <button
           onClick={() => setSelectedProject(null)}
           className="flex-1 py-2 rounded-2xl font-bold transition hover:opacity-90"
-          style={{background: '#e8f8f5', color: '#0e6b55'}}
+          style={{background: '#eaf2ed', color: '#0b5d4b'}}
         >
           {locale === 'ar' ? 'حسناً، سأجرب!' : locale === 'fr' ? 'OK, je vais essayer!' : 'OK, I\'ll try it!'}
         </button>

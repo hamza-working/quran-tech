@@ -52,7 +52,7 @@ export default function LoginForm({ locale, onSuccess }: LoginFormProps) {
   const t = texts[locale as keyof typeof texts] || texts.ar;
 
   const inputStyle: React.CSSProperties = {
-    border: '2px solid #a9dfbf',
+    border: '1.5px solid #cfe0d6',
     color: '#333',
     backgroundColor: 'white',
   };
@@ -96,14 +96,14 @@ await createChildProfile(
         <button
           onClick={() => { setIsLogin(true); setError(''); }}
           className="flex-1 py-2 font-bold text-sm transition"
-          style={isLogin ? {background: '#079992', color: 'white'} : {background: '#f0fffe', color: '#0e6b55'}}
+          style={isLogin ? {background: '#1f7a55', color: 'white'} : {background: '#f7f3e8', color: '#0b5d4b'}}
         >
           {t.login}
         </button>
         <button
           onClick={() => { setIsLogin(false); setError(''); }}
           className="flex-1 py-2 font-bold text-sm transition"
-          style={!isLogin ? {background: '#079992', color: 'white'} : {background: '#f0fffe', color: '#0e6b55'}}
+          style={!isLogin ? {background: '#1f7a55', color: 'white'} : {background: '#f7f3e8', color: '#0b5d4b'}}
         >
           {t.register}
         </button>
@@ -112,7 +112,7 @@ await createChildProfile(
       <div className="space-y-4">
         {!isLogin && (
           <div>
-            <label className="block text-sm font-bold mb-1" style={{color: '#0e6b55'}}>{t.name}</label>
+            <label className="block text-sm font-bold mb-1" style={{color: '#0b5d4b'}}>{t.name}</label>
             <input
               type="text"
               placeholder={t.name}
@@ -120,14 +120,14 @@ await createChildProfile(
               onChange={e => setChildName(e.target.value)}
               className="w-full rounded-2xl px-4 py-3 text-right outline-none"
               style={inputStyle}
-              onFocus={e => e.target.style.borderColor = '#079992'}
-              onBlur={e => e.target.style.borderColor = '#a9dfbf'}
+              onFocus={e => e.target.style.borderColor = '#1f7a55'}
+              onBlur={e => e.target.style.borderColor = '#cfe0d6'}
             />
           </div>
         )}
 
         <div>
-          <label className="block text-sm font-bold mb-1" style={{color: '#0e6b55'}}>{t.email}</label>
+          <label className="block text-sm font-bold mb-1" style={{color: '#0b5d4b'}}>{t.email}</label>
           <input
             type="email"
             placeholder="example@email.com"
@@ -135,13 +135,13 @@ await createChildProfile(
             onChange={e => setEmail(e.target.value)}
             className="w-full rounded-2xl px-4 py-3 text-right outline-none"
             style={inputStyle}
-            onFocus={e => e.target.style.borderColor = '#079992'}
-            onBlur={e => e.target.style.borderColor = '#a9dfbf'}
+            onFocus={e => e.target.style.borderColor = '#1f7a55'}
+            onBlur={e => e.target.style.borderColor = '#cfe0d6'}
           />
         </div>
 
         <div>
-          <label className="block text-sm font-bold mb-1" style={{color: '#0e6b55'}}>{t.password}</label>
+          <label className="block text-sm font-bold mb-1" style={{color: '#0b5d4b'}}>{t.password}</label>
           <input
             type="password"
             placeholder="••••••••"
@@ -149,14 +149,14 @@ await createChildProfile(
             onChange={e => setPassword(e.target.value)}
             className="w-full rounded-2xl px-4 py-3 text-right outline-none"
             style={inputStyle}
-            onFocus={e => e.target.style.borderColor = '#079992'}
-            onBlur={e => e.target.style.borderColor = '#a9dfbf'}
+            onFocus={e => e.target.style.borderColor = '#1f7a55'}
+            onBlur={e => e.target.style.borderColor = '#cfe0d6'}
           />
         </div>
 
         {!isLogin && (
           <div>
-            <label className="block text-sm font-bold mb-1" style={{color: '#0e6b55'}}>{t.confirm}</label>
+            <label className="block text-sm font-bold mb-1" style={{color: '#0b5d4b'}}>{t.confirm}</label>
             <input
               type="password"
               placeholder="••••••••"
@@ -164,8 +164,8 @@ await createChildProfile(
               onChange={e => setConfirmPassword(e.target.value)}
               className="w-full rounded-2xl px-4 py-3 text-right outline-none"
               style={inputStyle}
-              onFocus={e => e.target.style.borderColor = '#079992'}
-              onBlur={e => e.target.style.borderColor = '#a9dfbf'}
+              onFocus={e => e.target.style.borderColor = '#1f7a55'}
+              onBlur={e => e.target.style.borderColor = '#cfe0d6'}
             />
           </div>
         )}
@@ -180,7 +180,7 @@ await createChildProfile(
           onClick={handleSubmit}
           disabled={loading}
           className="w-full font-bold py-3 rounded-2xl text-white transition hover:opacity-90"
-          style={{background: loading ? '#a9dfbf' : 'linear-gradient(135deg, #079992, #0e6b55)'}}
+          style={{background: loading ? '#cfe0d6' : 'linear-gradient(135deg, #1f7a55, #0b5d4b)'}}
         >
           {loading ? '⏳...' : isLogin ? t.submit_login : t.submit_register}
         </button>

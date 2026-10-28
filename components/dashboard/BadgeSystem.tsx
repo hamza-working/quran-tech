@@ -82,17 +82,17 @@ export default function BadgeSystem({
       {/* شريط التقدم العام */}
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
-          <h3 className="text-lg font-bold text-green-800">
+          <h3 className="text-lg font-bold text-[#0b5d4b]">
             {locale === 'ar' ? 'تقدمك' : locale === 'fr' ? 'Votre progrès' : 'Your Progress'}
           </h3>
-          <span className="text-green-700 font-bold">
+          <span className="text-[#1f7a55] font-bold">
             {memorizedSurahs} / 114
           </span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-3">
           <div
-            className="bg-green-600 h-3 rounded-full transition-all duration-500"
-            style={{ width: `${(memorizedSurahs / 114) * 100}%` }}
+            className="h-3 rounded-full transition-all duration-500"
+            style={{ width: `${(memorizedSurahs / 114) * 100}%`, background: 'linear-gradient(to right, #c9a24a, #1f7a55)' }}
           />
         </div>
       </div>
@@ -104,14 +104,14 @@ export default function BadgeSystem({
             key={badge.id}
             className={`rounded-xl p-4 text-center transition-all duration-300 ${
               badge.unlocked
-                ? 'bg-green-50 border-2 border-green-400 shadow-md'
-                : 'bg-gray-100 border-2 border-gray-200 opacity-60'
+                ? 'bg-[#faf6ec] border border-[#c9a24a] shadow-md'
+                : 'bg-gray-100 border border-gray-200 opacity-60'
             }`}
           >
             <div className="text-4xl mb-2">
               {badge.unlocked ? badge.icon : <Lock size={32} className="mx-auto text-gray-400" />}
             </div>
-            <h4 className={`font-bold text-sm ${badge.unlocked ? 'text-green-800' : 'text-gray-400'}`}>
+            <h4 className={`font-bold text-sm ${badge.unlocked ? 'text-[#0b5d4b]' : 'text-gray-400'}`}>
               {getBadgeName(badge)}
             </h4>
             <p className="text-xs text-gray-500 mt-1">
@@ -119,7 +119,7 @@ export default function BadgeSystem({
             </p>
             {badge.unlocked && (
               <div className="flex justify-center mt-2">
-                <Star size={14} className="text-yellow-500 fill-yellow-500" />
+                <Star size={14} className="text-[#c9a24a] fill-[#c9a24a]" />
               </div>
             )}
           </div>

@@ -18,7 +18,33 @@
     "quran_track": "Parcours Coran",
     "tech_track": "Parcours Technologie",
     "listen_title": "Écouter le Coran",
-    "listen_subtitle": "Par cheikh Maher Al Muaiqly"
+    "listen_subtitle": "Par cheikh Maher Al Muaiqly",
+    "hadith_intro": "Le Prophète ﷺ a dit :",
+    "hadith_text": "Ô jeune homme, je vais t’enseigner quelques paroles : Observe les commandements d’Allah, et Il te préservera. Observe les commandements d’Allah, et tu Le trouveras devant toi. Lorsque tu demandes quelque chose, demande-la à Allah ; et lorsque tu sollicites de l’aide, sollicite l’aide d’Allah. Sache que si toute la communauté se réunissait pour t’apporter un bien, elle ne pourrait t’apporter que ce qu’Allah a déjà décrété en ta faveur. Et si elle se réunissait pour te causer un tort, elle ne pourrait te causer que ce qu’Allah a déjà décrété à ton encontre. Les plumes ont été levées et les pages ont séché.",
+    "hadith_source": "Rapporté par at-Tirmidhi (hadith 2516), d'après Abdallah ibn Abbas (qu'Allah les agrée)",
+    "footer_rights": "Tous droits réservés — {author} — {title} © 2026",
+    "footer_author": "ALIOUI Hamza",
+    "pages_heading": "Découvrez les pages du site",
+    "pages_subtitle": "Tout pour apprendre au même endroit : choisissez la page qui vous intéresse.",
+    "pages_open": "Ouvrir la page",
+    "pages_desc_program": "Trois niveaux d’apprentissage alliant Coran et technologie.",
+    "pages_desc_mushaf": "Lisez le Saint Coran selon les lectures de Hafs et de Warsh.",
+    "pages_desc_tajweed": "Apprenez les règles du tajwid avec exemples et audio.",
+    "pages_desc_islam": "Piliers de l’islam, piliers de la prière, adhkar du matin et du soir.",
+    "pages_desc_quiz": "Testez vos connaissances religieuses, scientifiques et culturelles.",
+    "pages_desc_technology": "De la programmation à l’intelligence artificielle, de façon ludique.",
+    "pages_desc_english": "Apprenez l’anglais pas à pas.",
+    "pages_desc_french": "Apprenez le français pas à pas.",
+    "pages_desc_dashboard": "Suivez votre progression : mémorisation, apprentissage et badges.",
+    "pages_desc_contact": "Nous sommes là pour répondre à vos questions.",
+    "track_quran_1": "Mémorisation du Coran",
+    "track_quran_2": "Tajwid",
+    "track_quran_3": "Récitation",
+    "track_quran_4": "Concours",
+    "track_tech_1": "Scratch",
+    "track_tech_2": "Robotique",
+    "track_tech_3": "Intelligence artificielle",
+    "track_tech_4": "Projets"
   },
   "program": {
     "title": "Programme éducatif",
@@ -64,5 +90,196 @@
     "form_email": "Votre email",
     "form_message": "Votre message...",
     "form_submit": "Envoyer le message 📨"
+  },
+  "islam": {
+    "hero": {
+      "eyebrow": "Apprentissage islamique",
+      "title": "Apprends ta religion",
+      "subtitle": "Apprends les bases de l’islam, les piliers de la prière, et garde tes invocations quotidiennes (adhkar).",
+      "cta": "Commencer"
+    },
+    "breadcrumb": {
+      "label": "Fil d’Ariane",
+      "home": "Accueil",
+      "root": "Apprends ta religion",
+      "back": "Retour aux catégories"
+    },
+    "categories": {
+      "heading": "Choisis ce que tu veux apprendre",
+      "open": "Ouvrir la section",
+      "tabs": "Sections d’apprentissage islamique",
+      "pillars": {
+        "title": "Piliers de l’islam",
+        "desc": "Découvre les cinq piliers sur lesquels l’islam est bâti."
+      },
+      "salah": {
+        "title": "Piliers de la prière",
+        "desc": "Apprends les piliers et les obligations de la prière, étape par étape."
+      },
+      "morning": {
+        "title": "Adhkar du matin",
+        "desc": "Lis les invocations du matin avec un compteur de répétitions et un suivi."
+      },
+      "evening": {
+        "title": "Adhkar du soir",
+        "desc": "Lis les invocations du soir avec un compteur de répétitions et un suivi."
+      }
+    },
+    "pillars": {
+      "heading": "Les cinq piliers de l’islam",
+      "intro": "Ibn Umar (qu’Allah les agrée) rapporte que le Prophète ﷺ a dit que l’islam est bâti sur cinq piliers. Sélectionne un pilier pour en savoir plus.",
+      "readMore": "En savoir plus",
+      "close": "Fermer",
+      "evidence": "Preuves",
+      "hadith": "Hadith des piliers de l’islam",
+      "pillarNumber": "Pilier {n}",
+      "items": {
+        "shahada": {
+          "name": "Les deux attestations",
+          "short": "Attester qu’il n’y a de divinité digne d’adoration qu’Allah et que Muhammad est Son messager.",
+          "detail": "Le musulman atteste qu’il n’y a de divinité digne d’adoration qu’Allah et que Muhammad ﷺ est Son serviteur et Son messager. C’est la porte d’entrée en Islam ; la réaliser suppose d’en comprendre le sens, d’être sincère envers Allah et de suivre Son Messager."
+        },
+        "salah": {
+          "name": "L’accomplissement de la prière",
+          "short": "Les cinq prières quotidiennes, un lien entre le serviteur et son Seigneur.",
+          "detail": "Allah a rendu obligatoires cinq prières par jour et par nuit : Fajr, Dhuhr, Asr, Maghrib et Isha. Elles s’accomplissent à leurs heures, en état de pureté et en direction de la Qibla. Ses piliers, obligations et sunnas sont présentés dans la section « Piliers de la prière »."
+        },
+        "zakat": {
+          "name": "L’aumône légale (Zakat)",
+          "short": "Un droit obligatoire sur les biens atteignant le seuil (nisab), versé à ses ayants droit.",
+          "detail": "La zakat est un acte d’adoration financier obligatoire pour celui dont les biens atteignent le nisab et ont été détenus une année lunaire, sous certaines conditions. Elle est versée aux huit catégories citées par Allah dans la sourate at-Tawba ; elle purifie les biens et l’âme et renforce la solidarité."
+        },
+        "sawm": {
+          "name": "Le jeûne du Ramadan",
+          "short": "S’abstenir de ce qui rompt le jeûne, de l’aube au coucher du soleil, pendant tout le mois de Ramadan.",
+          "detail": "Tout musulman capable jeûne le mois de Ramadan en s’abstenant de manger, de boire et de ce qui rompt le jeûne, de l’aube au coucher du soleil, avec l’intention de jeûner. Le malade et le voyageur peuvent rompre le jeûne et rattraper les jours manqués. Le but du jeûne est d’atteindre la piété (taqwa)."
+        },
+        "hajj": {
+          "name": "Le pèlerinage (Hajj)",
+          "short": "Se rendre à la Maison sacrée d’Allah pour accomplir les rites, une fois dans sa vie pour qui en a la capacité.",
+          "detail": "Le Hajj est un acte d’adoration accompli à La Mecque et dans ses environs durant les mois du Hajj. Il est obligatoire une fois dans la vie pour le musulman pubère, sain d’esprit et capable physiquement et financièrement. Parmi ses rites : l’ihram, le tawaf, le sa’y et la station à Arafat."
+        }
+      }
+    },
+    "salah": {
+      "heading": "Piliers de la prière",
+      "intro": "Apprends les piliers de la prière dans l’ordre, puis distingue-les des obligations et des sunnas.",
+      "schoolTitle": "Remarque scientifique",
+      "school": "Le décompte et la classification des piliers de la prière diffèrent selon les écoles juridiques. Cette section présente la classification de l’école hanbalite (quatorze piliers et huit obligations) telle qu’elle figure dans les deux sources citées ci-dessous ; ce que tu as appris dans ton école peut différer. Pour approfondir ou en cas de divergence, consulte un savant de confiance.",
+      "sources": "Sources",
+      "tabSteps": "Les piliers pas à pas",
+      "tabObligatory": "Les obligations",
+      "tabSunnah": "Quelques sunnas",
+      "tabCompare": "La différence",
+      "step": "Pilier {n} sur {total}",
+      "prev": "Précédent",
+      "next": "Suivant",
+      "goTo": "Aller au pilier {n}",
+      "kind": {
+        "pillar": "Pilier",
+        "obligatory": "Obligation",
+        "sunnah": "Sunna"
+      },
+      "kindDesc": {
+        "pillar": "Pilier : la prière n’est pas valide sans lui, et la prosternation d’oubli ne le remplace pas.",
+        "obligatory": "Obligation : si elle est oubliée, on la compense par la prosternation d’oubli ; l’omettre volontairement invalide la prière.",
+        "sunnah": "Sunna : recommandée ; la prière reste valide sans elle."
+      },
+      "obligatoryIntro": "Dans cette école, il y a huit obligations, distinctes des piliers.",
+      "sunnahIntro": "Exemples de sunnas de la prière, sans exhaustivité ; les livres de fiqh en citent d’autres.",
+      "compareIntro": "Trois niveaux d’actes dans la prière :",
+      "items": {
+        "qiyam": "Accomplir la prière obligatoire debout si l’on en est capable ; sinon assis, et sinon allongé sur le côté.",
+        "takbir": "Dire « Allahu akbar » pour commencer la prière ; par elle, le fidèle entre dans l’état de prière.",
+        "fatiha": "Réciter la sourate al-Fatiha dans la prière.",
+        "ruku": "S’incliner dans la prière, en glorification d’Allah.",
+        "itidal": "Se relever de l’inclinaison pour se tenir droit.",
+        "sujud": "Poser au sol le front (avec le nez), les deux mains, les deux genoux et les orteils des deux pieds : les sept membres.",
+        "raf": "Se relever de la prosternation.",
+        "jalsa": "S’asseoir entre les deux prosternations.",
+        "tuma": "Le calme dans chaque pilier d’action de la prière, de sorte que chaque membre se stabilise.",
+        "tashahhud": "Réciter le tashahhud à la fin de la prière.",
+        "julus": "S’asseoir pour réciter le dernier tashahhud.",
+        "salawat": "Invoquer les bénédictions sur le Prophète ﷺ dans le dernier tashahhud.",
+        "taslim": "Le salut vers la droite puis vers la gauche, qui met fin à la prière.",
+        "tartib": "Accomplir les piliers de la prière dans l’ordre établi par la Sunna.",
+        "takbirat": "Les takbirs de la prière autres que celui d’ouverture, par exemple lors des changements de position.",
+        "tasmi": "Dit par l’imam et par celui qui prie seul en se relevant de l’inclinaison.",
+        "tahmid": "Se dit après s’être relevé de l’inclinaison.",
+        "tasbih_ruku": "La glorification obligatoire durant l’inclinaison, une fois.",
+        "tasbih_sujud": "La glorification obligatoire durant la prosternation, une fois.",
+        "rabbighfir": "Se dit assis entre les deux prosternations.",
+        "tashahhud1": "Le tashahhud récité à l’assise intermédiaire des prières de trois et quatre rak’as.",
+        "julus1": "S’asseoir pour réciter le premier tashahhud.",
+        "raf_yadayn": "Une des sunnas de la prière mentionnées dans les livres de fiqh.",
+        "istiftah": "Une des sunnas de la prière mentionnées dans les livres de fiqh.",
+        "surah": "Une des sunnas de la prière mentionnées dans les livres de fiqh.",
+        "tasbih_more": "Une des sunnas de la prière mentionnées dans les livres de fiqh."
+      }
+    },
+    "adhkar": {
+      "morning": {
+        "title": "Adhkar du matin",
+        "intro": "Récités après la prière de Fajr jusqu’au lever du soleil ; on peut encore les réciter plus tard dans la journée si on a manqué le moment."
+      },
+      "evening": {
+        "title": "Adhkar du soir",
+        "intro": "Récités après la prière d’Asr jusqu’au coucher du soleil ; leur temps se prolonge dans la nuit."
+      },
+      "progress": "{done} sur {total} terminés",
+      "remaining": "Restants : {n}",
+      "allDone": "Tu as terminé les adhkar de ce moment de la journée. Qu’Allah l’accepte de toi.",
+      "repeat": "Répétitions : {count}",
+      "counter": "{current} / {target}",
+      "tap": "Appuie pour compter",
+      "done": "Terminé",
+      "countAria": "Compteur du dhikr {n} : {current} sur {target}",
+      "resetOne": "Réinitialiser ce dhikr",
+      "resetAll": "Tout réinitialiser",
+      "resetConfirm": "Ta progression pour ce moment de la journée sera effacée pour aujourd’hui. Continuer ?",
+      "resetYes": "Oui, réinitialiser",
+      "cancel": "Annuler",
+      "copy": "Copier le texte",
+      "copied": "Copié",
+      "copyFailed": "Copie impossible",
+      "favAdd": "Ajouter aux favoris",
+      "favRemove": "Retirer des favoris",
+      "favorite": "Favoris",
+      "search": "Rechercher dans les adhkar",
+      "searchLabel": "Rechercher dans le texte des adhkar",
+      "filterAll": "Tous",
+      "filterRemaining": "Non terminés",
+      "filterFavorites": "Favoris",
+      "filterLabel": "Filtrer les adhkar",
+      "emptySearch": "Aucun dhikr ne correspond à ta recherche.",
+      "emptyFavorites": "Tu n’as pas encore ajouté de dhikr à tes favoris.",
+      "emptyRemaining": "Il ne reste rien. Macha’Allah !",
+      "dhikrNumber": "Dhikr {n}",
+      "source": "Source",
+      "textSource": "Texte tiré de « Hisn al-Muslim » du cheikh Sa’id ibn Ali ibn Wahf al-Qahtani.",
+      "review": "La référence détaillée de ce dhikr est encore en cours de vérification par un savant.",
+      "disputed": "Les savants divergent sur l’authentification de ce hadith ; merci de le vérifier.",
+      "eveningNotes": "Le soir (tel que donné par la source)",
+      "eveningShort": "La source abrège la formule du soir ; merci de consulter « Hisn al-Muslim » pour le texte complet.",
+      "note": "Remarque de la source",
+      "storageNote": "Ta progression est enregistrée uniquement sur cet appareil et repart de zéro chaque jour.",
+      "loading": "Chargement…",
+      "error": "Cette section n’a pas pu s’afficher. Recharge la page.",
+      "onlyMorning": "Ce dhikr est pour le matin",
+      "onlyEvening": "Ce dhikr est pour le soir",
+      "grading": "Authentification"
+    },
+    "review": {
+      "banner": "Remarque : le contenu religieux de cette section provient de sources reconnues, et les éléments nécessitant encore une vérification savante sont signalés. Si tu remarques une erreur, merci de nous le signaler via la page de contact."
+    }
+  },
+  "player": {
+    "surah": "Sourate {name}",
+    "reciter": "Cheikh Yassine Al-Jazairi — récitation de Warsh",
+    "prev": "Sourate précédente",
+    "next": "Sourate suivante",
+    "playPause": "Lecture / Pause",
+    "volume": "Volume",
+    "chooseSurah": "Choisir une sourate"
   }
 }
