@@ -19,7 +19,7 @@
     "tech_track": "Parcours Technologie",
     "listen_title": "Écouter le Coran",
     "listen_subtitle": "Par cheikh Maher Al Muaiqly",
-    "hadith_intro": "Le Prophète ﷺ a dit :",
+    "hadith_intro": ": a dit ﷺ Le Prophète",
     "hadith_text": "Ô jeune homme, je vais t’enseigner quelques paroles : Observe les commandements d’Allah, et Il te préservera. Observe les commandements d’Allah, et tu Le trouveras devant toi. Lorsque tu demandes quelque chose, demande-la à Allah ; et lorsque tu sollicites de l’aide, sollicite l’aide d’Allah. Sache que si toute la communauté se réunissait pour t’apporter un bien, elle ne pourrait t’apporter que ce qu’Allah a déjà décrété en ta faveur. Et si elle se réunissait pour te causer un tort, elle ne pourrait te causer que ce qu’Allah a déjà décrété à ton encontre. Les plumes ont été levées et les pages ont séché.",
     "hadith_source": "Rapporté par at-Tirmidhi (hadith 2516), d'après Abdallah ibn Abbas (qu'Allah les agrée)",
     "footer_rights": "Tous droits réservés — {author} — {title} © 2026",
@@ -275,7 +275,7 @@
   },
   "player": {
     "surah": "Sourate {name}",
-    "reciter": "Cheikh Yassine Al-Jazairi — récitation de Warsh",
+    "reciter": "Cheikh Yassine Al-Jazairi — Récitation de Warsh",
     "prev": "Sourate précédente",
     "next": "Sourate suivante",
     "playPause": "Lecture / Pause",
