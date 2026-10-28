@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Volume2 } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import { getSurahAudioUrl, getSurahById, surahs } from '@/lib/api/quran';
 
 interface AudioPlayerProps {
@@ -9,6 +10,11 @@ interface AudioPlayerProps {
 }
 
 export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
+  const t = useTranslations('player');
+  const locale = useLocale();
+  // Surah names: Arabic in the Arabic interface, transliterated names (already in the data) in English/French.
+  const surahName = (sr: { name: string; englishName: string; frenchName: string }) =>
+    locale === 'fr' ? sr.frenchName : locale === 'en' ? sr.englishName : sr.name;
   const [currentSurahId, setCurrentSurahId] = useState(initialSurahId);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
@@ -100,9 +106,9 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
       {/* اسم السورة */}
       <div className="text-center mb-6">
         <h2 className="text-2xl md:text-3xl font-bold" style={{color: '#0b5d4b'}}>
-          سورة {currentSurah?.name}
+          {currentSurah ? t('surah', { name: surahName(currentSurah) }) : ''}
         </h2>
-        <p className="text-gray-500 text-sm mt-1">الشيخ ياسين الجزائري — رواية ورش</p>
+        <p className="text-gray-500 text-sm mt-1">{t('reciter')}</p>
         <p className="text-xs mt-1 font-semibold" style={{color: '#8f6b1c'}}>
           {currentSurahId} / {surahs.length}
         </p>
@@ -128,12 +134,12 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
 
       {/* أزرار التحكم */}
       <div className="flex items-center justify-center gap-6 mb-6">
-        <button onClick={handlePrev} aria-label="Previous" className="p-2 rounded-full transition hover:bg-black/5 cursor-pointer" style={{color: '#0b5d4b'}}>
+        <button onClick={handlePrev} aria-label={t('prev')} className="p-2 rounded-full transition hover:bg-black/5 cursor-pointer" style={{color: '#0b5d4b'}}>
           <SkipBack size={28} />
         </button>
         <button
           onClick={togglePlay}
-          aria-label="Play / Pause"
+          aria-label={t('playPause')}
           className="text-white rounded-full p-4 transition hover:brightness-110 cursor-pointer"
           style={{background: '#0b5d4b', boxShadow: '0 6px 18px rgba(11,93,75,0.35), inset 0 0 0 2px rgba(201,162,74,0.55)'}}
         >
@@ -144,7 +150,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
             : <Play size={28} />
           }
         </button>
-        <button onClick={handleNext} aria-label="Next" className="p-2 rounded-full transition hover:bg-black/5 cursor-pointer" style={{color: '#0b5d4b'}}>
+        <button onClick={handleNext} aria-label={t('next')} className="p-2 rounded-full transition hover:bg-black/5 cursor-pointer" style={{color: '#0b5d4b'}}>
           <SkipForward size={28} />
         </button>
       </div>
@@ -152,14 +158,15 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
       {/* قائمة السور */}
       <div className="mb-4 rounded-xl overflow-hidden" style={{border: '1px solid #e3dcc8'}}>
         <select
+          aria-label={t('chooseSurah')}
           value={currentSurahId}
           onChange={e => setCurrentSurahId(Number(e.target.value))}
-          className="w-full px-4 py-3 text-right outline-none font-bold"
+          className="w-full px-4 py-3 text-start outline-none font-bold"
           style={{color: '#0b5d4b', background: '#faf6ec'}}
         >
           {surahs.map(surah => (
             <option key={surah.id} value={surah.id}>
-              {surah.id}. سورة {surah.name}
+              {surah.id}. {t('surah', { name: surahName(surah) })}
             </option>
           ))}
         </select>
@@ -168,7 +175,7 @@ export default function AudioPlayer({ initialSurahId = 1 }: AudioPlayerProps) {
       {/* التحكم في الصوت */}
       <div className="flex items-center gap-3">
         <Volume2 size={18} style={{color: '#0b5d4b'}} />
-        <input
+        <input aria-label={t('volume')}
           type="range"
           min="0"
           max="1"

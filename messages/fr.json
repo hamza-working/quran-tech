@@ -19,8 +19,8 @@
     "tech_track": "Parcours Technologie",
     "listen_title": "Écouter le Coran",
     "listen_subtitle": "Par cheikh Maher Al Muaiqly",
-    "hadith_intro": "قال رسول الله ﷺ :",
-    "hadith_text": "«يا غلام، إني أُعلِّمُكَ كلماتٍ: احفظِ اللهَ يحفظْكَ، احفظِ اللهَ تجِدْهُ تجاهَكَ، إذا سألتَ فاسألِ اللهَ، وإذا استعنتَ فاستعنْ باللهِ، واعلمْ أنَّ الأمةَ لو اجتمعتْ على أن ينفعوكَ بشيءٍ لم ينفعوكَ إلا بشيءٍ قد كتبهُ اللهُ لكَ، وإنِ اجتمعوا على أن يضرُّوكَ بشيءٍ لم يضرُّوكَ إلا بشيءٍ قد كتبهُ اللهُ عليكَ، رُفعتِ الأقلامُ وجفَّتِ الصُّحُفُ»",
+    "hadith_intro": "Le Prophète ﷺ a dit :",
+    "hadith_text": "Ô jeune homme, je vais t’enseigner quelques paroles : Observe les commandements d’Allah, et Il te préservera. Observe les commandements d’Allah, et tu Le trouveras devant toi. Lorsque tu demandes quelque chose, demande-la à Allah ; et lorsque tu sollicites de l’aide, sollicite l’aide d’Allah. Sache que si toute la communauté se réunissait pour t’apporter un bien, elle ne pourrait t’apporter que ce qu’Allah a déjà décrété en ta faveur. Et si elle se réunissait pour te causer un tort, elle ne pourrait te causer que ce qu’Allah a déjà décrété à ton encontre. Les plumes ont été levées et les pages ont séché.",
     "hadith_source": "Rapporté par at-Tirmidhi (hadith 2516), d'après Abdallah ibn Abbas (qu'Allah les agrée)",
     "footer_rights": "Tous droits réservés — {author} — {title} © 2026",
     "footer_author": "ALIOUI Hamza",
@@ -36,7 +36,15 @@
     "pages_desc_english": "Apprenez l’anglais pas à pas.",
     "pages_desc_french": "Apprenez le français pas à pas.",
     "pages_desc_dashboard": "Suivez votre progression : mémorisation, apprentissage et badges.",
-    "pages_desc_contact": "Nous sommes là pour répondre à vos questions."
+    "pages_desc_contact": "Nous sommes là pour répondre à vos questions.",
+    "track_quran_1": "Mémorisation du Coran",
+    "track_quran_2": "Tajwid",
+    "track_quran_3": "Récitation",
+    "track_quran_4": "Concours",
+    "track_tech_1": "Scratch",
+    "track_tech_2": "Robotique",
+    "track_tech_3": "Intelligence artificielle",
+    "track_tech_4": "Projets"
   },
   "program": {
     "title": "Programme éducatif",
@@ -264,5 +272,14 @@
     "review": {
       "banner": "Remarque : le contenu religieux de cette section provient de sources reconnues, et les éléments nécessitant encore une vérification savante sont signalés. Si tu remarques une erreur, merci de nous le signaler via la page de contact."
     }
+  },
+  "player": {
+    "surah": "Sourate {name}",
+    "reciter": "Cheikh Yassine Al-Jazairi — récitation de Warsh",
+    "prev": "Sourate précédente",
+    "next": "Sourate suivante",
+    "playPause": "Lecture / Pause",
+    "volume": "Volume",
+    "chooseSurah": "Choisir une sourate"
   }
 }

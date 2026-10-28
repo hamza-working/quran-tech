@@ -173,8 +173,18 @@ const rules = [
   },
 ];
 
+const DURATION_I18N: Record<string, { en: string; fr: string }> = {
+  'بدون غنة': { en: 'Without ghunnah', fr: 'Sans ghunna' },
+  '2 حركة مع غنة': { en: '2 counts with ghunnah', fr: '2 temps avec ghunna' },
+  '2 حركة': { en: '2 counts', fr: '2 temps' },
+  'حركة واحدة': { en: '1 count', fr: '1 temps' },
+  'حسب الحرف': { en: 'Depends on the letter', fr: 'Selon la lettre' },
+};
+
 export default function TajweedPage() {
   const locale = useLocale() as 'ar' | 'fr' | 'en';
+  // The "duration" field is interface text (Arabic in the data); the Quranic examples stay Arabic.
+  const durationLabel = (d: string) => (locale === 'ar' ? d : DURATION_I18N[d]?.[locale] ?? d);
   const [selectedRule, setSelectedRule] = useState<number | null>(null);
 
   const texts = {
@@ -250,7 +260,7 @@ export default function TajweedPage() {
                   <span className="text-xs px-2 py-1 rounded-full font-bold" style={{background: rule.color, color: readableOn(rule.color)}}>
                     {rule.example}
                   </span>
-                  <span className="text-xs text-gray-400">{rule.duration}</span>
+                  <span className="text-xs text-gray-400">{durationLabel(rule.duration)}</span>
                 </div>
               </div>
             ))}
@@ -299,7 +309,7 @@ export default function TajweedPage() {
                 <div className="rounded-2xl p-5 text-center" style={{background: '#eaf2ed', border: '1.5px solid #1f7a55'}}>
                   <div className="font-bold mb-2" style={{color: '#0b5d4b'}}>⏱️ {t.duration}</div>
                   <div className="text-xl font-bold" style={{color: '#1f7a55'}}>
-                    {selected.duration}
+                    {durationLabel(selected.duration)}
                   </div>
                 </div>
               </div>

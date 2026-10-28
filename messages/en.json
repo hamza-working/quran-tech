@@ -19,8 +19,8 @@
     "tech_track": "Technology Track",
     "listen_title": "Listen to the Quran",
     "listen_subtitle": "By Sheikh Maher Al Muaiqly",
-    "hadith_intro": "قال رسول الله ﷺ:",
-    "hadith_text": "«يا غلام، إني أُعلِّمُكَ كلماتٍ: احفظِ اللهَ يحفظْكَ، احفظِ اللهَ تجِدْهُ تجاهَكَ، إذا سألتَ فاسألِ اللهَ، وإذا استعنتَ فاستعنْ باللهِ، واعلمْ أنَّ الأمةَ لو اجتمعتْ على أن ينفعوكَ بشيءٍ لم ينفعوكَ إلا بشيءٍ قد كتبهُ اللهُ لكَ، وإنِ اجتمعوا على أن يضرُّوكَ بشيءٍ لم يضرُّوكَ إلا بشيءٍ قد كتبهُ اللهُ عليكَ، رُفعتِ الأقلامُ وجفَّتِ الصُّحُفُ»",
+    "hadith_intro": "The Prophet ﷺ said:",
+    "hadith_text": "O young boy, I shall teach you some words: Be mindful of Allah, and He will protect you. Be mindful of Allah, and you will find Him before you. When you ask, ask Allah; and when you seek help, seek help from Allah. Know that if the entire nation were to gather together to benefit you with anything, they would not benefit you except with something that Allah has already decreed for you. And if they were to gather together to harm you with anything, they would not harm you except with something that Allah has already decreed against you. The pens have been lifted, and the pages have dried.",
     "hadith_source": "Narrated by Jami' at-Tirmidhi (Hadith 2516), from Abdullah ibn Abbas (may Allah be pleased with them)",
     "footer_rights": "All rights reserved — {author} — {title} © 2026",
     "footer_author": "ALIOUI Hamza",
@@ -36,7 +36,15 @@
     "pages_desc_english": "Learn English step by step.",
     "pages_desc_french": "Learn French step by step.",
     "pages_desc_dashboard": "Follow your progress in memorisation, learning and badges.",
-    "pages_desc_contact": "We are here to answer your questions."
+    "pages_desc_contact": "We are here to answer your questions.",
+    "track_quran_1": "Quran memorization",
+    "track_quran_2": "Tajweed",
+    "track_quran_3": "Recitation",
+    "track_quran_4": "Competitions",
+    "track_tech_1": "Scratch",
+    "track_tech_2": "Robotics",
+    "track_tech_3": "Artificial intelligence",
+    "track_tech_4": "Projects"
   },
   "program": {
     "title": "Educational Program",
@@ -264,5 +272,14 @@
     "review": {
       "banner": "Note: the religious content in this section comes from recognised sources, and items still needing scholarly review are marked. If you notice a mistake, please let us know through the contact page."
     }
+  },
+  "player": {
+    "surah": "Surah {name}",
+    "reciter": "Sheikh Yassine Al-Jazairi — Warsh recitation",
+    "prev": "Previous surah",
+    "next": "Next surah",
+    "playPause": "Play / Pause",
+    "volume": "Volume",
+    "chooseSurah": "Choose a surah"
   }
 }

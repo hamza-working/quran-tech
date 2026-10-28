@@ -294,9 +294,9 @@ return (
               </h3>
               <ul className="text-gray-600 space-y-2">
                 <li>✅ {t('quran_track')}</li>
-                <li>✅ التجويد</li>
-                <li>✅ التلاوة</li>
-                <li>✅ المسابقات</li>
+                <li>✅ {t('track_quran_2')}</li>
+                <li>✅ {t('track_quran_3')}</li>
+                <li>✅ {t('track_quran_4')}</li>
               </ul>
             </div>
             <div className="rounded-2xl p-8 border-2" style={{background: '#faf3dc', borderColor: '#c9a24a'}}>
