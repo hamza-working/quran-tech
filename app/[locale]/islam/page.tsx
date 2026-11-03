@@ -9,7 +9,10 @@ import Logo from '@/components/shared/Logo';
 import PillarsOfIslam from '@/components/islam/PillarsOfIslam';
 import SalahPillars from '@/components/islam/SalahPillars';
 import AdhkarReader from '@/components/islam/AdhkarReader';
+import TopicsBrowser from '@/components/islam/TopicsBrowser';
 import { useHash, setHash } from '@/components/islam/useHash';
+import { TOPICS, CHAPTERS } from '@/lib/islam/topics';
+import { TOPIC_ICONS } from '@/components/islam/topic-icons';
 
 type SectionId = 'pillars' | 'salah' | 'morning' | 'evening';
 
@@ -27,7 +30,20 @@ export default function IslamPage() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const categoriesRef = useRef<HTMLElement>(null);
 
-  const active = SECTIONS.find((s) => s.id === hash)?.id ?? null;
+  // Deep link for a topic: #topic-<id>, e.g. #topic-travel
+  const rawTopic = hash.startsWith('topic-') ? hash.slice('topic-'.length) : null;
+  const topicId = rawTopic && TOPICS.some((x) => x.id === rawTopic) ? rawTopic : null;
+  const active: SectionId | 'topics' | null = topicId ? 'topics' : SECTIONS.find((s) => s.id === hash)?.id ?? null;
+
+  // One grid for everything: the four main sections, then the supplication topics.
+  const cards = [
+    ...SECTIONS.map(({ id, icon, tint }) => ({ key: id, hash: id, icon, tint, selected: active === id, title: t(`categories.${id}.title`), desc: t(`categories.${id}.desc`) })),
+    ...TOPICS.map((tp) => ({
+      key: `topic-${tp.id}`, hash: `topic-${tp.id}`, icon: TOPIC_ICONS[tp.id], tint: '#0b5d4b', selected: topicId === tp.id,
+      title: t(`topics.names.${tp.id}`),
+      desc: t('topics.countOf', { n: tp.chapters.reduce((n, id) => n + CHAPTERS[id].items.length, 0) }),
+    })),
+  ];
 
   // Scroll to the opened section (or back to the categories), honouring reduced motion.
   useEffect(() => {
@@ -65,34 +81,29 @@ export default function IslamPage() {
           <h2 id="categories-heading" className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ color: '#0b5d4b' }}>
             {t('categories.heading')}
           </h2>
-          <ul className="grid gap-4 sm:grid-cols-2" aria-label={t('categories.tabs')}>
-            {SECTIONS.map(({ id, icon: Icon, tint }) => {
-              const selected = active === id;
-              return (
-                <li key={id}>
-                  <button
-                    type="button"
-                    onClick={() => setHash(id)}
-                    aria-current={selected ? 'true' : undefined}
-                    className="card-premium w-full h-full p-6 text-start flex gap-4 items-start cursor-pointer"
-                    style={selected ? { borderColor: '#c9a24a', boxShadow: 'var(--shadow-lg)' } : undefined}
-                  >
-                    <span className="qt-keep shrink-0">
-                      <span className="w-14 h-14 rounded-xl flex items-center justify-center" style={{ background: tint, color: '#f3eddc' }}>
-                        <Icon size={26} aria-hidden="true" />
-                      </span>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label={t('categories.tabs')}>
+            {cards.map((c) => (
+              <li key={c.key}>
+                <button
+                  type="button"
+                  onClick={() => setHash(c.hash)}
+                  aria-current={c.selected ? 'true' : undefined}
+                  className="card-premium w-full h-full p-5 text-start flex flex-col gap-3 cursor-pointer"
+                  style={c.selected ? { borderColor: '#c9a24a', boxShadow: 'var(--shadow-lg)' } : undefined}
+                >
+                  <span className="qt-keep self-start">
+                    <span className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: c.tint, color: '#f3eddc', boxShadow: 'inset 0 0 0 2px rgba(201,162,74,0.45)' }}>
+                      <c.icon size={24} aria-hidden="true" />
                     </span>
-                    <span className="flex-1">
-                      <span className="block text-xl font-bold mb-1" style={{ color: 'var(--qt-ink)', fontFamily: 'var(--qt-font-display)' }}>{t(`categories.${id}.title`)}</span>
-                      <span className="block text-sm mb-3" style={{ color: 'var(--qt-muted)' }}>{t(`categories.${id}.desc`)}</span>
-                      <span className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: '#1f7a55' }}>
-                        {t('categories.open')} <ArrowRight size={16} className="rtl:rotate-180" aria-hidden="true" />
-                      </span>
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
+                  </span>
+                  <span className="block text-lg font-bold" style={{ color: 'var(--qt-ink)', fontFamily: 'var(--qt-font-display)' }}>{c.title}</span>
+                  <span className="block text-sm flex-1" style={{ color: 'var(--qt-muted)' }}>{c.desc}</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: '#1f7a55' }}>
+                    {t('categories.open')} <ArrowRight size={16} className="rtl:rotate-180" aria-hidden="true" />
+                  </span>
+                </button>
+              </li>
+            ))}
           </ul>
         </section>
 
@@ -105,7 +116,9 @@ export default function IslamPage() {
                 <li aria-hidden="true"><ChevronLeft size={14} className="ltr:rotate-180" /></li>
                 <li><button type="button" onClick={() => setHash('')} className="hover:underline cursor-pointer">{t('breadcrumb.root')}</button></li>
                 <li aria-hidden="true"><ChevronLeft size={14} className="ltr:rotate-180" /></li>
-                <li aria-current="page" className="font-bold" style={{ color: 'var(--qt-ink)' }}>{t(`categories.${active}.title`)}</li>
+                <li aria-current="page" className="font-bold" style={{ color: 'var(--qt-ink)' }}>
+                  {active === 'topics' && topicId ? t(`topics.names.${topicId}`) : active ? t(`categories.${active}.title`) : null}
+                </li>
               </ol>
             </nav>
 
@@ -126,6 +139,7 @@ export default function IslamPage() {
             {active === 'salah' && <SalahPillars />}
             {active === 'morning' && <AdhkarReader period="morning" />}
             {active === 'evening' && <AdhkarReader period="evening" />}
+            {active === 'topics' && topicId && <TopicsBrowser topicId={topicId} />}
 
             <button type="button" onClick={() => { setHash(''); categoriesRef.current?.scrollIntoView({ behavior: 'auto', block: 'start' }); }}
               className="mt-10 mx-auto flex items-center gap-2 text-sm font-bold cursor-pointer" style={{ color: '#1f7a55' }}>

@@ -2,6 +2,8 @@
 
 import { useState, useRef } from 'react';
 
+import { useLocale } from 'next-intl';
+
 interface AudioClipProps {
   url: string;
   color: string;
@@ -13,6 +15,26 @@ export default function AudioClip({ url, color, startTime = 0, duration = 15 }: 
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const locale = useLocale() as 'ar' | 'fr' | 'en';
+  const texts = {
+    ar: {
+      listen: 'استمع للمثال',
+      stop: "ايقاف",
+      sec: "ثانية",
+    },
+     fr: {
+      listen: 'Ecouter l\'exemple',
+      stop: "Arrêter",
+      sec: "Secondes",
+    },
+    en: {
+      listen: 'Listen to Example',
+      stop: "Stop",
+      sec: "Seconds",
+    }
+  }
+  const t = texts[locale] || texts.ar;
 
   const handlePlay = () => {
     const audio = audioRef.current;
@@ -42,10 +64,10 @@ export default function AudioClip({ url, color, startTime = 0, duration = 15 }: 
         className="flex items-center gap-2 px-5 py-3 rounded-2xl font-bold text-white transition hover:opacity-90"
         style={{background: color}}
       >
-        {isPlaying ? '⏹️ إيقاف' : '▶️ استمع للمثال'}
+    {isPlaying ? `⏹️ ${t.stop}` : `▶️ ${t.listen}`}
       </button>
       <span className="text-xs text-gray-400">
-        {duration} {' '}ثانية
+        {duration} {' '} {t.sec}
       </span>
       <audio ref={audioRef} src={url} />
     </div>

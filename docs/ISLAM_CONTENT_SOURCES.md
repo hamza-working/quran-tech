@@ -44,3 +44,17 @@ especially for users following the Maliki school (common in Morocco).
 
 ## Hero hadith (home page)
 Full text of Jāmi' al-Tirmidhī 2516 (narrated by Ibn 'Abbās), checked against the vocalised wording in al-Mawsū'a al-Ḥadīthiyya (dorar.net, "اللفظ للترمذي") and the Tirmidhī text edited by Aḥmad Shākir. Known wording variant between editions: «وإنِ اجتمعوا» (used) / «ولو اجتمعوا».
+
+## Supplications by topic (`#topics`)
+- **Source:** the 132 chapters of «حصن المسلم» (same open dataset as above). 12 topics group 92 chapters / 158 supplications
+  (prayer, food & drink, home, clothes, hard times, sickness, social, travel, money, marriage, children, Hajj & Umrah).
+- **Text:** verbatim from the dataset (the book's `(( ))` mark the supplication itself; text outside them is the book's own instruction
+  and is displayed in a lighter style). Only `*` separators became spaces. 5 entries have unbalanced/nested `(( ))` in the source:
+  they are shown as one block with the markers removed (words untouched). Heading typography was normalised (e.g. «اﻟﻤﺠلس» → «المجلس»).
+- **Counts:** dataset counts, with 3 corrected from the entry's own wording: «سبحان الملك القدوس» ×3 (ch. 33), the supplication against a ruler's
+  injustice ×3 (ch. 37), and the visit-to-the-sick supplication ×7 (ch. 49). For entries whose instruction mixes several repetitions
+  (e.g. after-prayer tahlil «ثلاثًا» then more words) the counter is 1 and the instruction stays visible in the text.
+- **Not included on purpose (audience: children 6–12):** the chapter on intimacy with one's spouse (ch. 81) and the chapter for a sick person who despairs of life (ch. 51).
+  Topics «Study» and «Lost items» (seen in the reference app) have no chapter in Hisn al-Muslim, so they were not invented.
+- **References:** every item cites its book chapter («حصن المسلم، باب …») and is flagged `review: true` — **hadith numbers/gradings were not yet verified
+  for these 158 items** (unlike the morning/evening adhkar). The en/fr chapter titles are navigation labels translated for this site (review welcome).

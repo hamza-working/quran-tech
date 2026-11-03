@@ -1,6 +1,5 @@
 // Tiny localStorage-backed store for adhkar counters and favourites.
 // Works with useSyncExternalStore so it is SSR-safe (server snapshot is always empty).
-import type { Period } from './types';
 
 type Counts = Record<number, number>;
 const EMPTY_COUNTS: Counts = {};
@@ -26,7 +25,7 @@ const todayKey = () => {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 };
-const countsKey = (p: Period) => `qt-adhkar:v1:${p}:${todayKey()}`;
+const countsKey = (p: string) => `qt-adhkar:v1:${p}:${todayKey()}`;
 const FAV_KEY = 'qt-adhkar:v1:favorites';
 
 function safeGet(key: string): string | null {
@@ -48,7 +47,7 @@ function read<T>(key: string, fallback: T, parse: (raw: string) => T): T {
   return value;
 }
 
-export const getCounts = (p: Period): Counts => read(countsKey(p), EMPTY_COUNTS, (r) => {
+export const getCounts = (p: string): Counts => read(countsKey(p), EMPTY_COUNTS, (r) => {
   const o = JSON.parse(r) as Counts;
   return o && typeof o === 'object' ? o : EMPTY_COUNTS;
 });
@@ -60,20 +59,20 @@ export const getServerCounts = () => EMPTY_COUNTS;
 export const getServerFavorites = () => EMPTY_FAVS;
 
 /** Increment one dhikr, never beyond its target. */
-export function increment(p: Period, id: number, target: number) {
+export function increment(p: string, id: number, target: number) {
   const cur = getCounts(p);
   const next = Math.min((cur[id] ?? 0) + 1, target);
   if (next === (cur[id] ?? 0)) return;
   safeSet(countsKey(p), JSON.stringify({ ...cur, [id]: next }));
   emit();
 }
-export function resetOne(p: Period, id: number) {
+export function resetOne(p: string, id: number) {
   const { [id]: _removed, ...rest } = getCounts(p);
   void _removed;
   safeSet(countsKey(p), JSON.stringify(rest));
   emit();
 }
-export function resetAll(p: Period) {
+export function resetAll(p: string) {
   safeSet(countsKey(p), JSON.stringify({}));
   emit();
 }
@@ -91,5 +90,8 @@ export function normalizeArabic(s: string) {
     .replace(/[أإآٱ]/g, 'ا')
     .replace(/ى/g, 'ي')
     .replace(/ة/g, 'ه')
+    .replace(/[،؛؟,.;:!?()\[\]{}«»"'﴿﴾]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
     .toLowerCase();
 }

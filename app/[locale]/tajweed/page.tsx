@@ -171,6 +171,7 @@ const rules = [
     audioSurah: 'الفاتحة — آية 1',
     startTime: 0,
   },
+  
 ];
 
 const DURATION_I18N: Record<string, { en: string; fr: string }> = {
@@ -197,6 +198,9 @@ export default function TajweedPage() {
       clickToLearn: 'انقر لتعلم القاعدة',
       rules: 'القواعد',
       back: 'رجوع للقائمة',
+      listen: 'استمع للمثال',
+      surah: 'من سورة',
+      warsh: 'برواية ورش',
     },
     fr: {
       title: 'Cours de Tajwid',
@@ -207,6 +211,9 @@ export default function TajweedPage() {
       clickToLearn: 'Cliquez pour apprendre la règle',
       rules: 'Règles',
       back: 'Retour à la liste',
+      listen: 'Ecouter l\'exemple',
+      surah: 'De la sourate',
+      warsh: 'Récitation de Warsh',
     },
     en: {
       title: 'Tajweed Lessons',
@@ -217,6 +224,9 @@ export default function TajweedPage() {
       clickToLearn: 'Click to learn the rule',
       rules: 'Rules',
       back: 'Back to list',
+      listen: 'Listen to Example',
+      surah: 'From Surah',
+      warsh: 'Warsh narration',
     },
   };
 
@@ -317,13 +327,11 @@ export default function TajweedPage() {
             {/* مشغل الصوت */}
 <div className="mt-6">
   <h3 className="font-bold mb-3 text-center" style={{color: textTone(selected.color)}}>
-    🎧 {locale === 'ar' ? 'استمع للمثال' : locale === 'fr' ? 'Écouter l\'exemple' : 'Listen to Example'}
+    🎧 {t.listen}
   </h3>
   <div className="rounded-2xl p-4 text-center" style={{background: `${selected.color}10`, border: `1.5px solid ${selected.color}`}}>
     <p className="text-sm text-gray-500 mb-3">
-      {locale === 'ar' ? `من سورة ${selected.audioSurah} — برواية ورش` :
-       locale === 'fr' ? `De la sourate ${selected.audioSurah} — Warsh` :
-       `From Surah ${selected.audioSurah} — Warsh`}
+      {t.surah} {selected.audioSurah} — {t.warsh}
     </p>
 <AudioClip
   url={selected.audioUrl}

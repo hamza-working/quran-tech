@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Bookmark, Check, Copy, RotateCcw, Info } from 'lucide-react';
 import type { Dhikr, Period } from '@/lib/islam/types';
+import DuaText from './DuaText';
 
 interface Props {
   dhikr: Dhikr;
@@ -11,12 +12,14 @@ interface Props {
   period: Period;
   current: number;
   favorite: boolean;
+  /** Optional custom heading (defaults to «الذكر n»). */
+  heading?: string;
   onTap: () => void;
   onReset: () => void;
   onFavorite: () => void;
 }
 
-export default function DhikrCard({ dhikr, index, period, current, favorite, onTap, onReset, onFavorite }: Props) {
+export default function DhikrCard({ dhikr, index, period, current, favorite, heading, onTap, onReset, onFavorite }: Props) {
   const t = useTranslations('islam.adhkar');
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
 
@@ -29,7 +32,7 @@ export default function DhikrCard({ dhikr, index, period, current, favorite, onT
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(text.replace(/\(\(|\)\)/g, ''));
       setCopyState('copied');
     } catch {
       setCopyState('failed');
@@ -45,7 +48,7 @@ export default function DhikrCard({ dhikr, index, period, current, favorite, onT
     >
       <header className="flex items-center justify-between gap-3 mb-4">
         <h3 id={`dhikr-${period}-${dhikr.id}`} className="text-sm font-bold tracking-wide" style={{ color: '#8f6b1c', fontFamily: 'var(--qt-font-ui)' }}>
-          {t('dhikrNumber', { n: index + 1 })}
+          {heading ?? t('dhikrNumber', { n: index + 1 })}
           {dhikr.periods.length === 1 && (
             <span className="ms-2 text-xs font-semibold rounded-full px-2 py-0.5" style={{ background: '#f3e9cc', color: '#8f6b1c' }}>
               {dhikr.periods[0] === 'morning' ? t('onlyMorning') : t('onlyEvening')}
@@ -81,9 +84,9 @@ export default function DhikrCard({ dhikr, index, period, current, favorite, onT
       </header>
 
       {/* Religious text: always Arabic, RTL, never translated */}
-      <p lang="ar" dir="rtl" className="font-quranic text-2xl md:text-[1.75rem] text-center whitespace-pre-line" style={{ color: 'var(--qt-ink)' }}>
-        {text}
-      </p>
+      <div lang="ar" dir="rtl" className="text-center">
+        <DuaText text={text} />
+      </div>
 
       {dhikr.note && (
         <p lang="ar" dir="rtl" className="font-quranic text-lg text-center mt-3" style={{ color: 'var(--qt-muted)' }}>
