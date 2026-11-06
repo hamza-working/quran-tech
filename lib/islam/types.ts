@@ -16,6 +16,8 @@ export interface Dhikr {
   note?: string;
   /** Verified references (Arabic citation strings). Empty when not yet verified. */
   refs: string[];
+  /** True when the references are the abridged ones of the book (volume/page, no hadith number). */
+  refsBrief?: boolean;
   /** Grading statement exactly as given by the source (who graded it, where). */
   grading?: string;
   /** True when the takhrij/grading still needs scholarly review. */

@@ -268,7 +268,8 @@
       "onlyMorning": "Ce dhikr est pour le matin",
       "onlyEvening": "Ce dhikr est pour le soir",
       "grading": "Authentification",
-      "duaNumber": "Invocation {n}"
+      "duaNumber": "Invocation {n}",
+      "briefRefs": "Références abrégées telles qu’imprimées dans le « Hisn al-Muslim » abrégé : ouvrage et tome/page, sans numéro de hadith."
     },
     "review": {
       "banner": "Remarque : le contenu religieux de cette section provient de sources reconnues, et les éléments nécessitant encore une vérification savante sont signalés. Si tu remarques une erreur, merci de nous le signaler via la page de contact."

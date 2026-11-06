@@ -69,6 +69,13 @@ export default function DuaCard({ dua, heading, favorite, onFavorite }: Props) {
           <span className="font-bold">{t('source')}:</span>{' '}
           <span lang="ar" dir="rtl" className="font-quranic text-base align-middle">{dua.refs.length > 0 ? dua.refs.join('، ') : 'حصن المسلم'}</span>
         </p>
+        {dua.grading && (
+          <p>
+            <span className="font-bold">{t('grading')}:</span>{' '}
+            <span lang="ar" dir="rtl" className="font-quranic text-base align-middle">{dua.grading}</span>
+          </p>
+        )}
+        {dua.refsBrief && <p>{t('briefRefs')}</p>}
         {dua.review && (
           <p className="flex items-start gap-1.5" style={{ color: '#8f6b1c' }}>
             <Info size={14} className="mt-0.5 shrink-0" aria-hidden="true" /> {t('review')}

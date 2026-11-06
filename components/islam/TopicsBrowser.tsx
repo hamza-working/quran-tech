@@ -6,6 +6,8 @@ import { Search, ChevronDown } from 'lucide-react';
 import { TOPICS, CHAPTERS, type DuaChapter } from '@/lib/islam/topics';
 import { subscribe, getFavorites, getServerFavorites, toggleFavorite, normalizeArabic } from '@/lib/islam/progress-store';
 import DuaCard from './DuaCard';
+import { TOPIC_COLORS } from './topic-icons';
+import { accentText } from '@/components/shared/card-colors';
 
 /** One topic (e.g. travel): its chapters as collapsible groups of supplication cards. */
 export default function TopicsBrowser({ topicId }: { topicId: string }) {
@@ -41,7 +43,7 @@ export default function TopicsBrowser({ topicId }: { topicId: string }) {
 
   return (
     <section aria-labelledby="topics-heading">
-      <h2 id="topics-heading" className="text-2xl md:text-3xl font-bold mb-2" style={{ color: '#0b5d4b' }}>{t(`names.${topic.id}`)}</h2>
+      <h2 id="topics-heading" className="text-2xl md:text-3xl font-bold mb-2" style={{ color: accentText(TOPIC_COLORS[topic.id]) }}>{t(`names.${topic.id}`)}</h2>
       <p className="mb-6" style={{ color: 'var(--qt-muted)' }}>{t('countOf', { n: total })}</p>
 
       <label className="relative block mb-8">
@@ -68,7 +70,7 @@ export default function TopicsBrowser({ topicId }: { topicId: string }) {
                   <span className="block font-bold text-base md:text-lg" style={{ color: 'var(--qt-ink)', fontFamily: 'var(--qt-font-display)' }}>{chapterTitle(c)}</span>
                   {locale !== 'ar' && <span lang="ar" dir="rtl" className="block font-quranic text-base text-start" style={{ color: 'var(--qt-muted)' }}>{c.title}</span>}
                 </span>
-                <span className="text-xs font-bold rounded-full px-2.5 py-1 shrink-0" style={{ background: '#eaf2ed', color: '#0b5d4b' }}>{c.items.length}</span>
+                <span className="text-xs font-bold rounded-full px-2.5 py-1 shrink-0" style={{ background: `color-mix(in srgb, ${TOPIC_COLORS[topic.id]} 14%, #fffdf8)`, color: accentText(TOPIC_COLORS[topic.id]) }}>{c.items.length}</span>
                 <ChevronDown size={18} className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
               </summary>
               <div className="px-3 md:px-5 pb-5 space-y-4">

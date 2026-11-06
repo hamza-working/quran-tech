@@ -268,7 +268,8 @@
       "onlyMorning": "This dhikr is for the morning",
       "onlyEvening": "This dhikr is for the evening",
       "grading": "Grading",
-      "duaNumber": "Supplication {n}"
+      "duaNumber": "Supplication {n}",
+      "briefRefs": "Brief referencing as printed in the abridged “Hisn al-Muslim”: book and volume/page, without hadith numbers."
     },
     "review": {
       "banner": "Note: the religious content in this section comes from recognised sources, and items still needing scholarly review are marked. If you notice a mistake, please let us know through the contact page."

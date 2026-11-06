@@ -12,14 +12,15 @@ import AdhkarReader from '@/components/islam/AdhkarReader';
 import TopicsBrowser from '@/components/islam/TopicsBrowser';
 import { useHash, setHash } from '@/components/islam/useHash';
 import { TOPICS, CHAPTERS } from '@/lib/islam/topics';
-import { TOPIC_ICONS } from '@/components/islam/topic-icons';
+import { TOPIC_ICONS, TOPIC_COLORS } from '@/components/islam/topic-icons';
+import { tintedCard, accentText, iconBadge } from '@/components/shared/card-colors';
 
 type SectionId = 'pillars' | 'salah' | 'morning' | 'evening';
 
 const SECTIONS: { id: SectionId; icon: LucideIcon; tint: string }[] = [
   { id: 'pillars', icon: Star, tint: '#0b5d4b' },
-  { id: 'salah', icon: Landmark, tint: '#1f7a55' },
-  { id: 'morning', icon: Sunrise, tint: '#b8893a' },
+  { id: 'salah', icon: Landmark, tint: '#2c5f9e' },
+  { id: 'morning', icon: Sunrise, tint: '#d08a2e' },
   { id: 'evening', icon: Sunset, tint: '#1b2a4a' },
 ];
 
@@ -39,7 +40,7 @@ export default function IslamPage() {
   const cards = [
     ...SECTIONS.map(({ id, icon, tint }) => ({ key: id, hash: id, icon, tint, selected: active === id, title: t(`categories.${id}.title`), desc: t(`categories.${id}.desc`) })),
     ...TOPICS.map((tp) => ({
-      key: `topic-${tp.id}`, hash: `topic-${tp.id}`, icon: TOPIC_ICONS[tp.id], tint: '#0b5d4b', selected: topicId === tp.id,
+      key: `topic-${tp.id}`, hash: `topic-${tp.id}`, icon: TOPIC_ICONS[tp.id], tint: TOPIC_COLORS[tp.id], selected: topicId === tp.id,
       title: t(`topics.names.${tp.id}`),
       desc: t('topics.countOf', { n: tp.chapters.reduce((n, id) => n + CHAPTERS[id].items.length, 0) }),
     })),
@@ -89,16 +90,16 @@ export default function IslamPage() {
                   onClick={() => setHash(c.hash)}
                   aria-current={c.selected ? 'true' : undefined}
                   className="card-premium w-full h-full p-5 text-start flex flex-col gap-3 cursor-pointer"
-                  style={c.selected ? { borderColor: '#c9a24a', boxShadow: 'var(--shadow-lg)' } : undefined}
+                  style={{ ...tintedCard(c.tint), ...(c.selected ? { boxShadow: `0 0 0 2px ${c.tint}, var(--shadow-lg)` } : {}) }}
                 >
                   <span className="qt-keep self-start">
-                    <span className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: c.tint, color: '#f3eddc', boxShadow: 'inset 0 0 0 2px rgba(201,162,74,0.45)' }}>
+                    <span className="w-12 h-12 rounded-xl flex items-center justify-center" style={iconBadge(c.tint)}>
                       <c.icon size={24} aria-hidden="true" />
                     </span>
                   </span>
-                  <span className="block text-lg font-bold" style={{ color: 'var(--qt-ink)', fontFamily: 'var(--qt-font-display)' }}>{c.title}</span>
+                  <span className="block text-lg font-bold" style={{ color: accentText(c.tint), fontFamily: 'var(--qt-font-display)' }}>{c.title}</span>
                   <span className="block text-sm flex-1" style={{ color: 'var(--qt-muted)' }}>{c.desc}</span>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: '#1f7a55' }}>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: accentText(c.tint) }}>
                     {t('categories.open')} <ArrowRight size={16} className="rtl:rotate-180" aria-hidden="true" />
                   </span>
                 </button>

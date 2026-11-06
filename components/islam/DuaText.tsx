@@ -12,7 +12,7 @@ export default function DuaText({ text }: { text: string }) {
       </p>
     );
   }
-  const parts = text.split(/(\(\([\s\S]*?\)\))/g).filter((x) => x.trim());
+  const parts = text.split(/(\(\([\s\S]*?\)\))/g).filter((x) => x.trim() && !/^[.،,؛\s]+$/.test(x));
   return (
     <>
       {parts.map((part, i) =>
