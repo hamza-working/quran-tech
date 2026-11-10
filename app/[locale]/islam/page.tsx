@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { Star, Landmark, Sunrise, Sunset, ChevronLeft, ArrowDown, ArrowRight, type LucideIcon } from 'lucide-react';
+import { Star, ListOrdered, Sunrise, Sunset, ChevronLeft, ArrowDown, ArrowRight, type LucideIcon } from 'lucide-react';
 import Navbar from '@/components/shared/Navbar';
 import Logo from '@/components/shared/Logo';
 import PillarsOfIslam from '@/components/islam/PillarsOfIslam';
@@ -19,7 +19,7 @@ type SectionId = 'pillars' | 'salah' | 'morning' | 'evening';
 
 const SECTIONS: { id: SectionId; icon: LucideIcon; tint: string }[] = [
   { id: 'pillars', icon: Star, tint: '#0b5d4b' },
-  { id: 'salah', icon: Landmark, tint: '#2c5f9e' },
+  { id: 'salah', icon: ListOrdered, tint: '#2c5f9e' },
   { id: 'morning', icon: Sunrise, tint: '#d08a2e' },
   { id: 'evening', icon: Sunset, tint: '#1b2a4a' },
 ];
@@ -28,7 +28,7 @@ export default function IslamPage() {
   const t = useTranslations('islam');
   const locale = useLocale();
   const hash = useHash();
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const categoriesRef = useRef<HTMLElement>(null);
 
   // Deep link for a topic: #topic-<id>, e.g. #topic-travel
@@ -46,12 +46,14 @@ export default function IslamPage() {
     })),
   ];
 
-  // Scroll to the opened section (or back to the categories), honouring reduced motion.
+  // Scroll straight to the content (title + cards) whenever the section OR the topic changes
+  // (switching between topics keeps `active` unchanged, so the topic id must be part of the key).
+  const viewKey = active ? `${active}:${topicId ?? ''}` : '';
   useEffect(() => {
+    if (!viewKey) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const target = active ? sectionRef.current : null;
-    if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-  }, [active]);
+    contentRef.current?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }, [viewKey]);
 
   const scrollToCategories = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -110,7 +112,7 @@ export default function IslamPage() {
 
         {/* Selected section */}
         {active && (
-          <div ref={sectionRef} className="mt-14 scroll-mt-24">
+          <div className="mt-14 scroll-mt-24">
             <nav aria-label={t('breadcrumb.label')} className="mb-6">
               <ol className="flex flex-wrap items-center gap-2 text-sm" style={{ color: 'var(--qt-muted)' }}>
                 <li><Link href={`/${locale}`} className="hover:underline">{t('breadcrumb.home')}</Link></li>
@@ -136,11 +138,13 @@ export default function IslamPage() {
               ))}
             </div>
 
-            {active === 'pillars' && <PillarsOfIslam />}
-            {active === 'salah' && <SalahPillars />}
-            {active === 'morning' && <AdhkarReader period="morning" />}
-            {active === 'evening' && <AdhkarReader period="evening" />}
-            {active === 'topics' && topicId && <TopicsBrowser topicId={topicId} />}
+            <div ref={contentRef} className="scroll-mt-20">
+              {active === 'pillars' && <PillarsOfIslam />}
+              {active === 'salah' && <SalahPillars />}
+              {active === 'morning' && <AdhkarReader period="morning" />}
+              {active === 'evening' && <AdhkarReader period="evening" />}
+              {active === 'topics' && topicId && <TopicsBrowser key={topicId} topicId={topicId} />}
+            </div>
 
             <button type="button" onClick={() => { setHash(''); categoriesRef.current?.scrollIntoView({ behavior: 'auto', block: 'start' }); }}
               className="mt-10 mx-auto flex items-center gap-2 text-sm font-bold cursor-pointer" style={{ color: '#1f7a55' }}>

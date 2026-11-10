@@ -291,7 +291,10 @@
         "money": "Argent",
         "marriage": "Mariage",
         "children": "Enfants",
-        "hajj": "Hajj et Omra"
+        "hajj": "Hajj et Omra",
+        "wudu": "Ablutions",
+        "mosque": "Mosquée",
+        "misc": "Invocations diverses"
       },
       "chapters": {
         "4": "En entrant aux toilettes",
@@ -385,7 +388,35 @@
         "121": "Takbîr en lapidant les jamarât",
         "124": "Ressentir une douleur dans le corps",
         "125": "Craindre d’atteindre quelque chose par le mauvais œil",
-        "126": "Dans les moments de frayeur"
+        "126": "Dans les moments de frayeur",
+        "2": "Invocations avant de dormir",
+        "3": "Invocations au réveil",
+        "29": "En se retournant la nuit",
+        "30": "Frayeur ou solitude pendant le sommeil",
+        "31": "Après un rêve ou un cauchemar",
+        "55": "Prière funéraire : invocation pour le défunt",
+        "56": "Prière funéraire : invocation pour un enfant décédé",
+        "63": "Prière de la pluie : invocations (istisqâ’)",
+        "201": "Prières de l’éclipse (soleil et lune)",
+        "61": "Quand le vent souffle",
+        "62": "En entendant le tonnerre",
+        "64": "Quand il pleut",
+        "65": "Après la pluie",
+        "66": "Invocation pour que la pluie cesse",
+        "67": "À la vue du nouveau croissant",
+        "82": "En cas de colère",
+        "92": "Crainte de tomber dans le shirk",
+        "94": "Aversion pour les mauvais présages (tiyara)",
+        "106": "Quand survient une chose agréable ou désagréable",
+        "110": "En entendant le chant du coq ou le braiment de l’âne",
+        "111": "En entendant les chiens aboyer la nuit",
+        "122": "Devant l’émerveillement et une bonne nouvelle",
+        "123": "En recevant une bonne nouvelle",
+        "127": "En égorgeant un animal",
+        "129": "Demander pardon et se repentir",
+        "130": "Le mérite du tasbîh, du tahmîd, du tahlîl et du takbîr",
+        "131": "Comment le Prophète ﷺ comptait son tasbîh",
+        "132": "Bonnes actions et bonnes manières (récapitulatif)"
       }
     }
   },

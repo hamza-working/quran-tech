@@ -291,7 +291,10 @@
         "money": "Money",
         "marriage": "Marriage",
         "children": "Children",
-        "hajj": "Hajj & Umrah"
+        "hajj": "Hajj & Umrah",
+        "wudu": "Wudu (ablution)",
+        "mosque": "Mosque",
+        "misc": "Various supplications"
       },
       "chapters": {
         "4": "Entering the toilet",
@@ -385,7 +388,35 @@
         "121": "Takbir when stoning the Jamarat",
         "124": "Feeling pain in the body",
         "125": "Fearing to harm something with the evil eye",
-        "126": "In moments of fear"
+        "126": "In moments of fear",
+        "2": "Remembrance before sleeping",
+        "3": "Remembrance upon waking up",
+        "29": "When turning over at night",
+        "30": "Fear or loneliness during sleep",
+        "31": "After seeing a dream or a nightmare",
+        "55": "Funeral prayer: supplication for the deceased",
+        "56": "Funeral prayer: supplication for a deceased child",
+        "63": "Prayer for rain: supplications (istisqa)",
+        "201": "Eclipse prayers (sun and moon)",
+        "61": "When the wind blows",
+        "62": "When hearing thunder",
+        "64": "When it rains",
+        "65": "After the rain",
+        "66": "Supplication for the rain to stop",
+        "67": "On seeing the new moon",
+        "82": "When angry",
+        "92": "Fear of committing shirk",
+        "94": "Dislike of omens (tiyara)",
+        "106": "When something pleasing or displeasing happens",
+        "110": "On hearing a rooster crow or a donkey bray",
+        "111": "On hearing dogs bark at night",
+        "122": "On wonder and pleasant news",
+        "123": "When receiving good news",
+        "127": "When slaughtering an animal",
+        "129": "Seeking forgiveness and repentance",
+        "130": "The virtue of tasbih, tahmid, tahlil and takbir",
+        "131": "How the Prophet ﷺ used to count his tasbih",
+        "132": "Comprehensive good deeds and manners"
       }
     }
   },
